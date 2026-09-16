@@ -1,0 +1,64 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+/* Hero image */
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Gradient overlay */
+.gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.04) 35%,
+      rgba(0, 0, 0, 0.45) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0) 45%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+}
+.content {
+  position: absolute;
+  z-index: 2;
+  padding-left: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+}
+.heroTitle {
+  font-family: "Alta";
+  font-weight: 400;
+  font-size: 85px;
+  line-height: 90.8px;
+  color: #000000;
+  vertical-align: middle;
+  letter-spacing: 0px;
+}
+.description {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24.92px;
+  color: #00000080;
+  padding-bottom: 1rem;
+  letter-spacing: 0.42px;
+}
