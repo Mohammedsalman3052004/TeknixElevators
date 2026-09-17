@@ -1,0 +1,230 @@
+.cta {
+  position: relative;
+
+  width: 100%;
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #050505;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   SUBTLE BACKGROUND
+   ========================================= */
+
+.cta::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 255, 255, 0.045) 0%,
+      rgba(255, 255, 255, 0.015) 28%,
+      transparent 65%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CENTER VERTICAL LINES
+   ========================================= */
+
+.verticalLineLeft,
+.verticalLineRight {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.verticalLineLeft {
+  left: calc(50% - 85px);
+}
+
+.verticalLineRight {
+  right: calc(50% - 85px);
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 70px 24px;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 26px;
+
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+
+  color: #9c8e70;
+}
+
+.line {
+  width: 18px;
+  height: 1px;
+
+  background: #9c8e70;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.title {
+  margin: 0;
+
+  font-family: "Alta", serif;
+  font-size: clamp(58px, 5vw, 82px);
+  font-weight: 300;
+
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.description {
+  margin: 36px 0 38px;
+
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  color: #9c8e70;
+}
+
+
+/* =========================================
+   CONTACT LINK
+   ========================================= */
+
+.contactLink {
+  margin-top: 15px;
+
+  font-family: var(--font-secondary);
+  font-size: 8px;
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  color: #a99c82;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   ANIMATION
+   ========================================= */
+
+.content {
+  animation: revealContent 1s ease both;
+}
+
+@keyframes revealContent {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+  .cta {
+    min-height: 500px;
+  }
+
+  .content {
+    padding: 70px 20px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+    gap: 10px;
+  }
+
+  .line {
+    width: 14px;
+  }
+
+  .title {
+    font-size: clamp(48px, 13vw, 68px);
+  }
+
+  .description {
+    font-size: 12px;
+    margin-top: 30px;
+    margin-bottom: 32px;
+  }
+
+  .verticalLineLeft {
+    left: 20%;
+  }
+
+  .verticalLineRight {
+    right: 20%;
+  }
+}

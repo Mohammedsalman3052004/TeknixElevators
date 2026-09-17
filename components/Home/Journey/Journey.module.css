@@ -1,0 +1,256 @@
+.journey {
+  position: relative;
+
+  width: 100%;
+  min-height: 680px;
+
+  background: #ffffff;
+  color: #111111;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+
+  margin: 0 auto;
+
+  padding: clamp(70px, 6.4vw, 123px) 15%;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 398px);
+
+  align-items: center;
+
+  column-gap: clamp(60px, 7vw, 135px);
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  padding-top: 2px;
+}
+
+
+/* =========================================
+   EYEBROW
+   ========================================= */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  color: #a4a4a4;
+}
+
+.line {
+  width: 17px;
+  height: 1px;
+
+  background: #d5d5d5;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.title {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(48px, 3.35vw, 64px);
+  font-weight: 300;
+
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+
+  color: #171717;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.description {
+  margin: 28px 0 0;
+
+  font-family: var(--font-secondary);
+
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color: #858585;
+}
+
+
+/* =========================================
+   IMAGE
+   ========================================= */
+
+.imageWrapper {
+  width: 398px;
+  height: 531px;
+}
+
+.image {
+  object-fit: cover;
+
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   ANIMATION
+   ========================================= */
+
+.content {
+  animation: contentReveal 1s ease both;
+}
+
+.imageWrapper {
+  animation: imageReveal 1.2s ease both;
+}
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   LARGE SCREEN
+   ========================================= */
+
+/* @media (min-width: 1600px) {
+  .container {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+} */
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 80px 8%;
+
+    grid-template-columns: 1fr 360px;
+
+    column-gap: 50px;
+  }
+
+  .imageWrapper {
+    width: 360px;
+    height: 480px;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+  .journey {
+    min-height: auto;
+  }
+
+  .container {
+    padding: 70px 7%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 50px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 25px;
+  }
+
+  .title {
+    font-size: clamp(46px, 12vw, 65px);
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .desktopBreak {
+    display: none;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 398 / 531;
+  }
+}

@@ -1,0 +1,402 @@
+.section {
+  width: 100%;
+  background: #ffffff;
+
+  padding: 80px 0;
+
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   LEFT IMAGE SLIDER
+========================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  /* aspect-ratio: 960 / 1080; */
+  height: 90vh;
+
+  overflow: hidden;
+}
+
+
+/* All images occupy exactly the same space */
+
+.image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  z-index: 1;
+
+  transition: opacity 1.4s ease-in-out;
+}
+
+
+/* Active image */
+
+.image.active {
+  opacity: 1;
+}
+
+
+/* =========================================
+   IMAGE GRADIENT
+========================================= */
+
+.gradient {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 5, 3, 0.15) 0%,
+      rgba(8, 5, 3, 0.35) 100%
+    );
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.content {
+  width: 100%;
+
+  max-width: 620px;
+
+  padding-left: clamp(60px, 7vw, 135px);
+
+  padding-right: clamp(40px, 6vw, 120px);
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 38px;
+
+  font-family: var(--font-secondary);
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+
+  color: #9b9b9b;
+}
+
+.eyebrowLine {
+  width: 20px;
+
+  height: 1px;
+
+  flex-shrink: 0;
+
+  background: #d5d5d5;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.title {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(44px, 4vw, 68px);
+
+  font-weight: 400;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.025em;
+
+  color: #171717;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+  margin: 42px 0 36px;
+
+  font-family: var(--font-secondary);
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color: #858585;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.links {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* Individual row */
+
+.link {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0;
+
+  border-top: 1px solid #e5e5e5;
+
+  text-decoration: none;
+
+  color: #777777;
+
+  overflow: hidden;
+
+  transition:
+    color 0.35s ease,
+    padding 0.35s ease,
+    background-color 0.35s ease;
+}
+
+
+/* Bottom border */
+
+.link:last-child {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+
+/* =========================================
+   LINK TEXT
+========================================= */
+
+.linkText {
+  font-family: var(--font-secondary);
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.14em;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.arrow {
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 300;
+
+  color: #b1b1b1;
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s ease;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.link:hover {
+  color: #111111;
+
+  padding-left: 8px;
+
+  padding-right: 8px;
+
+  background: #fafafa;
+}
+
+.link:hover .linkText {
+  color: #111111;
+
+  transform: translateX(4px);
+}
+
+.link:hover .arrow {
+  color: #111111;
+
+  transform: translateX(7px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .content {
+    padding-left: clamp(45px, 6vw, 90px);
+
+    padding-right: clamp(35px, 5vw, 80px);
+  }
+
+  .title {
+    font-size: clamp(42px, 4.5vw, 58px);
+  }
+
+  .description {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+
+  /* Image first */
+
+  .imageWrapper {
+    width: 100%;
+
+    /* aspect-ratio: 16 / 12; */
+    height: 400px;
+  }
+
+
+  /* Content second */
+
+  .content {
+    max-width: none;
+
+    padding: 70px 40px 0;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .content {
+    padding: 55px 25px 0;
+  }
+
+  .eyebrow {
+    margin-bottom: 28px;
+
+    font-size: 9px;
+  }
+
+  .eyebrowLine {
+    width: 16px;
+  }
+
+  .title {
+    font-size: clamp(40px, 11vw, 52px);
+
+    line-height: 1.1;
+  }
+
+  .description {
+    margin: 30px 0;
+
+    font-size: 12px;
+  }
+
+  .description br {
+    display: none;
+  }
+
+  .link {
+    min-height: 46px;
+  }
+
+  .linkText {
+    font-size: 10px;
+  }
+}

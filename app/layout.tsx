@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Navbar />
 
         {children}
+        <Footer />
       </body>
     </html>
   );
