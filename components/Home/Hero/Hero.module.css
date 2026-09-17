@@ -48,7 +48,7 @@
   gap:1rem;
 
   width:100%;
-  max-width:620px;
+  max-width:820px;
 
   padding-left:clamp(40px,9vw,180px);
 }

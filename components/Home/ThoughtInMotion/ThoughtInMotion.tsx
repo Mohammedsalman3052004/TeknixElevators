@@ -70,7 +70,7 @@ export default function ThoughtInMotion() {
         <div className={styles.content}>
 
           {/* Eyebrow */}
-          <div className={styles.eyebrow}>
+          <div className={styles.eyebrow} data-reveal>
             <span className={styles.eyebrowLine}></span>
 
             <span>BEHIND EVERY JOURNEY</span>
@@ -78,7 +78,7 @@ export default function ThoughtInMotion() {
 
 
           {/* Heading */}
-          <h2 className={styles.title}>
+          <h2 className={styles.title} data-reveal>
             THOUGHT.
             <br />
             IN MOTION
@@ -86,7 +86,7 @@ export default function ThoughtInMotion() {
 
 
           {/* Description */}
-          <p className={styles.description}>
+          <p className={styles.description} data-reveal>
             Every Teknix elevator begins with a considered
             <br />
             approach to engineering, materials, technology and
@@ -96,13 +96,14 @@ export default function ThoughtInMotion() {
 
 
           {/* Links */}
-          <div className={styles.links}>
+          <div className={styles.links} >
 
             {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 className={styles.link}
+                data-reveal
               >
                 <span className={styles.linkText}>
                   {link.name}

@@ -116,9 +116,9 @@ export default function ElevatorSlider() {
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.headingWrapper}>
-          <span className={styles.eyebrow}>THE ELEVATORS</span>
+          <span className={styles.eyebrow} data-reveal>THE ELEVATORS</span>
 
-          <h2>
+          <h2 data-reveal>
             DESIGNED FOR
             <br />
             DIFFERENT WAYS TO MOVE.
@@ -126,7 +126,7 @@ export default function ElevatorSlider() {
         </div>
 
         {/* Controls */}
-        <div className={styles.controls}>
+        <div className={styles.controls} data-reveal>
           <button
             type="button"
             onClick={previousSlide}
@@ -157,9 +157,10 @@ export default function ElevatorSlider() {
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
+        
       >
         {elevators.map((elevator, index) => (
-          <article className={styles.card} key={`${elevator.title}-${index}`}>
+          <article className={styles.card} key={`${elevator.title}-${index}`} data-reveal>
             {/* Image */}
             <Image
               src={elevator.image}

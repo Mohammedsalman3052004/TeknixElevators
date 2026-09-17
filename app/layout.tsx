@@ -3,6 +3,8 @@ import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import Animations from "@/components/Animations/Animations";
+// import Animations from "@/components/Animations/Animations.tsx";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -27,7 +29,7 @@ export default function RootLayout({
     >
       <body>
         <Navbar />
-
+        <Animations />
         {children}
         <Footer />
       </body>

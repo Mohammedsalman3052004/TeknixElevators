@@ -4,21 +4,21 @@ import styles from "./ProjectCTA.module.css";
 
 export default function ProjectCTA() {
   return (
-    <section className={styles.cta}>
+    <section className={styles.cta} data-reveal>
       {/* Decorative vertical lines */}
       <div className={styles.verticalLineLeft} />
       <div className={styles.verticalLineRight} />
 
       <div className={styles.content}>
         {/* Eyebrow */}
-        <div className={styles.eyebrow}>
+        <div className={styles.eyebrow} data-reveal>
           <span className={styles.line} />
           <span>BEGIN THE CONVERSATION</span>
           <span className={styles.line} />
         </div>
 
         {/* Heading */}
-        <h2 className={styles.title}>
+        <h2 className={styles.title} data-reveal>
           LET’S BUILD
           <br />
           WHAT
@@ -27,7 +27,7 @@ export default function ProjectCTA() {
         </h2>
 
         {/* Description */}
-        <p className={styles.description}>
+        <p className={styles.description} data-reveal>
           Tell us what you're building.
           <br />
           We'll help you find the right way to move through it.
@@ -35,13 +35,14 @@ export default function ProjectCTA() {
 
         {/* Button */}
         <Button
+          data-reveal
           name="DISCUSS YOUR PROJECT"
           href="/contact"
           variant="white"
         />
 
         {/* Secondary link */}
-        <Link href="/contact" className={styles.contactLink}>
+        <Link href="/contact" className={styles.contactLink} data-reveal>
           CONTACT TEKNIX
         </Link>
       </div>

@@ -9,12 +9,12 @@ export default function Journey() {
         {/* Left Content */}
         <div className={styles.content}>
 
-          <div className={styles.eyebrow}>
+          <div className={styles.eyebrow} data-reveal>
             <span className={styles.line} />
             <span>MORE THAN MOVEMENT.</span>
           </div>
 
-          <h2 className={styles.title}>
+          <h2 className={styles.title} data-reveal>
             EVERY JOURNEY
             <br />
             CARRIES
@@ -24,7 +24,7 @@ export default function Journey() {
             THAT MATTERS
           </h2>
 
-          <p className={styles.description}>
+          <p className={styles.description} data-reveal>
             From the first step to the last floor, every journey is
             <br className={styles.desktopBreak} />
             part of something bigger.
@@ -36,6 +36,7 @@ export default function Journey() {
         {/* Right Image */}
         <div className={styles.imageWrapper}>
           <Image
+          data-reveal
             src="/Images/Home/journey.png"
             alt="Family using a TekniX elevator"
             fill
