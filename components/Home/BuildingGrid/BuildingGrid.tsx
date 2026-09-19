@@ -69,7 +69,7 @@ export default function BuildingGrid() {
       ========================================= */}
 
       <div className={styles.header}>
-        <h2 className={styles.heading} data-reveal>
+        <h2 className={styles.heading} data-reveal="up">
           WHAT ARE YOU BUILDING
         </h2>
       </div>

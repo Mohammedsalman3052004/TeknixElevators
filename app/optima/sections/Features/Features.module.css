@@ -1,0 +1,497 @@
+/* =========================================================
+   OPTIMA — FEATURES
+========================================================= */
+
+.section {
+  width: 100%;
+  background: #0b0b0b;
+  color: #ffffff;
+
+  padding: 90px 5vw 110px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  width: min(100%, 1180px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 520px minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 55px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #151515;
+}
+
+.image {
+  object-fit: cover;
+
+  transition:
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  width: 100%;
+
+  max-width: 520px;
+
+  justify-self: start;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.content h2 {
+  margin: 0;
+
+  font-family: "Alta", var(--font-display, serif);
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+
+  color: #f5f5f5;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+  margin: 12px 0 30px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #858585;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+  width: 100%;
+}
+
+
+/* =========================================================
+   FEATURE ROW
+========================================================= */
+
+.feature {
+  position: relative;
+
+  padding: 13px 0 16px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  cursor: pointer;
+
+  transition:
+    padding-left 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s ease;
+}
+
+.feature:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   TOP LINE
+========================================================= */
+
+.featureTop {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.number {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 0.22em;
+
+  color: #9a8060;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.arrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  color: #8b7357;
+
+  transform: rotate(0deg);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s ease;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.feature h3 {
+  margin: 8px 0 7px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  line-height: 1.3;
+
+  color: #eeeeee;
+
+  transition:
+    color 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.feature p {
+  margin: 0;
+
+  max-width: 270px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1.55;
+
+  color: #5e5e5e;
+
+  transition:
+    color 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.feature:hover {
+  padding-left: 8px;
+
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+
+/*
+   ↗  →  effect
+
+   Starting arrow:
+        ↗
+
+   Hover:
+        →
+*/
+
+.feature:hover .arrow {
+  transform: rotate(-45deg);
+
+  color: #ffffff;
+}
+
+.feature:hover h3 {
+  color: #ffffff;
+
+  transform: translateX(3px);
+}
+
+.feature:hover p {
+  color: #858585;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .section {
+    padding: 80px 5vw 90px;
+  }
+
+  .container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 45px;
+  }
+
+  .content h2 {
+    font-size: clamp(34px, 4.5vw, 46px);
+  }
+
+  .intro {
+    margin-bottom: 26px;
+  }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .section {
+    padding: 80px 6vw 90px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+
+    max-width: 650px;
+
+    gap: 55px;
+  }
+
+  .imageWrapper {
+    width: 100%;
+
+    max-width: 520px;
+
+    justify-self: center;
+  }
+
+  .content {
+    max-width: 520px;
+
+    justify-self: center;
+  }
+
+  .content h2 {
+    font-size: clamp(38px, 7vw, 50px);
+  }
+
+  .feature {
+    padding-top: 15px;
+    padding-bottom: 18px;
+  }
+
+  .feature h3 {
+    font-size: 11px;
+  }
+
+  .feature p {
+    font-size: 9px;
+
+    max-width: 340px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 70px 24px 80px;
+  }
+
+  .container {
+    width: 100%;
+
+    gap: 45px;
+  }
+
+  .imageWrapper {
+    width: 100%;
+
+    aspect-ratio: 1 / 1.05;
+  }
+
+  .content h2 {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+
+  .intro {
+    font-size: 11px;
+
+    margin-top: 10px;
+
+    margin-bottom: 24px;
+  }
+
+  .feature {
+    padding: 14px 0 17px;
+  }
+
+  .number {
+    font-size: 7px;
+  }
+
+  .arrow {
+    font-size: 13px;
+  }
+
+  .feature h3 {
+    font-size: 10px;
+
+    margin-top: 8px;
+  }
+
+  .feature p {
+    font-size: 8.5px;
+
+    max-width: 260px;
+  }
+
+  /*
+     Keep hover interaction from becoming awkward
+     on touch devices.
+  */
+
+  .feature:hover {
+    padding-left: 0;
+  }
+
+  .feature:hover h3,
+  .feature:hover p {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .content h2 {
+    font-size: 33px;
+  }
+
+  .feature h3 {
+    font-size: 9.5px;
+  }
+
+  .feature p {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .image {
+    transition: none;
+  }
+
+  .imageWrapper:hover .image {
+    transform: none;
+  }
+
+  .feature,
+  .arrow,
+  .feature h3,
+  .feature p {
+    transition: none;
+  }
+}

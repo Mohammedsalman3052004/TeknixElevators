@@ -13,7 +13,7 @@ export const elevators: Elevator[] = [
     description:
       "Designed for larger-scale and demanding environments.",
     buttonText: "DISCOVER",
-    href: "/elevators/vertix",
+    href: "/vertix",
   },
 
   {
@@ -22,7 +22,7 @@ export const elevators: Elevator[] = [
     description:
       "Engineered with efficiency and application in mind.",
     buttonText: "DISCOVER",
-    href: "/elevators/greentek",
+    href: "/greentek",
   },
 
   {
@@ -31,7 +31,7 @@ export const elevators: Elevator[] = [
     description:
       "A dedicated solution for villas and private homes.",
     buttonText: "DISCOVER",
-    href: "/elevators/villa-matek",
+    href: "/villa-matek",
   },
 
   {
@@ -40,7 +40,7 @@ export const elevators: Elevator[] = [
     description:
       "A specialised elevator solution.",
     buttonText: "DISCOVER",
-    href: "/elevators/optima",
+    href: "/optima",
   },
   {
     image: "/Images/Home/elevator-5.jpg",
@@ -48,7 +48,7 @@ export const elevators: Elevator[] = [
     description:
       "For environments where standard solutions aren't enough.",
     buttonText: "DISCOVER",
-    href: "/elevators/optima",
+    href: "/optima",
   },
 ];
 

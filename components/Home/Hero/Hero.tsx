@@ -15,14 +15,14 @@ export default function Hero() {
 
       <div className={styles.gradient} />
 
-      <div className={styles.content} data-reveal>
-        <h1 className={styles.heroTitle} data-reveal>
+      <div className={styles.content} data-reveal="up">
+        <h1 className={styles.heroTitle} data-reveal="up">
           ENGINEERED FOR
           <br />
           LIFE IN MOTION
         </h1>
 
-        <p className={styles.description} data-reveal>
+        <p className={styles.description} data-reveal="up">
           Thoughtful engineering. Refined design.
           <br />
           Made around the way you move.

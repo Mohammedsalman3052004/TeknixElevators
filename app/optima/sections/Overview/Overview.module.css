@@ -1,0 +1,681 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  padding: clamp(100px, 10vw, 160px) 0;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(1200px, 88%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(480px, 1fr);
+
+  align-items: center;
+
+  column-gap: clamp(50px, 8vw, 130px);
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.content {
+  width: 100%;
+
+  max-width: 470px;
+
+  justify-self: start;
+  transform: translateX(-60px);
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.content h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(42px, 4vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 1.03;
+
+  letter-spacing: -0.025em;
+
+  color: #151515;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+  margin-top: 34px;
+
+  max-width: 430px;
+}
+
+.description p {
+  margin: 0 0 22px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color: #858585;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   VISUAL AREA
+========================================= */
+
+.visual {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 600px;
+
+  min-height: 470px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  justify-self: end;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: min(300px, 58%);
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+
+  z-index: 2;
+}
+
+.image {
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Very subtle image interaction */
+
+.imageWrapper:hover .image {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   SPECIFICATION
+========================================= */
+
+.spec {
+  position: absolute;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  z-index: 3;
+}
+
+
+/* Small text */
+
+.spec span:not(.line) {
+  font-size: 12px;
+
+  line-height: 1.3;
+
+  color: #888888;
+
+  font-weight: 400;
+}
+
+
+/* Main specification */
+
+.spec strong {
+  font-size: 13px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  color: #777777;
+}
+
+
+/* =========================================
+   CONNECTING LINE
+========================================= */
+
+.line {
+  position: absolute;
+
+  top: 50%;
+
+  width: 38px;
+
+  height: 1px;
+
+  background: #d7d7d7;
+}
+
+
+/* =========================================
+   TOP LEFT
+========================================= */
+
+.topLeft {
+  top: 17%;
+
+  right: calc(50% + 200px);
+
+  width: 110px;
+
+  text-align: right;
+
+  align-items: flex-end;
+}
+
+.topLeft .line {
+  right: -48px;
+}
+
+
+/* =========================================
+   BOTTOM LEFT
+========================================= */
+
+.bottomLeft {
+  bottom: 18%;
+
+  right: calc(50% + 200px);
+
+  width: 130px;
+
+  text-align: right;
+
+  align-items: flex-end;
+}
+
+.bottomLeft .line {
+  right: -48px;
+}
+
+
+/* =========================================
+   TOP RIGHT
+========================================= */
+
+.topRight {
+  top: 17%;
+
+  left: calc(50% + 200px);
+
+  width: 110px;
+
+  text-align: left;
+
+  align-items: flex-start;
+}
+
+.topRight .line {
+  left: -48px;
+}
+
+
+/* =========================================
+   BOTTOM RIGHT
+========================================= */
+
+.bottomRight {
+  bottom: 18%;
+
+  left: calc(50% + 200px);
+
+  width: 125px;
+
+  text-align: left;
+
+  align-items: flex-start;
+}
+
+.bottomRight .line {
+  left: -48px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .section {
+    padding: 110px 0;
+  }
+
+  .container {
+    width: 88%;
+
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(420px, 1fr);
+
+    column-gap: 50px;
+  }
+
+  .content {
+    max-width: 400px;
+  }
+
+  .content h2 {
+    font-size: clamp(40px, 5vw, 54px);
+  }
+
+  .description {
+    margin-top: 28px;
+  }
+
+  .visual {
+    min-height: 440px;
+  }
+
+  .imageWrapper {
+    width: 270px;
+  }
+
+  .topLeft {
+    right: calc(50% + 135px);
+  }
+
+  .bottomLeft {
+    right: calc(50% + 135px);
+  }
+
+  .topRight {
+    left: calc(50% + 135px);
+  }
+
+  .bottomRight {
+    left: calc(50% + 135px);
+  }
+
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 850px) {
+
+  .section {
+    padding: 100px 0;
+  }
+
+  .container {
+    width: 86%;
+
+    grid-template-columns: 1fr;
+
+    row-gap: 80px;
+  }
+
+  .content {
+    max-width: 500px;
+
+    justify-self: start;
+  }
+
+  .content h2 {
+    font-size: clamp(42px, 7vw, 56px);
+  }
+
+  .description {
+    max-width: 450px;
+  }
+
+  .visual {
+    width: min(100%, 600px);
+
+    min-height: 500px;
+
+    justify-self: center;
+  }
+
+  .imageWrapper {
+    width: 300px;
+  }
+
+  .topLeft {
+    right: calc(50% + 150px);
+  }
+
+  .bottomLeft {
+    right: calc(50% + 150px);
+  }
+
+  .topRight {
+    left: calc(50% + 150px);
+  }
+
+  .bottomRight {
+    left: calc(50% + 150px);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .section {
+    padding: 80px 0 90px;
+  }
+
+  .container {
+    width: 86%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 55px;
+  }
+
+
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
+
+  .content {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .content h2 {
+    font-size: clamp(38px, 10vw, 50px);
+
+    line-height: 1.02;
+  }
+
+  .description {
+    margin-top: 24px;
+
+    max-width: 100%;
+  }
+
+  .description p {
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+  }
+
+
+  /* -----------------------------------------
+     VISUAL
+  ----------------------------------------- */
+
+  .visual {
+    width: 100%;
+
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 0;
+
+    gap: 0;
+  }
+
+
+  .imageWrapper {
+    width: 72%;
+
+    max-width: 310px;
+
+    aspect-ratio: 3 / 4;
+
+    margin: 0 auto;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE SPECIFICATIONS
+  ----------------------------------------- */
+
+  .spec {
+    position: absolute;
+
+    width: auto !important;
+
+    min-width: 100px;
+  }
+
+
+  .spec span:not(.line) {
+    font-size: 10px;
+  }
+
+  .spec strong {
+    font-size: 11px;
+  }
+
+
+  /* -----------------------------------------
+     TOP LEFT
+  ----------------------------------------- */
+
+  .topLeft {
+    top: 13%;
+
+    left: 0;
+
+    right: auto;
+
+    text-align: left;
+
+    align-items: flex-start;
+  }
+
+  .topLeft .line {
+    left: calc(100% + 12px);
+
+    right: auto;
+
+    width: 22px;
+  }
+
+
+  /* -----------------------------------------
+     BOTTOM LEFT
+  ----------------------------------------- */
+
+  .bottomLeft {
+    bottom: 13%;
+
+    left: 0;
+
+    right: auto;
+
+    text-align: left;
+
+    align-items: flex-start;
+  }
+
+  .bottomLeft .line {
+    left: calc(100% + 12px);
+
+    right: auto;
+
+    width: 22px;
+  }
+
+
+  /* -----------------------------------------
+     TOP RIGHT
+  ----------------------------------------- */
+
+  .topRight {
+    top: 13%;
+
+    right: 0;
+
+    left: auto;
+
+    text-align: right;
+
+    align-items: flex-end;
+  }
+
+  .topRight .line {
+    right: calc(100% + 12px);
+
+    left: auto;
+
+    width: 22px;
+  }
+
+
+  /* -----------------------------------------
+     BOTTOM RIGHT
+  ----------------------------------------- */
+
+  .bottomRight {
+    bottom: 13%;
+
+    right: 0;
+
+    left: auto;
+
+    text-align: right;
+
+    align-items: flex-end;
+  }
+
+  .bottomRight .line {
+    right: calc(100% + 12px);
+
+    left: auto;
+
+    width: 22px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding: 70px 0 80px;
+  }
+
+  .container {
+    width: 88%;
+
+    gap: 45px;
+  }
+
+  .content h2 {
+    font-size: 36px;
+  }
+
+  .description p {
+    font-size: 11.5px;
+  }
+
+  .visual {
+    min-height: 390px;
+  }
+
+  .imageWrapper {
+    width: 70%;
+  }
+
+  .spec span:not(.line) {
+    font-size: 9px;
+  }
+
+  .spec strong {
+    font-size: 10px;
+  }
+
+  .topLeft,
+  .bottomLeft {
+    left: -3px;
+  }
+
+  .topRight,
+  .bottomRight {
+    right: -3px;
+  }
+
+}

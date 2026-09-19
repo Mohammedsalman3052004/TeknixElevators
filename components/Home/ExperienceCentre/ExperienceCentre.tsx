@@ -29,12 +29,12 @@ export default function ExperienceCentre() {
         {/* LEFT CONTENT */}
         <div className={styles.content}>
 
-          <div className={styles.eyebrow} data-reveal>
+          <div className={styles.eyebrow} data-reveal="up">
             <span className={styles.line}></span>
             <span>EXPERIENCE CENTRE</span>
           </div>
 
-          <h2 className={styles.title} data-reveal>
+          <h2 className={styles.title} data-reveal="up">
             SEE IT. FEEL IT.
             <br />
             EXPERIENCE
@@ -42,14 +42,14 @@ export default function ExperienceCentre() {
             TEKNIX
           </h2>
 
-          <p className={styles.description} data-reveal>
+          <p className={styles.description} data-reveal="up">
             Explore our elevators, finishes and
             <br />
             possibilities in person
           </p>
 
           <Button
-          data-reveal
+          data-reveal="up"
             name="VISIT THE EXPERIENCE CENTRE"
             href="/experience-centre"
             variant="black"
@@ -58,7 +58,7 @@ export default function ExperienceCentre() {
         </div>
 
         {/* RIGHT IMAGE SLIDER */}
-        <div className={styles.imageWrapper} data-reveal>
+        <div className={styles.imageWrapper} data-reveal="up">
 
           {images.map((image, index) => (
             <img

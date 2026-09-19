@@ -1,0 +1,329 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+
+  background: #ffffff;
+
+  color: #171717;
+
+  overflow: hidden;
+
+  padding: clamp(90px, 9vw, 135px) 0;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(880px, 84%);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.heading {
+  margin: 0;
+
+  text-align: center;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+
+  color: #171717;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+  width: min(680px, 100%);
+
+  margin: 22px auto 0;
+
+  text-align: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  color: #858585;
+}
+
+
+/* =========================================
+   SPECIFICATIONS
+========================================= */
+
+.specifications {
+  width: 100%;
+
+  margin-top: clamp(55px, 6vw, 72px);
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+
+/* =========================================
+   SPEC
+========================================= */
+
+.spec {
+  position: relative;
+
+  min-height: 82px;
+
+  padding-top: 11px;
+
+  border-top: 1px solid #dcdcdc;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+
+/* =========================================
+   SPEC TITLE
+========================================= */
+
+.spec h3 {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  letter-spacing: 0.015em;
+
+  color: #222222;
+
+  transition: color 0.35s ease;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.spec p {
+  max-width: 165px;
+
+  margin: 8px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  color: #858585;
+
+  transition: color 0.35s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.spec:hover {
+  transform: translateY(-4px);
+
+  border-color: #a99a84;
+}
+
+.spec:hover h3 {
+  color: #111111;
+}
+
+.spec:hover p {
+  color: #666666;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 85px 0 100px;
+  }
+
+  .container {
+    width: 86%;
+  }
+
+  .heading {
+    font-size: clamp(36px, 5vw, 48px);
+  }
+
+  .intro {
+    max-width: 650px;
+
+    font-size: 10.5px;
+  }
+
+  .specifications {
+    margin-top: 55px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 35px;
+  }
+
+  .spec {
+    min-height: 80px;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 650px) {
+
+  .section {
+    padding: 75px 0 85px;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .heading {
+    font-size: clamp(32px, 8vw, 42px);
+
+    line-height: 1.08;
+  }
+
+  .intro {
+    margin-top: 18px;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+  }
+
+  .specifications {
+    margin-top: 45px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px 18px;
+  }
+
+  .spec {
+    min-height: 82px;
+
+    padding-top: 10px;
+  }
+
+  .spec h3 {
+    font-size: 8.5px;
+  }
+
+  .spec p {
+    max-width: 150px;
+
+    margin-top: 7px;
+
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .section {
+    padding: 65px 0 75px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .heading {
+    font-size: 29px;
+  }
+
+  .intro {
+    font-size: 9px;
+  }
+
+  .specifications {
+    gap: 25px 14px;
+  }
+
+  .spec {
+    min-height: 78px;
+  }
+
+  .spec h3 {
+    font-size: 8px;
+  }
+
+  .spec p {
+    font-size: 6.5px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .spec {
+    transition: none;
+  }
+
+  .spec:hover {
+    transform: none;
+  }
+}

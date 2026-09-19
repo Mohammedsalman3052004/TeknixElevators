@@ -87,8 +87,8 @@
 
   font-family: "Alta", serif;
 
-  font-size: clamp(48px, 3.35vw, 64px);
-  font-weight: 300;
+  font-size: clamp(70px, 3.35vw, 64px);
+  font-weight: 400;
 
   line-height: 0.92;
   letter-spacing: -0.02em;
@@ -106,7 +106,7 @@
 
   font-family: var(--font-secondary);
 
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
 
   line-height: 1.55;

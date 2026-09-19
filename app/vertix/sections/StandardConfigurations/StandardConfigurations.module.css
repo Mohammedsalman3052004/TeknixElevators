@@ -1,0 +1,400 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  position: relative;
+
+  width: 100%;
+
+  background: #0b0b0a;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  padding: clamp(90px, 9vw, 125px) 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(830px, 86%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.heading {
+  text-align: center;
+
+  margin-bottom: 55px;
+}
+
+.heading h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.025em;
+
+  color: #e7e1d8;
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
+
+.tableWrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table {
+  width: 100%;
+
+  min-width: 760px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.table thead {
+  border-bottom: 1px solid rgba(205, 195, 180, 0.38);
+}
+
+.table th {
+  height: 34px;
+
+  padding: 0 4px;
+
+  text-align: left;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 5.5px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 0.22em;
+
+  color: #aaa49b;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLE ROW
+========================================= */
+
+.table tbody tr {
+  border-bottom: 1px solid rgba(205, 195, 180, 0.28);
+
+  transition:
+    background 0.35s ease;
+}
+
+
+/* =========================================
+   TABLE CELL
+========================================= */
+
+.table td {
+  height: 39px;
+
+  padding: 0 4px;
+
+  text-align: left;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #817d77;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   ROW HOVER
+========================================= */
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.table tbody tr:hover td {
+  color: #d0cbc3;
+}
+
+
+/* =========================================
+   NOTE
+========================================= */
+
+.note {
+  margin: 20px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 6px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color: #77736d;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 90px 0;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .heading {
+    margin-bottom: 48px;
+  }
+
+  .heading h2 {
+    font-size: clamp(36px, 5vw, 48px);
+  }
+
+  .table {
+    min-width: 720px;
+  }
+
+  .table th {
+    font-size: 5px;
+  }
+
+  .table td {
+    font-size: 6.5px;
+  }
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 650px) {
+
+  .section {
+    padding: 75px 0 85px;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .heading {
+    margin-bottom: 38px;
+  }
+
+  .heading h2 {
+    font-size: 32px;
+  }
+
+  .table {
+    min-width: 680px;
+  }
+
+  .table th {
+    height: 31px;
+
+    font-size: 4.5px;
+
+    letter-spacing: 0.18em;
+  }
+
+  .table td {
+    height: 37px;
+
+    font-size: 6px;
+  }
+
+  .note {
+    font-size: 5.5px;
+
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .section {
+    padding: 65px 0 75px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .heading {
+    margin-bottom: 32px;
+  }
+
+  .heading h2 {
+    font-size: 28px;
+
+    line-height: 1.05;
+  }
+
+
+  /* Horizontal scroll on mobile */
+
+  .tableWrapper {
+    width: 100%;
+
+    margin-left: 0;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 650px;
+  }
+
+
+  .table th {
+    height: 30px;
+
+    padding: 0 5px;
+
+    font-size: 4.3px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .table td {
+    height: 36px;
+
+    padding: 0 5px;
+
+    font-size: 5.8px;
+  }
+
+
+  .note {
+    margin-top: 18px;
+
+    font-size: 5.5px;
+
+    line-height: 1.65;
+  }
+
+  .desktopBreak {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .section {
+    padding: 55px 0 65px;
+  }
+
+  .heading {
+    margin-bottom: 28px;
+  }
+
+  .heading h2 {
+    font-size: 25px;
+  }
+
+  .table {
+    min-width: 620px;
+  }
+
+  .table th {
+    font-size: 4px;
+  }
+
+  .table td {
+    font-size: 5.5px;
+  }
+
+  .note {
+    font-size: 5px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .table tbody tr,
+  .table td {
+    transition: none;
+  }
+}

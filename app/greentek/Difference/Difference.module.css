@@ -1,0 +1,435 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  padding: clamp(110px, 10vw, 160px) 0;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  /* width: min(760px, 86%); */
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 420px;
+
+  align-items: center;
+
+  gap: clamp(60px, 8vw, 100px);
+  padding: 0px 240px ;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.content {
+  width: 100%;
+
+  max-width: 644px;
+
+  justify-self: start;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.content h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  font-weight: 400;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.025em;
+
+  color: #171717;
+}
+
+
+/* =========================================
+   POINTS
+========================================= */
+
+.points {
+  margin-top: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+
+.point {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  color: #858585;
+}
+
+
+.dot {
+  font-size: 16px;
+
+  line-height: 1;
+
+  color: #8b8b8b;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats {
+  margin-top: 42px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 18px;
+
+  row-gap: 24px;
+}
+
+
+/* =========================================
+   STAT
+========================================= */
+
+.stat {
+  min-height: 62px;
+
+  padding-top: 9px;
+
+  border-top: 1px solid #dedede;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.35s ease;
+}
+
+
+.stat:hover {
+  border-color: #999999;
+
+  transform: translateY(-3px);
+}
+
+
+.stat strong {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+
+  color: #171717;
+}
+
+
+.stat span {
+  margin-top: 3px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 400;
+
+  color: #8a8a8a;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 0.86;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+
+.image {
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.imageWrapper:hover .image {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .section {
+    padding: 100px 0;
+  }
+
+  .container {
+    width: 88%;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(320px, 380px);
+
+    gap: 55px;
+  }
+
+  .content {
+    max-width: 380px;
+  }
+
+  .content h2 {
+    font-size: clamp(36px, 4.5vw, 48px);
+  }
+
+  .points {
+    margin-top: 25px;
+  }
+
+  .stats {
+    margin-top: 35px;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 800px) {
+
+  .section {
+    padding: 90px 0 100px;
+  }
+
+  .container {
+    width: 86%;
+
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .content {
+    max-width: 520px;
+
+    justify-self: center;
+  }
+
+  .content h2 {
+    font-size: clamp(40px, 6vw, 52px);
+  }
+
+  .points {
+    margin-top: 28px;
+  }
+
+  .stats {
+    max-width: 420px;
+
+    margin-top: 38px;
+  }
+
+  .imageWrapper {
+    width: min(75vw, 430px);
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 75px 0 85px;
+  }
+
+  .container {
+    width: 88%;
+
+    gap: 50px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content h2 {
+    font-size: clamp(32px, 9vw, 44px);
+
+    line-height: 1.06;
+  }
+
+  .points {
+    margin-top: 24px;
+
+    gap: 9px;
+  }
+
+  .point {
+    font-size: 11px;
+
+    gap: 7px;
+  }
+
+  .dot {
+    font-size: 15px;
+  }
+
+  .stats {
+    margin-top: 32px;
+
+    column-gap: 14px;
+
+    row-gap: 20px;
+  }
+
+  .stat {
+    min-height: 58px;
+
+    padding-top: 8px;
+  }
+
+  .stat strong {
+    font-size: 13px;
+  }
+
+  .stat span {
+    font-size: 7.5px;
+  }
+
+  .imageWrapper {
+    width: 82vw;
+
+    max-width: 360px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding: 65px 0 75px;
+  }
+
+  .container {
+    width: 90%;
+
+    gap: 42px;
+  }
+
+  .content h2 {
+    font-size: 31px;
+  }
+
+  .point {
+    font-size: 10.5px;
+  }
+
+  .stats {
+    column-gap: 12px;
+  }
+
+  .stat strong {
+    font-size: 12px;
+  }
+
+  .stat span {
+    font-size: 7px;
+  }
+
+  .imageWrapper {
+    width: 84vw;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .image {
+    transition: none;
+  }
+
+  .stat {
+    transition: none;
+  }
+
+  .imageWrapper:hover .image {
+    transform: none;
+  }
+
+  .stat:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,558 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  padding: clamp(90px, 9vw, 125px) 0 0;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  width: min(850px, 90%);
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.header h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(40px, 4.2vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+
+  color: #171717;
+}
+
+.header p {
+  margin: 18px auto 0;
+
+  max-width: 650px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color: #858585;
+}
+
+
+/* =========================================
+   CATEGORY NAVIGATION
+========================================= */
+
+.categories {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-end;
+
+  gap: 28px;
+
+  margin-top: 38px;
+}
+
+.category {
+  position: relative;
+
+  padding: 0 0 12px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  color: #969696;
+
+  transition:
+    color 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+/* Small animated underline */
+
+.category::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 0;
+
+  height: 1px;
+
+  background: #252525;
+
+  transition:
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.category:hover {
+  color: #333333;
+}
+
+.category.active {
+  color: #222222;
+}
+
+.category.active::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   IMAGE SECTION
+========================================= */
+
+.imageSection {
+  width: 100%;
+
+  margin-top: 0;
+}
+
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: min(638px, 42vw);
+
+  min-height: 430px;
+
+  overflow: hidden;
+
+  background: #151515;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.image {
+  object-fit: cover;
+
+  object-position: center;
+
+  animation: imageReveal 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  transform: scale(1.015);
+}
+
+
+/*
+   Every time the image changes,
+   React gives the image a new key,
+   so this animation runs again.
+*/
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1.015);
+  }
+}
+
+
+/* =========================================
+   DARK GRADIENT
+========================================= */
+
+.gradient {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 45%,
+      rgba(0, 0, 0, 0.18) 65%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+}
+
+
+/* =========================================
+   IMAGE BOTTOM CONTENT
+========================================= */
+
+.imageContent {
+  position: absolute;
+
+  left: 28px;
+
+  bottom: 22px;
+
+  z-index: 3;
+
+  max-width: 310px;
+
+  animation: contentReveal 0.7s
+    0.15s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.imageContent p {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 7px;
+
+  line-height: 1.5;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================
+   CONTENT FADE
+========================================= */
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding-top: 85px;
+  }
+
+  .header {
+    width: 88%;
+  }
+
+  .header h2 {
+    font-size: clamp(36px, 5vw, 50px);
+  }
+
+  .header p {
+    font-size: 9px;
+  }
+
+  .categories {
+    gap: 24px;
+
+    margin-top: 32px;
+  }
+
+  .category {
+    font-size: 6.5px;
+
+    letter-spacing: 0.14em;
+  }
+
+  .imageWrapper {
+    height: 48vw;
+
+    min-height: 380px;
+  }
+
+  .imageContent {
+    left: 24px;
+
+    bottom: 20px;
+
+    max-width: 280px;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 700px) {
+
+  .section {
+    padding-top: 75px;
+  }
+
+  .header {
+    width: 88%;
+  }
+
+  .header h2 {
+    font-size: clamp(34px, 7vw, 44px);
+  }
+
+  .header p {
+    max-width: 500px;
+
+    font-size: 8.5px;
+  }
+
+  .desktopBreak {
+    display: none;
+  }
+
+  .categories {
+    gap: 18px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+
+    padding: 0 20px;
+  }
+
+  .category {
+    font-size: 6px;
+
+    padding-bottom: 10px;
+  }
+
+  .imageWrapper {
+    height: 55vw;
+
+    min-height: 340px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+  .section {
+    padding-top: 65px;
+  }
+
+
+  /* Header */
+
+  .header {
+    width: 88%;
+  }
+
+  .header h2 {
+    font-size: 32px;
+
+    line-height: 1.08;
+  }
+
+  .header p {
+    margin-top: 15px;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+  }
+
+
+  /* Category navigation */
+
+  .categories {
+    justify-content: center;
+
+    gap: 0;
+
+    width: 92%;
+
+    margin: 28px auto 0;
+
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, auto);
+
+    column-gap: 25px;
+
+    row-gap: 14px;
+  }
+
+  .category {
+    justify-self: center;
+
+    font-size: 6px;
+
+    padding-bottom: 8px;
+
+    letter-spacing: 0.13em;
+  }
+
+
+  /* Image */
+
+  .imageWrapper {
+    height: 68vw;
+
+    min-height: 320px;
+  }
+
+  .image {
+    object-position: center;
+  }
+
+
+  /* Gradient */
+
+  .gradient {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 35%,
+        rgba(0, 0, 0, 0.25) 60%,
+        rgba(0, 0, 0, 0.78) 100%
+      );
+  }
+
+
+  /* Bottom text */
+
+  .imageContent {
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 18px;
+
+    max-width: 280px;
+  }
+
+  .imageContent p {
+    font-size: 7px;
+
+    line-height: 1.5;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding-top: 55px;
+  }
+
+  .header h2 {
+    font-size: 29px;
+  }
+
+  .header p {
+    font-size: 7.5px;
+  }
+
+  .categories {
+    column-gap: 18px;
+
+    row-gap: 12px;
+  }
+
+  .category {
+    font-size: 5.5px;
+  }
+
+  .imageWrapper {
+    height: 72vw;
+
+    min-height: 290px;
+  }
+
+  .imageContent {
+    left: 16px;
+
+    bottom: 15px;
+  }
+
+  .imageContent p {
+    font-size: 6.5px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .image {
+    animation: none;
+    transform: none;
+  }
+
+  .imageContent {
+    animation: none;
+  }
+
+  .category::after {
+    transition: none;
+  }
+}

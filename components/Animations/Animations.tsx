@@ -16,10 +16,10 @@ export default function Animations() {
   // Lenis <-> GSAP sync — runs once for the app's lifetime
   useEffect(() => {
     lenis = new Lenis({
-  duration: 0.8,
-  easing: (t) => 1 - Math.pow(1 - t, 4),
-  smoothWheel: true,
-});
+      duration: 0.8,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
+      smoothWheel: true,
+    });
 
     lenis.on("scroll", ScrollTrigger.update);
 
@@ -46,19 +46,33 @@ export default function Animations() {
       const items = gsap.utils.toArray<HTMLElement>("[data-reveal]");
       if (!items.length) return;
 
-      gsap.set(items, { y: 60, opacity: 0 });
+      const fromVars: Record<string, gsap.TweenVars> = {
+        up: { y: 60, opacity: 0 },
+        left: { x: -60, opacity: 0 },
+        right: { x: 60, opacity: 0 },
+      };
 
-      ScrollTrigger.batch(items, {
-        start: "top 85%",
-        onEnter: (batch) =>
-          gsap.to(batch, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out",
-            stagger: 0.15,
-            overwrite: true,
-          }),
+      (["up", "left", "right"] as const).forEach((dir) => {
+        const group = items.filter(
+          (el) => (el.dataset.reveal || "up") === dir
+        );
+        if (!group.length) return;
+
+        gsap.set(group, fromVars[dir]);
+
+        ScrollTrigger.batch(group, {
+          start: "top 85%",
+          onEnter: (batch) =>
+            gsap.to(batch, {
+              x: 0,
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              ease: "power3.out",
+              stagger: 0.15,
+              overwrite: true,
+            }),
+        });
       });
 
       ScrollTrigger.refresh();
