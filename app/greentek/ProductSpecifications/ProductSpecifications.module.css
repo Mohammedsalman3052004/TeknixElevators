@@ -1,0 +1,543 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+  background: #0b0b0a;
+  color: #ffffff;
+
+  padding: clamp(100px, 10vw, 145px) 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(730px, 86%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  text-align: center;
+
+  margin-bottom: 58px;
+}
+
+.header h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+
+  color: #e8e2d9;
+}
+
+.header p {
+  margin: 18px auto 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color: #88847e;
+}
+
+
+/* =========================================
+   SPECIFICATION GRID
+========================================= */
+
+.grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid rgba(211, 194, 163, 0.12);
+
+  border-left: 1px solid rgba(211, 194, 163, 0.12);
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+  position: relative;
+
+  min-height: 128px;
+
+  padding: 24px 20px 20px;
+
+  border-right: 1px solid rgba(211, 194, 163, 0.10);
+
+  border-bottom: 1px solid rgba(211, 194, 163, 0.10);
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.025);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.icon {
+  width: 17px;
+  height: 17px;
+
+  margin-bottom: 17px;
+
+  color: #887653;
+
+  transition:
+    color 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 0.8;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.card:hover .icon {
+  color: #b49a6b;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 5px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.22em;
+
+  color: #776f62;
+}
+
+
+/* =========================================
+   VALUE
+========================================= */
+
+.card h3 {
+  margin: 0;
+
+  max-width: 150px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  letter-spacing: 0.025em;
+
+  color: #e6e1da;
+
+  transition:
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover h3 {
+  color: #ffffff;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.card p {
+  margin: 5px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 6px;
+
+  font-weight: 400;
+
+  line-height: 1.35;
+
+  color: #69655f;
+
+  transition: color 0.3s ease;
+}
+
+.card:hover p {
+  color: #88827a;
+}
+
+
+/* =========================================
+   SMALL GOLD LINE
+========================================= */
+
+.cardLine {
+  display: block;
+
+  width: 14px;
+  height: 1px;
+
+  margin-top: 13px;
+
+  background: rgba(155, 132, 89, 0.28);
+
+  transition:
+    width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease;
+}
+
+.card:hover .cardLine {
+  width: 25px;
+
+  background: rgba(180, 154, 107, 0.55);
+}
+
+
+/* =========================================
+   BROCHURE
+========================================= */
+
+.brochure {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  width: fit-content;
+
+  margin: 42px auto 0;
+
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid rgba(154, 134, 101, 0.4);
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 5px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.28em;
+
+  color: #9a8c78;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.brochureArrow {
+  font-size: 9px;
+
+  letter-spacing: 0;
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brochure:hover {
+  color: #ded4c4;
+
+  border-color: #a9977c;
+}
+
+.brochure:hover .brochureArrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 90px 0 110px;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .header {
+    margin-bottom: 45px;
+  }
+
+  .header h2 {
+    font-size: clamp(34px, 5vw, 46px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    min-height: 135px;
+
+    padding: 23px 22px 19px;
+  }
+
+  .card h3 {
+    font-size: 12px;
+  }
+
+  .card p {
+    font-size: 6.5px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 75px 0 85px;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .header {
+    margin-bottom: 35px;
+  }
+
+  .header h2 {
+    font-size: clamp(30px, 8.5vw, 40px);
+
+    line-height: 1.08;
+  }
+
+  .header p {
+    margin-top: 14px;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+  }
+
+  .desktopBreak {
+    display: none;
+  }
+
+
+  /* -----------------------------------------
+     GRID
+  ----------------------------------------- */
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    min-height: 145px;
+
+    padding: 19px 15px 16px;
+  }
+
+  .icon {
+    width: 15px;
+    height: 15px;
+
+    margin-bottom: 15px;
+  }
+
+  .label {
+    font-size: 4.5px;
+
+    letter-spacing: 0.17em;
+  }
+
+  .card h3 {
+    max-width: 120px;
+
+    font-size: 10px;
+
+    line-height: 1.3;
+  }
+
+  .card p {
+    font-size: 5.5px;
+
+    line-height: 1.4;
+  }
+
+  .cardLine {
+    margin-top: 11px;
+  }
+
+
+  /* -----------------------------------------
+     BROCHURE
+  ----------------------------------------- */
+
+  .brochure {
+    margin-top: 32px;
+
+    font-size: 4.5px;
+
+    letter-spacing: 0.22em;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding: 65px 0 75px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .header h2 {
+    font-size: 29px;
+  }
+
+  .header p {
+    font-size: 7.5px;
+  }
+
+  .card {
+    min-height: 135px;
+
+    padding: 17px 12px 14px;
+  }
+
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .card h3 {
+    font-size: 9px;
+  }
+
+  .card p {
+    font-size: 5px;
+  }
+
+  .label {
+    font-size: 4px;
+  }
+
+  .brochure {
+    font-size: 4px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .card,
+  .icon,
+  .card h3,
+  .card p,
+  .cardLine,
+  .brochure,
+  .brochureArrow {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .icon {
+    transform: none;
+  }
+
+  .card:hover h3 {
+    transform: none;
+  }
+
+  .brochure:hover .brochureArrow {
+    transform: none;
+  }
+}
