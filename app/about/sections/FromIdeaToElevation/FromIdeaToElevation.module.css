@@ -1,0 +1,434 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+
+  background: #0b0b0a;
+
+  color: #eeeae2;
+
+  overflow: hidden;
+
+  padding: clamp(100px, 9vw, 145px) 0;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(1120px, 86%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+  text-align: center;
+
+  margin-bottom: clamp(50px, 5vw, 70px);
+}
+
+.intro h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(38px, 4vw, 56px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+
+  color: #eeeae2;
+}
+
+.intro p {
+  margin: 12px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  color: #777572;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: clamp(16px, 1.6vw, 22px);
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+  min-width: 0;
+}
+
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1.55 / 1;
+
+  overflow: hidden;
+
+  background: #111;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.image {
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.imageOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, 0.22) 100%
+    );
+
+  opacity: 0.35;
+
+  pointer-events: none;
+
+  transition: opacity 0.7s ease;
+}
+
+
+/* =========================================
+   IMAGE HOVER
+========================================= */
+
+.card:hover .image {
+  transform: scale(1.035);
+
+  filter: brightness(1.05);
+}
+
+.card:hover .imageOverlay {
+  opacity: 0.15;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.cardContent {
+  padding: 19px 8px 0;
+}
+
+.cardContent h3 {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.06em;
+
+  color: #e8e4dc;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.4s ease;
+}
+
+.cardContent p {
+  margin: 7px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+
+  color: #5f5d59;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.4s ease;
+}
+
+
+/* =========================================
+   CONTENT HOVER
+========================================= */
+
+.card:hover .cardContent h3 {
+  color: #ffffff;
+
+  transform: translateX(3px);
+}
+
+.card:hover .cardContent p {
+  color: #88847d;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 90px 0 110px;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .intro {
+    margin-bottom: 50px;
+  }
+
+  .intro h2 {
+    font-size: clamp(38px, 5.5vw, 50px);
+  }
+
+  .grid {
+    gap: 16px;
+  }
+
+  .cardContent {
+    padding-top: 16px;
+  }
+
+  .cardContent h3 {
+    font-size: 12px;
+  }
+
+  .cardContent p {
+    font-size: 8.5px;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 700px) {
+
+  .section {
+    padding: 80px 0 95px;
+  }
+
+  .container {
+    width: 86%;
+  }
+
+  .intro {
+    margin-bottom: 45px;
+  }
+
+  .intro h2 {
+    font-size: clamp(36px, 7vw, 48px);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 1.6 / 1;
+  }
+
+  .cardContent {
+    padding: 16px 4px 0;
+  }
+
+  .cardContent h3 {
+    font-size: 13px;
+  }
+
+  .cardContent p {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .section {
+    padding: 70px 0 80px;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .intro {
+    margin-bottom: 38px;
+  }
+
+  .intro h2 {
+    font-size: 34px;
+
+    line-height: 1.08;
+  }
+
+  .intro p {
+    margin-top: 10px;
+
+    font-size: 10px;
+  }
+
+  .grid {
+    gap: 38px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .cardContent {
+    padding-top: 14px;
+  }
+
+  .cardContent h3 {
+    font-size: 12px;
+  }
+
+  .cardContent p {
+    margin-top: 6px;
+
+    font-size: 8.5px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding: 60px 0 70px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .intro h2 {
+    font-size: 31px;
+  }
+
+  .intro p {
+    font-size: 9px;
+  }
+
+  .grid {
+    gap: 34px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 1.4 / 1;
+  }
+
+  .cardContent h3 {
+    font-size: 11px;
+  }
+
+  .cardContent p {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .image,
+  .imageOverlay,
+  .cardContent h3,
+  .cardContent p {
+    transition: none;
+  }
+
+  .card:hover .image {
+    transform: none;
+  }
+
+  .card:hover .imageOverlay {
+    opacity: 0.35;
+  }
+
+  .card:hover .cardContent h3,
+  .card:hover .cardContent p {
+    transform: none;
+  }
+}

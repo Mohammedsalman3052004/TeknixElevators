@@ -1,0 +1,340 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  padding: clamp(90px, 9vw, 140px) 0;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(980px, 86%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(360px, 1fr);
+
+  align-items: center;
+
+  column-gap: clamp(60px, 8vw, 110px);
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.content {
+  width: 100%;
+
+  max-width: 370px;
+
+  justify-self: center;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 25px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.14em;
+
+  color: #9a9895;
+}
+
+.eyebrow span:first-child {
+  width: 15px;
+
+  height: 1px;
+
+  background: #d5d3d0;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.content h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(40px, 4vw, 54px);
+
+  font-weight: 400;
+
+  line-height: 1.04;
+
+  letter-spacing: -0.025em;
+
+  color: #171615;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.content p {
+  max-width: 340px;
+
+  margin: 27px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color: #858381;
+}
+
+
+/* =========================================
+   RIGHT MEDIA
+========================================= */
+
+.media {
+  position: relative;
+
+  width: 100%;
+
+  justify-self: end;
+}
+
+
+/* =========================================
+   MEDIA INNER
+========================================= */
+
+.mediaInner {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1.08;
+
+  background: #000000;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   IMAGE SUPPORT
+   If you add an image inside .mediaInner
+========================================= */
+
+.mediaInner img,
+.mediaInner video {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 90px 0 110px;
+  }
+
+  .container {
+    width: 88%;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(320px, 1fr);
+
+    column-gap: 55px;
+  }
+
+  .content {
+    max-width: 340px;
+  }
+
+  .content h2 {
+    font-size: clamp(38px, 5vw, 50px);
+  }
+
+  .content p {
+    max-width: 310px;
+
+    font-size: 10.5px;
+  }
+
+  .mediaInner {
+    aspect-ratio: 1 / 1.08;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 750px) {
+
+  .section {
+    padding: 80px 0 95px;
+  }
+
+  .container {
+    width: 86%;
+
+    grid-template-columns: 1fr;
+
+    row-gap: 55px;
+  }
+
+  .content {
+    max-width: 500px;
+
+    justify-self: start;
+  }
+
+  .content h2 {
+    font-size: clamp(40px, 7vw, 54px);
+  }
+
+  .content p {
+    max-width: 430px;
+
+    font-size: 11px;
+  }
+
+  .media {
+    width: min(100%, 500px);
+
+    justify-self: center;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 70px 0 80px;
+  }
+
+  .container {
+    width: 88%;
+
+    row-gap: 45px;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 9px;
+  }
+
+  .content h2 {
+    font-size: clamp(36px, 10vw, 48px);
+
+    line-height: 1.05;
+  }
+
+  .content p {
+    max-width: 100%;
+
+    margin-top: 22px;
+
+    font-size: 10.5px;
+
+    line-height: 1.6;
+  }
+
+  .media {
+    width: 100%;
+  }
+
+  .mediaInner {
+    aspect-ratio: 1 / 1.05;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding: 60px 0 70px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .content h2 {
+    font-size: 34px;
+  }
+
+  .content p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mediaInner img,
+  .mediaInner video {
+    transition: none;
+  }
+}

@@ -1,0 +1,250 @@
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.imageWrapper {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+
+  object-position: center;
+
+  transform: scale(1.01);
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.45) 30%,
+      rgba(0, 0, 0, 0.12) 65%,
+      rgba(0, 0, 0, 0.25) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.content {
+  position: absolute;
+
+  left: clamp(50px, 9vw, 120px);
+
+  bottom: clamp(130px, 22vh, 220px);
+
+  z-index: 2;
+
+  max-width: 520px;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.content h1 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(48px, 5vw, 68px);
+
+  font-weight: 400;
+
+  line-height: 1.03;
+
+  letter-spacing: -0.025em;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.content p {
+  margin: 18px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+
+  color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .content {
+    left: 7vw;
+
+    bottom: 18vh;
+  }
+
+  .content h1 {
+    font-size: clamp(44px, 6vw, 62px);
+  }
+
+  .content p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 760px) {
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .content {
+    left: 8vw;
+
+    right: 8vw;
+
+    bottom: 16vh;
+
+    max-width: 500px;
+  }
+
+  .content h1 {
+    font-size: clamp(42px, 9vw, 58px);
+  }
+
+  .content p {
+    margin-top: 16px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .image {
+    object-position: 58% center;
+  }
+
+  .overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.40) 65%,
+        rgba(0, 0, 0, 0.25) 100%
+      );
+  }
+
+  .content {
+    left: 22px;
+
+    right: 22px;
+
+    bottom: 13vh;
+  }
+
+  .content h1 {
+    font-size: clamp(40px, 11vw, 52px);
+
+    line-height: 1.02;
+
+    letter-spacing: -0.03em;
+  }
+
+  .content p {
+    margin-top: 14px;
+
+    font-size: 10.5px;
+
+    line-height: 1.45;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .content {
+    left: 18px;
+
+    right: 18px;
+
+    bottom: 11vh;
+  }
+
+  .content h1 {
+    font-size: 38px;
+  }
+
+  .content p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .image {
+    transform: none;
+  }
+}

@@ -1,0 +1,390 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  padding: clamp(100px, 11vw, 165px) 0;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(800px, 86%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(360px, 1fr);
+
+  align-items: center;
+
+  column-gap: clamp(55px, 8vw, 100px);
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.content {
+  width: 100%;
+
+  max-width: 330px;
+
+  justify-self: start;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.13em;
+
+  color: #a0a0a0;
+}
+
+.eyebrowLine {
+  width: 14px;
+
+  height: 1px;
+
+  background: #d9d9d9;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.content h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(40px, 4vw, 53px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+
+  color: #171717;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+  margin-top: 27px;
+
+  max-width: 330px;
+}
+
+.description p {
+  margin: 0 0 14px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  color: #858585;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   INTRO TEXT
+========================================= */
+
+.description .intro {
+  color: #454545;
+
+  margin-bottom: 13px;
+}
+
+
+/* =========================================
+   RIGHT VISUAL
+========================================= */
+
+.visual {
+  width: 100%;
+
+  justify-self: end;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 356 / 444;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.image {
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* subtle image hover */
+
+.imageWrapper:hover .image {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 110px 0;
+  }
+
+  .container {
+    width: 88%;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(320px, 1fr);
+
+    column-gap: 55px;
+  }
+
+  .content {
+    max-width: 300px;
+  }
+
+  .content h2 {
+    font-size: clamp(38px, 5vw, 48px);
+  }
+
+  .description {
+    margin-top: 24px;
+  }
+
+  .description p {
+    font-size: 8.5px;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 760px) {
+
+  .section {
+    padding: 95px 0;
+  }
+
+  .container {
+    width: 86%;
+
+    grid-template-columns: 1fr;
+
+    row-gap: 60px;
+  }
+
+  .content {
+    width: 100%;
+
+    max-width: 500px;
+
+    justify-self: start;
+  }
+
+  .content h2 {
+    font-size: clamp(42px, 7vw, 54px);
+  }
+
+  .description {
+    max-width: 430px;
+  }
+
+  .description p {
+    font-size: 10px;
+  }
+
+  .visual {
+    width: min(100%, 430px);
+
+    justify-self: center;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 80px 0 90px;
+  }
+
+  .container {
+    width: 88%;
+
+    row-gap: 50px;
+  }
+
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
+
+  .content {
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 21px;
+
+    font-size: 7.5px;
+  }
+
+  .eyebrowLine {
+    width: 12px;
+  }
+
+  .content h2 {
+    font-size: clamp(38px, 11vw, 50px);
+
+    line-height: 1.04;
+  }
+
+  .description {
+    margin-top: 23px;
+
+    max-width: 100%;
+  }
+
+  .description p {
+    font-size: 10px;
+
+    line-height: 1.6;
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+  ----------------------------------------- */
+
+  .visual {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    width: min(88vw, 380px);
+
+    margin: 0 auto;
+
+    aspect-ratio: 356 / 444;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding: 70px 0 80px;
+  }
+
+  .container {
+    width: 90%;
+
+    row-gap: 42px;
+  }
+
+  .content h2 {
+    font-size: 37px;
+  }
+
+  .description p {
+    font-size: 9.5px;
+  }
+
+  .imageWrapper {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .image {
+    transition: none;
+  }
+
+  .imageWrapper:hover .image {
+    transform: none;
+  }
+}
