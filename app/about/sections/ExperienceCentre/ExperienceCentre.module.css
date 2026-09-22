@@ -41,7 +41,7 @@
 .content {
   width: 100%;
 
-  max-width: 370px;
+  max-width: 410px;
 
   justify-self: center;
 }
@@ -62,7 +62,7 @@
 
   font-family: Arial, Helvetica, sans-serif;
 
-  font-size: 10px;
+  font-size: 12px;
 
   font-weight: 400;
 
@@ -112,7 +112,7 @@
 
   font-family: Arial, Helvetica, sans-serif;
 
-  font-size: 11px;
+  font-size: 14px;
 
   font-weight: 400;
 

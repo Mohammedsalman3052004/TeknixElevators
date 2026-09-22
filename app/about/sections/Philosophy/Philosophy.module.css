@@ -4,12 +4,10 @@
 
 .section {
   width: 100%;
-
   background: #ffffff;
-
   overflow: hidden;
 
-  padding: clamp(100px, 11vw, 165px) 0;
+  padding: clamp(100px, 8vw, 125px) 0;
 }
 
 
@@ -18,19 +16,21 @@
 ========================================= */
 
 .container {
-  width: min(800px, 86%);
+  width: 78vw;
+  max-width: 1500px;
+  min-width: 900px;
 
   margin: 0 auto;
 
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1fr)
-    minmax(360px, 1fr);
+    minmax(0, 0.9fr)
+    minmax(0, 1fr);
 
   align-items: center;
 
-  column-gap: clamp(55px, 8vw, 100px);
+  column-gap: 7vw;
 }
 
 
@@ -40,8 +40,7 @@
 
 .content {
   width: 100%;
-
-  max-width: 330px;
+  max-width: 520px;
 
   justify-self: start;
 }
@@ -58,11 +57,11 @@
 
   gap: 10px;
 
-  margin-bottom: 25px;
+  margin-bottom: 1.7vw;
 
   font-family: Arial, Helvetica, sans-serif;
 
-  font-size: 8px;
+  font-size: clamp(16px, 0.55vw, 16px);
 
   font-weight: 400;
 
@@ -72,7 +71,7 @@
 }
 
 .eyebrowLine {
-  width: 14px;
+  width: clamp(12px, 1vw, 18px);
 
   height: 1px;
 
@@ -91,11 +90,18 @@
 
   font-family: "Alta", serif;
 
-  font-size: clamp(40px, 4vw, 53px);
+  /*
+    Important:
+    Don't cap this too aggressively.
+    vw keeps the design visually consistent
+    between 100% and 133% browser zoom.
+  */
+
+  font-size: clamp(42px, 3.75vw, 68px);
 
   font-weight: 400;
 
-  line-height: 1.05;
+  line-height: 1.03;
 
   letter-spacing: -0.025em;
 
@@ -108,27 +114,23 @@
 ========================================= */
 
 .description {
-  margin-top: 27px;
+  margin-top: 2vw;
 
-  max-width: 330px;
+  max-width: 480px;
 }
 
 .description p {
-  margin: 0 0 14px;
+  margin: 0 0 1vw;
 
   font-family: Arial, Helvetica, sans-serif;
 
-  font-size: 9px;
+  font-size: clamp(16px, 0.62vw, 13px);
 
   font-weight: 400;
 
   line-height: 1.55;
 
   color: #858585;
-}
-
-.description p:last-child {
-  margin-bottom: 0;
 }
 
 
@@ -139,7 +141,7 @@
 .description .intro {
   color: #454545;
 
-  margin-bottom: 13px;
+  margin-bottom: 0.9vw;
 }
 
 
@@ -163,12 +165,16 @@
 
   width: 100%;
 
+  /*
+    Same proportion as your reference image
+  */
   aspect-ratio: 356 / 444;
 
   overflow: hidden;
 
   background: #eeeeee;
 }
+
 
 .image {
   object-fit: cover;
@@ -180,7 +186,9 @@
 }
 
 
-/* subtle image hover */
+/* =========================================
+   IMAGE HOVER
+========================================= */
 
 .imageWrapper:hover .image {
   transform: scale(1.025);
@@ -188,10 +196,30 @@
 
 
 /* =========================================
-   TABLET
+   LARGE DESKTOP
 ========================================= */
 
-@media (max-width: 900px) {
+@media (min-width: 1600px) {
+
+  .container {
+    width: 78vw;
+
+    max-width: 1500px;
+
+    column-gap: 6vw;
+  }
+
+  .content {
+    max-width: 540px;
+  }
+}
+
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
 
   .section {
     padding: 110px 0;
@@ -199,6 +227,8 @@
 
   .container {
     width: 88%;
+
+    min-width: 0;
 
     grid-template-columns:
       minmax(0, 1fr)
@@ -208,19 +238,19 @@
   }
 
   .content {
-    max-width: 300px;
+    max-width: 380px;
   }
 
   .content h2 {
-    font-size: clamp(38px, 5vw, 48px);
+    font-size: clamp(40px, 5vw, 54px);
   }
 
   .description {
-    margin-top: 24px;
+    margin-top: 25px;
   }
 
   .description p {
-    font-size: 8.5px;
+    font-size: 10px;
   }
 }
 
@@ -287,10 +317,6 @@
     row-gap: 50px;
   }
 
-  /* -----------------------------------------
-     CONTENT
-  ----------------------------------------- */
-
   .content {
     max-width: 100%;
   }
@@ -322,11 +348,6 @@
 
     line-height: 1.6;
   }
-
-
-  /* -----------------------------------------
-     IMAGE
-  ----------------------------------------- */
 
   .visual {
     width: 100%;

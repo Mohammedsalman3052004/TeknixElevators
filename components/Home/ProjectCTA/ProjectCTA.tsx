@@ -18,19 +18,29 @@ export default function ProjectCTA() {
         </div>
 
         {/* Heading */}
-        <h2 className={styles.title} data-reveal="up">
-          LET’S BUILD
-          <br />
-          WHAT
-          <br />
-          MATTERS.
+        {/* Heading */}
+        <h2 className={styles.title} data-reveal-lines>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>LET'S BUILD</span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>WHAT</span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>MATTERS.</span>
+          </span>
         </h2>
 
         {/* Description */}
-        <p className={styles.description} data-reveal="up">
-          Tell us what you're building.
-          <br />
-          We'll help you find the right way to move through it.
+        <p className={styles.description} data-reveal-lines>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>Tell us what you're building.</span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>
+              We'll help you find the right way to move through it.
+            </span>
+          </span>
         </p>
 
         {/* Button */}

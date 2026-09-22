@@ -39,13 +39,15 @@ export default function ThoughtInMotion() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
         {/* =====================================
             LEFT IMAGE SLIDER
         ===================================== */}
 
-        <div className={styles.imageWrapper}>
-
+        <div
+          className={styles.imageWrapper}
+          data-reveal-image
+          data-parallax="60"
+        >
           {images.map((image, index) => (
             <img
               key={image}
@@ -59,16 +61,13 @@ export default function ThoughtInMotion() {
 
           {/* Gradient overlay */}
           <div className={styles.gradient}></div>
-
         </div>
-
 
         {/* =====================================
             RIGHT CONTENT
         ===================================== */}
 
         <div className={styles.content}>
-
           {/* Eyebrow */}
           <div className={styles.eyebrow} data-reveal="up">
             <span className={styles.eyebrowLine}></span>
@@ -76,14 +75,15 @@ export default function ThoughtInMotion() {
             <span>BEHIND EVERY JOURNEY</span>
           </div>
 
-
           {/* Heading */}
-          <h2 className={styles.title} data-reveal="up">
-            THOUGHT.
-            <br />
-            IN MOTION
+          <h2 className={styles.title} data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>THOUGHT.</span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>IN MOTION</span>
+            </span>
           </h2>
-
 
           {/* Description */}
           <p className={styles.description} data-reveal="up">
@@ -94,10 +94,8 @@ export default function ThoughtInMotion() {
             the environment it will inhabit.
           </p>
 
-
           {/* Links */}
-          <div className={styles.links} >
-
+          <div className={styles.links}>
             {links.map((link) => (
               <a
                 key={link.name}
@@ -105,20 +103,13 @@ export default function ThoughtInMotion() {
                 className={styles.link}
                 data-reveal="up"
               >
-                <span className={styles.linkText}>
-                  {link.name}
-                </span>
+                <span className={styles.linkText}>{link.name}</span>
 
-                <span className={styles.arrow}>
-                  →
-                </span>
+                <span className={styles.arrow}>→</span>
               </a>
             ))}
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

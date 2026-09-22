@@ -10,6 +10,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 let lenis: Lenis | null = null;
 
+/**
+ * Line-by-line fade-up reveal for [data-reveal-line] children inside `container`.
+ * Call this directly for above-the-fold text (e.g. Hero, once the preloader
+ * finishes) — it is NOT scroll-triggered on its own.
+ */
+export function revealLines(
+  container: HTMLElement | null,
+  opts?: { stagger?: number; delay?: number },
+) {
+  if (!container) return;
+
+  const lines = container.querySelectorAll<HTMLElement>("[data-reveal-line]");
+  if (!lines.length) return;
+
+  gsap.set(lines, { yPercent: 100, opacity: 0 });
+
+  gsap.to(lines, {
+    yPercent: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power4.out",
+    stagger: opts?.stagger ?? 0.12,
+    delay: opts?.delay ?? 0,
+  });
+}
+
 export default function Animations() {
   const pathname = usePathname();
 
@@ -34,18 +60,17 @@ export default function Animations() {
     };
   }, []);
 
-  // Scroll-reveal for any [data-reveal] element — re-scans on route change
+  // All scroll-driven reveals — re-scans on route change
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     const ctx = gsap.context(() => {
       if (prefersReducedMotion) return;
 
+      // 1) Fade reveals — data-reveal="up" | "left" | "right"
       const items = gsap.utils.toArray<HTMLElement>("[data-reveal]");
-      if (!items.length) return;
-
       const fromVars: Record<string, gsap.TweenVars> = {
         up: { y: 60, opacity: 0 },
         left: { x: -60, opacity: 0 },
@@ -53,9 +78,7 @@ export default function Animations() {
       };
 
       (["up", "left", "right"] as const).forEach((dir) => {
-        const group = items.filter(
-          (el) => (el.dataset.reveal || "up") === dir
-        );
+        const group = items.filter((el) => (el.dataset.reveal || "up") === dir);
         if (!group.length) return;
 
         gsap.set(group, fromVars[dir]);
@@ -73,6 +96,104 @@ export default function Animations() {
               overwrite: true,
             }),
         });
+      });
+
+      // 2) Line-by-line reveal ON SCROLL — wrap with data-reveal-lines,
+      //    mark each line with data-reveal-line (for below-the-fold headings)
+      gsap.utils
+        .toArray<HTMLElement>("[data-reveal-lines]")
+        .forEach((container) => {
+          const lines =
+            container.querySelectorAll<HTMLElement>("[data-reveal-line]");
+          if (!lines.length) return;
+
+          gsap.set(lines, { yPercent: 100, opacity: 0 });
+
+          ScrollTrigger.create({
+            trigger: container,
+            start: "top 85%",
+            once: true,
+            onEnter: () =>
+              gsap.to(lines, {
+                yPercent: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power4.out",
+                stagger: 0.12,
+              }),
+          });
+        });
+
+      // 3) Image open reveal — clip grows top-to-bottom + scale settle
+      // 3) Image open reveal — clip grows top-to-bottom + scale settle
+      // 3) Image open reveal — clip grows top-to-bottom + scale settle
+gsap.utils
+  .toArray<HTMLElement>("[data-reveal-image]")
+  .forEach((wrapper) => {
+    const imgs = wrapper.querySelectorAll("img");
+
+    if (!imgs.length) return;
+
+    gsap.set(wrapper, {
+      clipPath: "inset(0% 0% 100% 0%)",
+    });
+
+    gsap.set(imgs, {
+      scale: 1.15,
+    });
+
+    ScrollTrigger.create({
+      trigger: wrapper,
+      start: "top 80%",
+      once: true,
+
+      onEnter: () => {
+        // IMAGE REVEAL
+        gsap.to(wrapper, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 1.2,
+          ease: "power4.inOut",
+
+          // IMPORTANT
+          // Tell Hero that image animation is finished
+          onComplete: () => {
+            wrapper.dispatchEvent(
+              new CustomEvent("reveal-image-complete")
+            );
+          },
+        });
+
+        // IMAGE SCALE
+        gsap.to(imgs, {
+          scale: 1,
+          duration: 1.4,
+          ease: "power3.out",
+        });
+      },
+    });
+  });
+
+      // 4) Parallax — data-parallax="60" moves the image slower/faster than scroll
+      gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((wrapper) => {
+        const imgs = wrapper.querySelectorAll("img");
+        if (!imgs.length) return;
+
+        const strength = parseFloat(wrapper.dataset.parallax || "60");
+
+        gsap.fromTo(
+          imgs,
+          { y: -strength },
+          {
+            y: strength,
+            ease: "none",
+            scrollTrigger: {
+              trigger: wrapper,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          },
+        );
       });
 
       ScrollTrigger.refresh();

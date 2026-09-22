@@ -25,41 +25,48 @@ export default function ExperienceCentre() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
         {/* LEFT CONTENT */}
         <div className={styles.content}>
-
           <div className={styles.eyebrow} data-reveal="up">
             <span className={styles.line}></span>
             <span>EXPERIENCE CENTRE</span>
           </div>
 
-          <h2 className={styles.title} data-reveal="up">
-            SEE IT. FEEL IT.
-            <br />
-            EXPERIENCE
-            <br />
-            TEKNIX
+          <h2 className={styles.title} data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>SEE IT. FEEL IT.</span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>EXPERIENCE</span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>TEKNIX</span>
+            </span>
           </h2>
 
-          <p className={styles.description} data-reveal="up">
-            Explore our elevators, finishes and
-            <br />
-            possibilities in person
+          <p className={styles.description} data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>Explore our elevators, finishes and</span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>possibilities in person</span>
+            </span>
           </p>
 
           <Button
-          data-reveal="up"
+            data-reveal="up"
             name="VISIT THE EXPERIENCE CENTRE"
             href="/experience-centre"
             variant="black"
           />
-
         </div>
 
         {/* RIGHT IMAGE SLIDER */}
-        <div className={styles.imageWrapper} data-reveal="up">
-
+        <div
+          className={styles.imageWrapper}
+          data-reveal-image
+          data-parallax="60"
+        >
           {images.map((image, index) => (
             <img
               key={image}
@@ -73,9 +80,7 @@ export default function ExperienceCentre() {
 
           {/* GRADIENT OVERLAY */}
           <div className={styles.gradient}></div>
-
         </div>
-
       </div>
     </section>
   );

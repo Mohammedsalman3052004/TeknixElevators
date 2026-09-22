@@ -13,7 +13,8 @@
 
   overflow: hidden;
 
-  padding: clamp(90px, 9vw, 135px) 0 110px;
+  /* padding: clamp(90px, 9vw, 135px) 0 110px; */
+  padding: 0;
 }
 
 
