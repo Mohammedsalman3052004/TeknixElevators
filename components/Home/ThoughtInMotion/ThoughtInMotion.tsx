@@ -5,9 +5,9 @@ import styles from "./ThoughtInMotion.module.css";
 
 const images = [
   "/Images/Home/thought-1.png",
-  "/Images/Home/thought-2.jpg",
-  "/Images/Home/thought-3.jpg",
-  "/Images/Home/thought-4.jpg",
+  // "/Images/Home/thought-2.jpg",
+  // "/Images/Home/thought-3.jpg",
+  // "/Images/Home/thought-4.jpg",
 ];
 
 const links = [

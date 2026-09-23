@@ -1,21 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./Hero.module.css";
-
-const leftLinks = [
-  { name: "ABOUT", href: "/about" },
-  { name: "ELEVATORS", href: "/elevators" },
-  { name: "ESCALATORS", href: "/escalators" },
-  { name: "SERVICES", href: "/services" },
-];
-
-const rightLinks = [
-  { name: "EXPERIENCE CENTRE", href: "/experience-centre" },
-  { name: "BLOG", href: "/blog" },
-  { name: "CONTACT", href: "/contact" },
-];
 
 export default function Hero() {
   return (
@@ -48,73 +34,9 @@ export default function Hero() {
           PAGE LABEL
       ========================================= */}
 
-      <div className={styles.pageLabel}>
+      {/* <div className={styles.pageLabel}>
         Greentek
-      </div>
-
-
-      {/* =========================================
-          NAVBAR
-      ========================================= */}
-
-      <nav className={styles.navbar}>
-
-        {/* LEFT NAV */}
-
-        <div className={styles.leftNav}>
-          {leftLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-
-        {/* CENTER LOGO */}
-
-        <Link
-          href="/"
-          className={styles.logo}
-        >
-          <Image
-            src="/Images/logo.png"
-            alt="TekniX Elevators"
-            width={130}
-            height={50}
-            priority
-          />
-        </Link>
-
-
-        {/* RIGHT NAV */}
-
-        <div className={styles.rightNav}>
-          {rightLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-
-        {/* MOBILE MENU */}
-
-        <button
-          className={styles.menuButton}
-          aria-label="Open menu"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
-      </nav>
+      </div> */}
 
 
       {/* =========================================

@@ -6,9 +6,9 @@ import Button from "@/components/UI/Button/Button";
 
 const images = [
   "/Images/Home/experience-1.png",
-  "/Images/Home/experience-2.jpg",
-  "/Images/Home/experience-3.jpg",
-  "/Images/Home/experience-4.jpg",
+  // "/Images/Home/experience-2.jpg",
+  // "/Images/Home/experience-3.jpg",
+  // "/Images/Home/experience-4.jpg",
 ];
 
 export default function ExperienceCentre() {

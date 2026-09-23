@@ -21,11 +21,11 @@ export default function ProjectCTA() {
         {/* Heading */}
         <h2 className={styles.title} data-reveal-lines>
           <span data-reveal-line-mask>
-            <span data-reveal-line>LET'S BUILD</span>
+            <span data-reveal-line>LET'S BUILD WHAT</span>
           </span>
-          <span data-reveal-line-mask>
-            <span data-reveal-line>WHAT</span>
-          </span>
+          {/* <span data-reveal-line-mask>
+            <span data-reveal-line></span>
+          </span> */}
           <span data-reveal-line-mask>
             <span data-reveal-line>MATTERS.</span>
           </span>
