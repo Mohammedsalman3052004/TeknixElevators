@@ -19,8 +19,8 @@ export default function ElevatorCard({
 }: ElevatorCardProps) {
   return (
     <article className={styles.card}>
-      {/* Background Image */}
 
+      {/* Background Image */}
       <Image
         src={image}
         alt={title}
@@ -33,12 +33,10 @@ export default function ElevatorCard({
         className={styles.image}
       />
 
-      {/* Dark Gradient */}
-
+      {/* Gradient */}
       <div className={styles.gradient} />
 
       {/* Content */}
-
       <div className={styles.content}>
 
         <div className={styles.textContent}>
@@ -54,6 +52,9 @@ export default function ElevatorCard({
         <Link
           href={href}
           className={styles.button}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
         >
           <span>{buttonText}</span>
 
