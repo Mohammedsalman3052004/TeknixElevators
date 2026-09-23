@@ -22,8 +22,7 @@ const specifications = [
         20 STOPS
       </>
     ),
-    description:
-      "Capacity for buildings requiring greater travel.",
+    description: "Capacity for buildings requiring greater travel.",
   },
   {
     title: (
@@ -33,8 +32,7 @@ const specifications = [
         2.0 M/S
       </>
     ),
-    description:
-      "Higher speed capability for a more efficient journey.",
+    description: "Higher speed capability for a more efficient journey.",
   },
   {
     title: (
@@ -53,34 +51,31 @@ export default function Overview() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
-        {/* =========================================
-            HEADING
-        ========================================= */}
-
-        <h2
-          className={styles.heading}
-          data-reveal="up"
-        >
-          MORE FREEDOM TO CREATE
+        <h2 className={styles.heading} data-reveal-lines>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>MORE FREEDOM TO CREATE</span>
+          </span>
         </h2>
 
-
-        {/* =========================================
-            DESCRIPTION
-        ========================================= */}
-
-        <p
-          className={styles.intro}
-          data-reveal="up"
-        >
-          Every building has its own character. Vertix is designed to give
-          you greater freedom to shape the elevator around it. With
-          higher-grade materials, increased performance capability and
-          extensive design possibilities, Vertix brings together
-          technology and flexibility in one refined product.
+        <p className={styles.intro} data-reveal-lines>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>
+              Every building has its own character. Vertix is designed to give
+              you greater freedom to shape the elevator around it. With
+            </span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>
+              higher-grade materials, increased performance capability and
+              extensive design possibilities, Vertix brings together
+            </span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>
+              technology and flexibility in one refined product.
+            </span>
+          </span>
         </p>
-
 
         {/* =========================================
             SPECIFICATIONS
@@ -88,18 +83,13 @@ export default function Overview() {
 
         <div className={styles.specifications}>
           {specifications.map((item, index) => (
-            <div
-              className={styles.spec}
-              key={index}
-              data-reveal="up"
-            >
+            <div className={styles.spec} key={index} data-reveal="up">
               <h3>{item.title}</h3>
 
               <p>{item.description}</p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

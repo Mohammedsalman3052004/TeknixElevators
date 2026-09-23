@@ -48,26 +48,29 @@ export default function Performance() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
         {/* =========================================
             HEADER
         ========================================= */}
 
         <div className={styles.header} data-reveal="up">
-          <h2>REFINED PERFORMANCE</h2>
+          <h2 data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>REFINED PERFORMANCE</span>
+            </span>
+          </h2>
 
-          <p>The difference is in how it feels</p>
+          <p data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>The difference is in how it feels</span>
+            </span>
+          </p>
         </div>
-
 
         {/* =========================================
             SINGLE CENTER IMAGE
         ========================================= */}
 
-        <div
-          className={styles.imageWrapper}
-          data-reveal="up"
-        >
+        <div className={styles.imageWrapper} data-reveal-image data-parallax="40">
           <Image
             src="/Images/Vertix/performance.png"
             alt="Vertix refined performance"
@@ -76,7 +79,6 @@ export default function Performance() {
             className={styles.image}
           />
         </div>
-
 
         {/* =========================================
             THREE MAIN FEATURES
@@ -96,25 +98,19 @@ export default function Performance() {
           ))}
         </div>
 
-
         {/* =========================================
             BOTTOM SPECIFICATIONS
         ========================================= */}
 
         <div className={styles.specifications}>
           {specifications.map((spec) => (
-            <div
-              key={spec.title}
-              className={styles.spec}
-              data-reveal="up"
-            >
+            <div key={spec.title} className={styles.spec} data-reveal="up">
               <h4>{spec.title}</h4>
 
               <p>{spec.description}</p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

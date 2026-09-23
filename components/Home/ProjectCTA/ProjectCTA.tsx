@@ -23,9 +23,6 @@ export default function ProjectCTA() {
           <span data-reveal-line-mask>
             <span data-reveal-line>LET'S BUILD WHAT</span>
           </span>
-          {/* <span data-reveal-line-mask>
-            <span data-reveal-line></span>
-          </span> */}
           <span data-reveal-line-mask>
             <span data-reveal-line>MATTERS.</span>
           </span>

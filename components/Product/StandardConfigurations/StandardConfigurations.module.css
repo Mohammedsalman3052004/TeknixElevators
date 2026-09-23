@@ -1,0 +1,391 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  position: relative;
+
+  width: 100%;
+
+  background: #0b0b0a;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  padding: clamp(90px, 9vw, 125px) 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(1100px, 86%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.heading {
+  text-align: center;
+
+  margin-bottom: 70px;
+}
+
+.heading h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(48px, 5vw, 68px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.025em;
+
+  color: #e7e1d8;
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
+
+.tableWrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table {
+  width: 100%;
+
+  min-width: 980px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.table thead {
+  border-bottom: 1px solid rgba(205, 195, 180, 0.38);
+}
+
+.table th {
+  height: 46px;
+
+  padding: 0 6px;
+
+  text-align: left;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 0.2em;
+
+  color: #aaa49b;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLE ROW
+========================================= */
+
+.table tbody tr {
+  border-bottom: 1px solid rgba(205, 195, 180, 0.28);
+
+  transition:
+    background 0.35s ease;
+}
+
+
+/* =========================================
+   TABLE CELL
+========================================= */
+
+.table td {
+  height: 52px;
+
+  padding: 0 6px;
+
+  text-align: left;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #817d77;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   ROW HOVER
+========================================= */
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.table tbody tr:hover td {
+  color: #d0cbc3;
+}
+
+
+/* =========================================
+   NOTE
+========================================= */
+
+.note {
+  margin: 26px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  color: #77736d;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .section {
+    padding: 90px 0;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .heading {
+    margin-bottom: 55px;
+  }
+
+  .heading h2 {
+    font-size: clamp(42px, 5vw, 56px);
+  }
+
+  .table {
+    min-width: 900px;
+  }
+
+  .table th {
+    font-size: 8px;
+  }
+
+  .table td {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 650px) {
+
+  .section {
+    padding: 75px 0 85px;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  .heading {
+    margin-bottom: 44px;
+  }
+
+  .heading h2 {
+    font-size: 38px;
+  }
+
+  .table {
+    min-width: 820px;
+  }
+
+  .table th {
+    height: 40px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.16em;
+  }
+
+  .table td {
+    height: 46px;
+
+    font-size: 9px;
+  }
+
+  .note {
+    font-size: 8px;
+
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .section {
+    padding: 65px 0 75px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .heading {
+    margin-bottom: 36px;
+  }
+
+  .heading h2 {
+    font-size: 32px;
+
+    line-height: 1.05;
+  }
+
+  .tableWrapper {
+    width: 100%;
+
+    margin-left: 0;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 760px;
+  }
+
+  .table th {
+    height: 38px;
+
+    padding: 0 7px;
+
+    font-size: 6.5px;
+
+    letter-spacing: 0.14em;
+  }
+
+  .table td {
+    height: 44px;
+
+    padding: 0 7px;
+
+    font-size: 8.5px;
+  }
+
+  .note {
+    margin-top: 22px;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .section {
+    padding: 55px 0 65px;
+  }
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  .heading h2 {
+    font-size: 28px;
+  }
+
+  .table {
+    min-width: 720px;
+  }
+
+  .table th {
+    font-size: 6px;
+  }
+
+  .table td {
+    font-size: 8px;
+  }
+
+  .note {
+    font-size: 7.5px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .table tbody tr,
+  .table td {
+    transition: none;
+  }
+}

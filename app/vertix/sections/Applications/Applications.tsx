@@ -47,18 +47,28 @@ export default function Applications() {
       ========================================= */}
 
       <div className={styles.header} data-reveal="up">
-        <h2>
-          MORE THAN A STANDARD
-          <br />
-          ELEVATOR
+        <h2 data-reveal-lines>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>MORE THAN A STANDARD</span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>ELEVATOR</span>
+          </span>
         </h2>
 
-        <p>
-          Vertix is designed to offer more possibilities — more freedom in
-          finishes, more
-          <br className={styles.desktopBreak} />
-          flexibility in design, more capability for different types of
-          buildings.
+        <p data-reveal-lines>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>
+              Vertix is designed to offer more possibilities — more freedom in
+              finishes, more
+            </span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>
+              flexibility in design, more capability for different types of
+              buildings.
+            </span>
+          </span>
         </p>
       </div>
 
@@ -66,10 +76,7 @@ export default function Applications() {
           CATEGORY NAVIGATION
       ========================================= */}
 
-      <div
-        className={styles.categories}
-        data-reveal="up"
-      >
+      <div className={styles.categories} data-reveal="up">
         {categories.map((category, index) => (
           <button
             key={category.id}
@@ -89,8 +96,7 @@ export default function Applications() {
       ========================================= */}
 
       <div className={styles.imageSection}>
-        <div className={styles.imageWrapper}>
-
+        <div className={styles.imageWrapper} data-reveal-image data-parallax="40">
           {/* IMAGE */}
 
           <Image
@@ -111,10 +117,7 @@ export default function Applications() {
               BOTTOM LEFT TEXT
           ===================================== */}
 
-          <div
-            key={activeCategory.id}
-            className={styles.imageContent}
-          >
+          <div key={activeCategory.id} className={styles.imageContent}>
             <p>{activeCategory.description}</p>
           </div>
         </div>
