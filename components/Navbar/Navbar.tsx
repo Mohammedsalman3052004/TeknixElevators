@@ -24,23 +24,14 @@ type NavItem = {
   children?: SubLink[];
 };
 
-/* Outer navbar (right side) — single level only */
-const barLinks: SubLink[] = [
-  { name: "HOME", href: "/" },
-  { name: "ABOUT", href: "/about" },
-  { name: "RESIDENTIAL", href: "/residential" },
-  { name: "COMMERCIAL", href: "/commercial" },
-  { name: "BLOGS", href: "/blog" },
-  { name: "CONTACT", href: "/contact" },
-];
-
 /* Left side panel — with sub links */
 const panelLinks: NavItem[] = [
   { name: "HOME", href: "/" },
   {
     name: "ABOUT US",
+    href: "/about",
     children: [
-      { name: "CORPORATE PROFILE", href: "/about" },
+      { name: "CORPORATE PROFILE", href: "/corporate-profile" },
       { name: "SUSTAINABILITY", href: "/sustainability" },
     ],
   },
@@ -350,45 +341,31 @@ export default function Navbar() {
       {/* ---------- OUTER NAVBAR ---------- */}
 
       <header className={styles.navbar}>
-        <div className={styles.left}>
-          <button
-            ref={menuBtnRef}
-            type="button"
-            className={styles.menuButton}
-            onClick={() => setOpen(true)}
-            aria-label="Open menu"
-            aria-expanded={open}
-            aria-controls="site-menu"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+        <button
+          ref={menuBtnRef}
+          type="button"
+          className={styles.menuButton}
+          onClick={() => setOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={open}
+          aria-controls="site-menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
 
-          <Link href="/" className={styles.logo} aria-label="TekniX Elevators">
-            <Image
-              src="/Images/logo-black.png"
-              alt="TekniX Elevators"
-              width={214}
-              height={67}
-              priority
-            />
-          </Link>
-        </div>
+        <Link href="/" className={styles.logo} aria-label="TekniX Elevators">
+          <Image
+            src="/Images/logo.png"
+            alt="TekniX Elevators"
+            width={130}
+            height={50}
+            priority
+          />
+        </Link>
 
-        <nav className={styles.links} aria-label="Primary">
-          {barLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`${styles.link} ${
-                isActive(link.href) ? styles.linkActive : ""
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+        <div className={styles.spacer} />
       </header>
 
       {/* ---------- SIDE PANEL ---------- */}
@@ -458,7 +435,28 @@ export default function Navbar() {
                       className={styles.listItem}
                       data-nav-item
                     >
-                      {item.children ? (
+                      {item.children && item.href ? (
+                        /* Has BOTH a direct link AND sub-menu children */
+                        <div className={styles.splitItem}>
+                          <Link
+                            href={item.href}
+                            className={`${styles.item} ${
+                              active ? styles.itemActive : ""
+                            }`}
+                            onClick={closeMenu}
+                          >
+                            <span>{item.name}</span>
+                          </Link>
+                          <button
+                            type="button"
+                            className={styles.chevronBtn}
+                            onClick={() => openSub(index)}
+                            aria-label={`Expand ${item.name}`}
+                          >
+                            <Chevron />
+                          </button>
+                        </div>
+                      ) : item.children ? (
                         <button
                           type="button"
                           className={`${styles.item} ${
