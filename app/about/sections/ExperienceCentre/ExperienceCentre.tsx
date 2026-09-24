@@ -17,16 +17,31 @@ export default function ExperienceCentre() {
             <span>THE EXPERIENCE</span>
           </div>
 
-          <h2>
-            SEE THE DIFFERENCE
-            <br />
-            FOR YOURSELF
+          <h2 data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>SEE THE DIFFERENCE</span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>FOR YOURSELF</span>
+            </span>
           </h2>
 
-          <p>
-            Visit the TekniX Experience Centre to experience the elevators,
-            explore materials and finishes, compare products and step inside
-            different cabin designs.
+          <p data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>
+                Visit the TekniX Experience Centre to experience the
+              </span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>
+                elevators, explore materials and finishes, compare
+              </span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>
+                products and step inside different cabin designs.
+              </span>
+            </span>
           </p>
         </div>
 
@@ -34,8 +49,12 @@ export default function ExperienceCentre() {
             RIGHT MEDIA
         ========================================= */}
 
-        <div className={styles.media} data-reveal="right">
-          <div className={styles.mediaInner}>
+        <div className={styles.media} >
+          <div
+            className={styles.mediaInner}
+            data-reveal-image
+            data-parallax="40"
+          >
             {/* Add image / video here later */}
             <Image
               src="/Images/About/philosophy.png"

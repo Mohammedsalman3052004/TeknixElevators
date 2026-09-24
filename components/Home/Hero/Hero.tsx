@@ -6,6 +6,7 @@ import gsap from "gsap";
 import styles from "./Hero.module.css";
 import Button from "@/components/UI/Button/Button";
 import { revealLines } from "@/components/Animations/Animations";
+import FillButton from "@/components/UI/FillButton/Fillbutton";
 
 export default function Hero() {
   const imageWrapperRef = useRef<HTMLDivElement>(null);
@@ -242,12 +243,8 @@ export default function Hero() {
 
         {/* BUTTON */}
 
-        <div ref={buttonRef}>
-          <Button
-            name="EXPLORE TEKNIX"
-            href="/about"
-            variant="white"
-          />
+        <div ref={buttonRef} >
+          <FillButton href="/companies">Explore Our Companies</FillButton>
         </div>
 
       </div>

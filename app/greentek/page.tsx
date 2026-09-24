@@ -1,11 +1,11 @@
-import Performance from "../vertix/sections/Performance/Performance";
 import Difference from "./sections/Difference/Difference";
 import Hero from "./sections/Hero/Hero";
 import PerformanceExperience from "./sections/PerformanceExperience/PerformanceExperience";
-import ProductSpecifications from "./sections/ProductSpecifications/ProductSpecifications";
-import StandardConfigurations from "./sections/StandardConfigurations/StandardConfigurations";
 import TechnicalHighlights from "./sections/TechnicalHighlights/TechnicalHighlights";
-import Technology from "./sections/Technology/Technology";
+import Specifications from "@/components/Product/Specifications/Specifications";
+import StandardConfigurations from "@/components/Product/StandardConfigurations/StandardConfigurations";
+import FeatureAccordion from "@/components/Product/FeatureAccordion/FeatureAccordion";
+import { specifications, standardConfigurations, keySafetyFeatures } from "./content";
 
 export default function GreentekPage() {
   return (
@@ -14,9 +14,9 @@ export default function GreentekPage() {
       <Difference />
       <TechnicalHighlights />
       <PerformanceExperience />
-      <ProductSpecifications />
-      <StandardConfigurations />
-      <Technology />
+      <Specifications {...specifications} />
+      <StandardConfigurations {...standardConfigurations} />
+      <FeatureAccordion {...keySafetyFeatures} />
     </>
   );
 }

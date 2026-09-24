@@ -1,0 +1,39 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #1a1a1a;
+  background: #ffffff;
+  padding: 14px 28px;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  isolation: isolate; /* keeps blend mode scoped to this button */
+}
+
+/* the expanding circle */
+.fill {
+  position: absolute;
+  width: 250%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: #1a1a1a;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* text stays white always — mix-blend-mode: difference
+   flips it to black automatically over the white button bg,
+   and back to white the instant the dark circle passes under it */
+.label {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  mix-blend-mode: difference;
+}

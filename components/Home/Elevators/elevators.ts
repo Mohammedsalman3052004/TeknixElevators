@@ -40,7 +40,7 @@ export const elevators: Elevator[] = [
     description:
       "A specialised elevator solution.",
     buttonText: "DISCOVER",
-    href: "/optima",
+    href: "/hydratek",
   },
   {
     image: "/Images/Home/elevator-5.jpg",

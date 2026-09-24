@@ -1,306 +1,483 @@
 /* =========================================
-   NAVBAR
+   SHARED SIZES
+========================================= */
+
+.navbar,
+.drawer {
+  --nav-h: 80px;
+  --pad: 32px;
+  --icon: 32px;
+  --gap: 20px;
+}
+
+
+/* =========================================
+   OUTER NAVBAR
 ========================================= */
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 
   width: 100%;
-  height: 130px;
+  height: var(--nav-h);
 
   padding: 0 5%;
 
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
 
   z-index: 2000;
 }
 
 
 /* =========================================
-   LEFT NAV
+   LEFT : HAMBURGER + LOGO
 ========================================= */
 
-.leftNav {
+.left {
   display: flex;
   align-items: center;
 
-  gap: 32px;
+  gap: var(--gap);
 }
 
-.leftNav a,
-.rightNav a {
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 10px;
-
-  font-weight: 400;
-
-  letter-spacing: 0.03em;
-
-  white-space: nowrap;
-
-  transition: opacity 0.3s ease;
-}
-
-.leftNav a:hover,
-.rightNav a:hover {
-  opacity: 0.6;
-}
-
-
-/* =========================================
-   LOGO
-========================================= */
-
-.logo {
+.menuButton {
   display: flex;
-
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  text-decoration: none;
-}
+  gap: 6px;
 
-.logo img {
-  width: 130px;
-  height: auto;
-
-  object-fit: contain;
-}
-
-
-/* =========================================
-   RIGHT NAV
-========================================= */
-
-.rightNav {
-  display: flex;
-
-  align-items: center;
-  justify-content: flex-end;
-
-  gap: 32px;
-}
-
-
-/* =========================================
-   HAMBURGER
-========================================= */
-
-.menuButton {
-  display: none;
-
-  position: absolute;
-
-  right: 5%;
-
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  width: 35px;
-  height: 35px;
+  width: var(--icon);
+  height: var(--icon);
 
   padding: 0;
 
   border: none;
-
   background: transparent;
 
   cursor: pointer;
+}
 
-  z-index: 2000;
+.menuButton span {
+  display: block;
+
+  width: 24px;
+  height: 1px;
+
+  background: #171717;
+
+  transition: width 0.35s ease;
+}
+
+.menuButton:hover span:nth-child(2) {
+  width: 15px;
+}
+
+.menuButton:focus-visible,
+.closeButton:focus-visible {
+  outline: 1px solid #9c8e70;
+  outline-offset: 3px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  /* margin-left: -2rem; */
+}
+
+.logo img {
+  display: block;
+
+  width: 200px;
+  height: 25px;
 }
 
 
-/* Three lines */
+/* =========================================
+   RIGHT : LINKS
+========================================= */
 
-.menuButton span {
+.links {
+  display: flex;
+  align-items: center;
+
+  gap: clamp(20px, 2.6vw, 44px);
+}
+
+.link {
+  position: relative;
+
+  padding: 6px 0;
+
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+
+  color: #171717;
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: #9c8e70;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link:hover::after,
+.linkActive::after {
+  transform: scaleX(1);
+}
+
+.linkActive {
+  color: #9c8e70;
+}
+
+
+/* =========================================
+   DRAWER (BACKDROP + PANEL)
+========================================= */
+
+.drawer {
+  position: fixed;
+  inset: 0;
+
+  z-index: 2100;
+
+  /* Shown / hidden by GSAP */
+  visibility: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(5, 5, 5, 0.5);
+
+  cursor: pointer;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 460px;
+  max-width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   PANEL HEADER (CLOSE + LOGO)
+========================================= */
+
+.panelHead {
+  flex-shrink: 0;
+
+  height: var(--nav-h);
+
+  padding: 0 var(--pad);
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--gap);
+}
+
+.closeButton {
+  position: relative;
+
+  width: var(--icon);
+  height: var(--icon);
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.closeButton span {
   position: absolute;
 
+  top: 50%;
   left: 50%;
 
   width: 22px;
   height: 1px;
 
-  background: #ffffff;
+  background: #171717;
 
-  transform: translateX(-50%);
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.2s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.menuButton span:nth-child(1) {
-  top: 10px;
+.closeButton span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.menuButton span:nth-child(2) {
-  top: 17px;
+.closeButton span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.menuButton span:nth-child(3) {
-  top: 24px;
+.closeButton:hover span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(135deg);
 }
 
-
-/* =========================================
-   HAMBURGER → X
-========================================= */
-
-.menuButtonOpen span:nth-child(1) {
-  top: 17px;
-
-  transform:
-    translateX(-50%)
-    rotate(45deg);
-}
-
-.menuButtonOpen span:nth-child(2) {
-  opacity: 0;
-}
-
-.menuButtonOpen span:nth-child(3) {
-  top: 17px;
-
-  transform:
-    translateX(-50%)
-    rotate(-45deg);
+.closeButton:hover span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 
 /* =========================================
-   MOBILE MENU
+   VIEWS (MAIN LIST / SUB LIST)
 ========================================= */
 
-.mobileMenu {
-  position: fixed;
+.views {
+  position: relative;
 
+  flex: 1;
+
+  min-height: 0;
+}
+
+.view {
+  position: absolute;
   inset: 0;
 
-  width: 100%;
-  height: 100vh;
+  padding-top: 18px;
+  padding-bottom: 24px;
 
-  background: #080604;
-
-  z-index: 1500;
-
-  visibility: hidden;
-
-  opacity: 0;
-
-  transform: translateY(-20px);
-
-  pointer-events: none;
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.4s ease,
-    visibility 0s linear 0.4s;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
+.list {
+  margin: 0;
+  padding: 0;
 
-/* Open */
-
-.mobileMenuOpen {
-  visibility: visible;
-
-  opacity: 1;
-
-  transform: translateY(0);
-
-  pointer-events: auto;
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.4s ease;
+  list-style: none;
 }
 
 
 /* =========================================
-   MOBILE MENU CONTENT
+   MAIN LINKS
 ========================================= */
 
-.mobileMenuContent {
-  width: 100%;
-  /* height: 100%; */
+.listItem {
+  margin-left: calc(var(--pad) + var(--icon) + var(--gap));
+  margin-right: var(--pad);
 
-  padding:
-    130px
-    7%
-    40px;
-
-  /* display: flex; */
-
-  flex-direction: column;
-
-  justify-content: center;
+  border-bottom: 1px solid #ececec;
 }
 
-
-/* =========================================
-   MOBILE LINKS
-========================================= */
-
-.mobileLink {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
+.item {
   width: 100%;
 
   padding: 18px 0;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  color: #ffffff;
+  border: none;
+  background: transparent;
 
+  font-family: "Alta", serif;
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 300;
+
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: left;
+
+  color: #171717;
   text-decoration: none;
 
-  font-family: "Alta", Arial, sans-serif;
+  cursor: pointer;
 
-  font-size: clamp(28px, 6vw, 52px);
-
-  font-weight: 400;
-
-  line-height: 1;
-
-  transition:
-    padding-left 0.3s ease,
-    opacity 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.mobileLink:hover {
-  padding-left: 10px;
+.item span:first-child {
+  display: inline-block;
 
-  opacity: 0.65;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-
-/* Arrow */
-
-.arrow {
-  font-family: Arial, sans-serif;
-
-  font-size: 18px;
-
-  transition:
-    transform 0.3s ease;
+.item:hover {
+  color: #9c8e70;
 }
 
-.mobileLink:hover .arrow {
+.item:hover span:first-child {
   transform: translateX(8px);
+}
+
+.itemActive {
+  color: #9c8e70;
+}
+
+.chevron {
+  flex-shrink: 0;
+
+  color: #858585;
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease;
+}
+
+.item:hover .chevron {
+  color: #9c8e70;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   SUB VIEW
+========================================= */
+
+.backRow {
+  width: 100%;
+
+  padding: 0 var(--pad);
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--gap);
+
+  height: 52px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  color: #171717;
+}
+
+.backIcon {
+  width: var(--icon);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.backRow:hover .backIcon {
+  transform: translateX(-4px);
+}
+
+.backTitle {
+  font-family: "Alta", serif;
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 300;
+
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+
+  color: #858585;
+}
+
+.subListItem {
+  margin-left: calc(var(--pad) + var(--icon) + var(--gap));
+  margin-right: var(--pad);
+}
+
+.subListItem:first-child {
+  margin-top: 20px;
+}
+
+.subItem {
+  display: block;
+
+  padding: 14px 0;
+
+  font-family: Alta, serif;
+  /* font-family: var(--font-secondary); */
+  font-size: clamp(24px, 2vw, 30px);;
+  font-weight: 300;
+
+  letter-spacing: 0.14em;
+
+  color: #171717;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.subItem:hover {
+  color: #9c8e70;
+
+  transform: translateX(8px);
+}
+
+
+/* =========================================
+   PANEL FOOTER
+========================================= */
+
+.panelFoot {
+  flex-shrink: 0;
+
+  padding:
+    20px
+    var(--pad)
+    28px
+    calc(var(--pad) + var(--icon) + var(--gap));
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
+  .link {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
 }
 
 
@@ -309,43 +486,23 @@
 ========================================= */
 
 @media (max-width: 900px) {
-
-  .navbar {
-    height: 100px;
-
-    padding: 0 5%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-start;
-  }
-
-
-  /* Logo LEFT */
-
-  .logo {
-    justify-content: flex-start;
+  .navbar,
+  .drawer {
+    --nav-h: 72px;
+    --pad: 28px;
   }
 
   .logo img {
-    width: 110px;
+    width: 108px;
   }
 
-
-  /* Hide desktop navigation */
-
-  .leftNav,
-  .rightNav {
+  /* Links live inside the side panel on tablet / mobile */
+  .links {
     display: none;
   }
 
-
-  /* Show hamburger */
-
-  .menuButton {
-    display: block;
+  .panel {
+    width: 420px;
   }
 }
 
@@ -355,49 +512,37 @@
 ========================================= */
 
 @media (max-width: 600px) {
-
-  .navbar {
-    height: 82px;
-
-    padding: 0 6%;
+  .navbar,
+  .drawer {
+    --nav-h: 66px;
+    --pad: 22px;
+    --icon: 30px;
+    --gap: 16px;
   }
 
+  .navbar {
+    padding: 0 6%;
+  }
 
   .logo img {
     width: 100px;
   }
 
-
-  .menuButton {
-    right: 6%;
-
-    width: 32px;
-    height: 32px;
+  .panel {
+    width: 100%;
   }
 
-
-  .menuButton span {
-    width: 21px;
+  .item,
+  .backTitle {
+    font-size: 26px;
   }
 
-
-  .mobileMenuContent {
-    padding:
-      110px
-      7%
-      30px;
-  }
-
-
-  .mobileLink {
+  .item {
     padding: 16px 0;
-
-    font-size: 30px;
   }
 
-
-  .arrow {
-    font-size: 16px;
+  .subItem {
+    font-size: 12px;
   }
 }
 
@@ -407,10 +552,12 @@
 ========================================= */
 
 @media (max-width: 380px) {
+  .item,
+  .backTitle {
+    font-size: 23px;
+  }
 
-  .mobileLink {
-    font-size: 26px;
-
+  .item {
     padding: 14px 0;
   }
 }

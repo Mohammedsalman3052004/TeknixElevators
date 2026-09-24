@@ -92,7 +92,7 @@ export default function Customization() {
           scale: 1,
           duration: 1.1,
           ease: "power3.out",
-        }
+        },
       );
 
       gsap.fromTo(
@@ -107,7 +107,7 @@ export default function Customization() {
           duration: 0.8,
           delay: 0.25,
           ease: "power3.out",
-        }
+        },
       );
     });
 
@@ -159,7 +159,6 @@ export default function Customization() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
         {/* =========================================
             LEFT IMAGE SLIDER
         ========================================= */}
@@ -171,7 +170,6 @@ export default function Customization() {
           onMouseLeave={handleMouseLeave}
         >
           <div className={styles.imageWrapper}>
-
             {slides.map((slide, index) => (
               <div
                 key={slide.image}
@@ -179,6 +177,8 @@ export default function Customization() {
                 className={`${styles.slide} ${
                   index === activeSlide ? styles.active : ""
                 }`}
+                data-reveal-image
+                data-parallax="40"
               >
                 <Image
                   src={slide.image}
@@ -196,19 +196,12 @@ export default function Customization() {
 
             {/* Bottom-left image label */}
 
-            <div
-              ref={textRef}
-              className={styles.imageLabel}
-            >
+            <div ref={textRef} className={styles.imageLabel}>
               <span>INCLUDED</span>
 
-              <strong>
-                {slides[activeSlide].label}
-              </strong>
+              <strong>{slides[activeSlide].label}</strong>
             </div>
-
           </div>
-
 
           {/* Slider indicators */}
 
@@ -227,78 +220,61 @@ export default function Customization() {
           </div>
         </div>
 
-
         {/* =========================================
             RIGHT CONTENT
         ========================================= */}
 
-        <div
-          className={styles.content}
-          data-reveal="right"
-        >
-
-          <h2>
-            MAKE IT YOUR OWN.
+        <div className={styles.content} data-reveal="right">
+          <h2 data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>MAKE IT YOUR OWN.</span>
+            </span>
           </h2>
 
-          <p className={styles.intro}>
-            Optima offers selected upgrade options to personalise the
-            elevator around your project.
+          <p className={styles.intro} data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>
+                Optima offers selected upgrade options to personalise the
+                elevator around your project.
+              </span>
+            </span>
           </p>
-
 
           {/* =====================================
               OPTIONS
           ===================================== */}
 
           <div className={styles.options}>
-
             {options.map((option, index) => (
               <div
                 key={option.title}
                 className={styles.option}
                 data-reveal="up"
               >
-
                 <div className={styles.optionHeader}>
-
                   <div>
-                    <span className={styles.optionType}>
-                      {option.type}
-                    </span>
+                    <span className={styles.optionType}>{option.type}</span>
 
-                    <h3>
-                      {option.title}
-                    </h3>
+                    <h3>{option.title}</h3>
                   </div>
 
                   <span className={styles.optionDot} />
-
                 </div>
 
-                {option.description && (
-                  <p>
-                    {option.description}
-                  </p>
-                )}
-
+                {option.description && <p>{option.description}</p>}
               </div>
             ))}
-
           </div>
-
 
           {/* =====================================
               FOOTNOTE
           ===================================== */}
 
           <p className={styles.note}>
-            Options shown are representative. Final configuration
-            subject to project requirements.
+            Options shown are representative. Final configuration subject to
+            project requirements.
           </p>
-
         </div>
-
       </div>
     </section>
   );

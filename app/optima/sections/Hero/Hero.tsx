@@ -3,7 +3,7 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} data-reveal-image data-parallax="40">
       <Image
         src="/Images/Optima/optima-hero.png"
         alt="Optima elevator"
@@ -16,17 +16,24 @@ export default function Hero() {
       <div className={styles.overlay} />
 
       <div className={styles.content}>
-
-        <h1 data-reveal="up">
-          EVERYTHING YOU NEED
-          <br />
-          NOTHING YOU NEED
+        <h1 data-reveal-lines>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>EVERYTHING YOU NEED</span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>NOTHING YOU NEED</span>
+          </span>
         </h1>
 
-        <p data-reveal="up">
-          Thoughtful engineering. Refined design.
-          <br />
-          Made around the way you move.
+        <p data-reveal-lines>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>
+              Thoughtful engineering. Refined design.
+            </span>
+          </span>
+          <span data-reveal-line-mask>
+            <span data-reveal-line>Made around the way you move.</span>
+          </span>
         </p>
       </div>
     </section>

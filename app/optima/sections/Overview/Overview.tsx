@@ -7,47 +7,53 @@ export default function Overview() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
         {/* =========================================
             LEFT CONTENT
         ========================================= */}
 
         <div className={styles.content} data-reveal="left">
-
-          <h2>
-            MADE FOR
-            <br />
-            WHAT MATTERS
+          <h2 data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>MADE FOR</span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>WHAT MATTERS</span>
+            </span>
           </h2>
 
           <div className={styles.description}>
-            <p>
-              Optima brings the essential elements of a modern
-              TekniX elevator into a refined and practical solution.
+            <p data-reveal-lines>
+              <span data-reveal-line-mask>
+                <span data-reveal-line>
+                  Optima brings the essential elements of a modern TekniX
+                  elevator into a refined and practical solution.
+                </span>
+              </span>
             </p>
 
-            <p>
-              Designed for low-rise buildings, it combines gearless
-              technology, thoughtful engineering and selected
-              design options around the requirements of everyday
-              movement.
+            <p data-reveal-lines>
+              <span data-reveal-line-mask>
+                <span data-reveal-line>
+                  Designed for low-rise buildings, it combines gearless
+                  technology, thoughtful engineering and selected design options
+                  around the requirements of everyday movement.
+                </span>
+              </span>
             </p>
           </div>
-
         </div>
-
 
         {/* =========================================
             IMAGE AREA
         ========================================= */}
 
         <div className={styles.visual}>
-
           {/* Main Image */}
 
           <div
             className={styles.imageWrapper}
-            data-reveal="up"
+            data-reveal-image
+            data-parallax="40"
           >
             <Image
               src="/Images/Optima/optima-overview.png"
@@ -57,7 +63,6 @@ export default function Overview() {
               className={styles.image}
             />
           </div>
-
 
           {/* =====================================
               TOP LEFT
@@ -73,7 +78,6 @@ export default function Overview() {
             <span className={styles.line} />
           </div>
 
-
           {/* =====================================
               BOTTOM LEFT
           ===================================== */}
@@ -87,7 +91,6 @@ export default function Overview() {
 
             <span className={styles.line} />
           </div>
-
 
           {/* =====================================
               TOP RIGHT
@@ -103,7 +106,6 @@ export default function Overview() {
             <span className={styles.line} />
           </div>
 
-
           {/* =====================================
               BOTTOM RIGHT
           ===================================== */}
@@ -117,9 +119,7 @@ export default function Overview() {
 
             <span className={styles.line} />
           </div>
-
         </div>
-
       </div>
     </section>
   );

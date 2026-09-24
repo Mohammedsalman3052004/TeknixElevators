@@ -30,15 +30,11 @@ export default function TechnicalHighlights() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
         {/* =========================================
             IMAGE
         ========================================= */}
 
-        <div
-          className={styles.media}
-          data-reveal="left"
-        >
+        <div className={styles.media} data-reveal-image data-parallax="40">
           <Image
             src="/Images/Greentek/greentek-details.png"
             alt="Greentek elevator engineering"
@@ -48,66 +44,50 @@ export default function TechnicalHighlights() {
           />
         </div>
 
-
         {/* =========================================
             CONTENT
         ========================================= */}
 
-        <div
-          className={styles.content}
-          data-reveal="right"
-        >
-
+        <div className={styles.content} data-reveal="right">
           <header className={styles.header}>
-            <h2>THE DETAILS GO DEEPER</h2>
+            <h2 data-reveal-lines>
+              <span data-reveal-line-mask>
+                <span data-reveal-line>THE DETAILS GO DEEPER</span>
+              </span>
+            </h2>
 
-            <p>
-              Every journey may only take a few seconds.
+            <p data-reveal-lines>
+              <span data-reveal-line-mask>
+                <span data-reveal-line>
+                  Every journey may only take a few seconds.
+                </span>
+              </span>
             </p>
           </header>
-
 
           {/* =====================================
               TECHNICAL HIGHLIGHTS
           ===================================== */}
 
           <div className={styles.highlights}>
-
             {highlights.map((item) => (
               <div
                 key={item.number}
                 className={styles.highlight}
+                data-reveal="up"
               >
-
-                <span className={styles.number}>
-                  {item.number}
-                </span>
-
+                <span className={styles.number}>{item.number}</span>
 
                 <div className={styles.highlightContent}>
-
-                  <h3>
-                    {item.title}
-                  </h3>
-
-                  <p>
-                    {item.description}
-                  </p>
-
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
                 </div>
 
-
-                <span className={styles.arrow}>
-                  ↗
-                </span>
-
+                <span className={styles.arrow}>↗</span>
               </div>
             ))}
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

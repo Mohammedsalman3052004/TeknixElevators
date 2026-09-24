@@ -1,0 +1,272 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+  width: 100%;
+
+  background: #0b0b0a;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  padding: clamp(100px, 9vw, 135px) 0 130px;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(1180px, 90%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  max-width: 760px;
+
+  margin: 0 auto clamp(60px, 7vw, 90px);
+
+  text-align: center;
+}
+
+.header h2 {
+  margin: 0 0 30px;
+
+  font-family: "Alta", serif;
+
+  font-size: clamp(30px, 3.4vw, 44px);
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.02em;
+
+  color: #e9e4dc;
+}
+
+.header p {
+  margin: 0 0 16px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+
+  line-height: 1.75;
+
+  color: #8b867d;
+}
+
+.header p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   PLANS GRID
+========================================= */
+
+.plans {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 50px;
+}
+
+
+/* =========================================
+   PLAN
+========================================= */
+
+.plan {
+  text-align: center;
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.badge {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 26px;
+}
+
+.badgeImage {
+  width: 130px;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   PLAN TITLE
+========================================= */
+
+.plan h3 {
+  margin: 0 0 22px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+
+  color: #f0ece6;
+}
+
+
+/* =========================================
+   FEATURE LIST
+========================================= */
+
+.featureList {
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.featureList li {
+  padding: 15px 6px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10.5px;
+
+  line-height: 1.55;
+
+  color: #b7b2a9;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .section {
+    padding: 90px 0 100px;
+  }
+
+  .plans {
+    gap: 36px;
+  }
+
+  .badgeImage {
+    width: 115px;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+========================================= */
+
+@media (max-width: 800px) {
+
+  .container {
+    width: 88%;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .plans {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    max-width: 420px;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 75px 0 85px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .header h2 {
+    font-size: clamp(27px, 7.5vw, 36px);
+  }
+
+  .header p {
+    font-size: 10.5px;
+
+    line-height: 1.7;
+  }
+
+  .badgeImage {
+    width: 105px;
+  }
+
+  .plan h3 {
+    font-size: 11px;
+  }
+
+  .featureList li {
+    font-size: 10px;
+
+    padding: 13px 4px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .header h2 {
+    font-size: 25px;
+  }
+
+  .header p {
+    font-size: 10px;
+  }
+
+  .badgeImage {
+    width: 95px;
+  }
+
+  .featureList li {
+    font-size: 9.5px;
+  }
+}

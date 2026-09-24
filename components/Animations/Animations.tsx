@@ -10,6 +10,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 let lenis: Lenis | null = null;
 
+/** Used by <Preloader /> to release scrolling once the intro has finished. */
+export function unlockScroll() {
+  lenis?.start();
+}
+
+/** Used by the Navbar side panel to freeze page scroll while it is open. */
+export function lockScroll() {
+  lenis?.stop();
+}
+
 /**
  * Line-by-line fade-up reveal for [data-reveal-line] children inside `container`.
  * Call this directly for above-the-fold text (e.g. Hero, once the preloader
@@ -47,6 +57,10 @@ export default function Animations() {
       smoothWheel: true,
     });
 
+    if (document.documentElement.dataset.preloading === "true") {
+      lenis.stop();
+    }
+
     lenis.on("scroll", ScrollTrigger.update);
 
     const update = (time: number) => lenis?.raf(time * 1000);
@@ -66,7 +80,7 @@ export default function Animations() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    const ctx = gsap.context(() => {
+    const build = () => {
       if (prefersReducedMotion) return;
 
       // 1) Fade reveals — data-reveal="up" | "left" | "right"
@@ -197,9 +211,27 @@ gsap.utils
       });
 
       ScrollTrigger.refresh();
-    });
+    };
 
-    return () => ctx.revert();
+    const ctx = gsap.context(() => {});
+    let onIntroStart: (() => void) | null = null;
+
+    if (document.documentElement.dataset.preloading === "true") {
+      // Opening animation is playing — hold every reveal until it says go
+      onIntroStart = () => ctx.add(build);
+      window.addEventListener("teknix:intro-start", onIntroStart, {
+        once: true,
+      });
+    } else {
+      ctx.add(build);
+    }
+
+    return () => {
+      if (onIntroStart) {
+        window.removeEventListener("teknix:intro-start", onIntroStart);
+      }
+      ctx.revert();
+    };
   }, [pathname]);
 
   return null;

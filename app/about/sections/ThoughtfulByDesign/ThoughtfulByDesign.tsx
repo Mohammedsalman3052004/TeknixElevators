@@ -30,37 +30,42 @@ export default function ThoughtfulByDesign() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
         {/* =========================================
             HEADING
         ========================================= */}
 
-        <div className={styles.intro} data-reveal="up">
-          <h2>THOUGHTFUL BY DESIGN</h2>
+        <div className={styles.intro}>
+          <h2 data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>THOUGHTFUL BY DESIGN</span>
+            </span>
+          </h2>
 
-          <p>
-            Every TekniX elevator begins with a
-            <br />
-            considered approach to :
+          <p data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>Every TekniX elevator begins with a</span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>considered approach to :</span>
+            </span>
           </p>
         </div>
-
 
         {/* =========================================
             MAIN CONTENT
         ========================================= */}
 
         <div className={styles.content}>
-
           {/* IMAGE */}
 
-          <div
-            className={styles.imageArea}
-            data-reveal="left"
-          >
+          <div className={styles.imageArea} data-reveal="left">
             <div className={styles.imageGlow} />
 
-            <div className={styles.imageWrapper}>
+            <div
+              className={styles.imageWrapper}
+              data-reveal-image
+              data-parallax="40"
+            >
               <Image
                 src="/Images/About/thoughtful-by-design.png"
                 alt="TekniX elevator engineering"
@@ -71,47 +76,30 @@ export default function ThoughtfulByDesign() {
             </div>
           </div>
 
-
           {/* =====================================
               FEATURE LIST
           ===================================== */}
-
-          <div className={styles.features} data-reveal="right">
-
+          <div className={styles.features}>
             {features.map((feature) => (
               <div
                 className={styles.feature}
                 key={feature.number}
+                data-reveal="right"
               >
-
                 <div className={styles.featureContent}>
-
-                  <span className={styles.number}>
-                    {feature.number}
-                  </span>
+                  <span className={styles.number}>{feature.number}</span>
 
                   <div className={styles.text}>
                     <h3>{feature.title}</h3>
-
                     <p>{feature.subtitle}</p>
                   </div>
-
                 </div>
 
-
-                {/* ARROW */}
-
-                <span className={styles.arrow}>
-                  ↗
-                </span>
-
+                <span className={styles.arrow}>↗</span>
               </div>
             ))}
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

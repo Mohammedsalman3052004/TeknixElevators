@@ -25,13 +25,13 @@ export default function PerformanceExperience() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-
         {/* LEFT CONTENT */}
-        <div
-          className={styles.content}
-          data-reveal="left"
-        >
-          <h2>REFINED IN MOTION</h2>
+        <div className={styles.content}>
+          <h2 data-reveal-lines>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>REFINED IN MOTION</span>
+            </span>
+          </h2>
 
           <div className={styles.features}>
             {features.map((feature, index) => (
@@ -40,21 +40,17 @@ export default function PerformanceExperience() {
                 className={`${styles.feature} ${
                   index === 2 ? styles.featureLast : ""
                 }`}
+                data-reveal="up"
               >
                 <h3>{feature.title}</h3>
-
                 <p>{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
 
-
         {/* RIGHT IMAGE */}
-        <div
-          className={styles.visual}
-          data-reveal="right"
-        >
+        <div className={styles.visual} data-reveal-image data-parallax="40">
           <Image
             src="/Images/Greentek/greentek-performance.jpg"
             alt="Greentek elevator technician"
@@ -63,7 +59,6 @@ export default function PerformanceExperience() {
             className={styles.image}
           />
         </div>
-
       </div>
     </section>
   );
