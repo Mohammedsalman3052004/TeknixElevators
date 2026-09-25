@@ -244,7 +244,7 @@ export default function Hero() {
         {/* BUTTON */}
 
         <div ref={buttonRef} >
-          <FillButton href="/companies">Explore Our Companies</FillButton>
+          <FillButton href="/about">Explore Teknix</FillButton>
         </div>
 
       </div>

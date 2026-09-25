@@ -51,7 +51,7 @@ export const standardConfigurations: StandardConfigurationsProps = {
 export const keySafetyFeatures: FeatureAccordionProps = {
   heading: "FUNCTIONS OF VILLA MATEK",
   image: {
-    src: "/Images/VillaMatek/villa-matek-technology.png",
+    src: "/Images/Optima/optima-protection.jpg",
     alt: "Villa Matek elevator interior",
   },
   items: [
@@ -67,10 +67,10 @@ export const keySafetyFeatures: FeatureAccordionProps = {
     { title: "Auto on/off", description: "Ventilation & lighting would have automatic on/off function" },
     { title: "Overspeed Protection", description: "When elevator speed is more then the calibrated speed, the device will automatically stop the elevator motor and activate the car safety device in turn activating the unintended car movement device to stop the car from moving further" },
     { title: "Automatic Rescue Device", description: "Automatic rescue mechanism that swiftly returns the elevator to the nearest floor during power outages." },
-    { title: "Car Illumination", description: "LED power saving lighting inside the car for illumination" },
-    { title: "Car Ventilation", description: "Cross Flow Ventilation system in the car" },
-    { title: "Power Supply", description: "AC415V, 3phase & AC220V , 1phase , 50HZ AC" },
-    { title: "Phase Loss Protection", description: "Automatic Phase loss protection system stop the elevator when it senses the loss of one of the three phases" },
-    { title: "Over – run Protection system", description: "Up/Down overrun protection System with triple layer limit switch for extra safety" },
+    // { title: "Car Illumination", description: "LED power saving lighting inside the car for illumination" },
+    // { title: "Car Ventilation", description: "Cross Flow Ventilation system in the car" },
+    // { title: "Power Supply", description: "AC415V, 3phase & AC220V , 1phase , 50HZ AC" },
+    // { title: "Phase Loss Protection", description: "Automatic Phase loss protection system stop the elevator when it senses the loss of one of the three phases" },
+    // { title: "Over – run Protection system", description: "Up/Down overrun protection System with triple layer limit switch for extra safety" },
   ],
 };

@@ -56,7 +56,7 @@ export default function ExperienceCentre() {
           <Button
             data-reveal="up"
             name="VISIT THE EXPERIENCE CENTRE"
-            href="/experience-centre"
+            href="/contact"
             variant="black"
           />
         </div>

@@ -10,12 +10,38 @@ const initialForm = {
   message: "",
 };
 
+type Status = "idle" | "loading" | "success" | "error";
+
 export default function ContactForm() {
   const [form, setForm] = useState(initialForm);
+  const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setForm(initialForm);
+    setStatus("loading");
+
+    try {
+      const response = await fetch(
+        "https://emailjsfuntions-428145106157.asia-south1.run.app/teknix-contact-form-new",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setStatus("success");
+        setForm(initialForm);
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -45,9 +71,7 @@ export default function ContactForm() {
                 type="text"
                 name="name"
                 value={form.name}
-                onChange={(event) =>
-                  setForm({ ...form, name: event.target.value })
-                }
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
               />
             </label>
@@ -58,9 +82,7 @@ export default function ContactForm() {
                 type="email"
                 name="email"
                 value={form.email}
-                onChange={(event) =>
-                  setForm({ ...form, email: event.target.value })
-                }
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
               />
             </label>
@@ -72,9 +94,7 @@ export default function ContactForm() {
               type="tel"
               name="mobile"
               value={form.mobile}
-              onChange={(event) =>
-                setForm({ ...form, mobile: event.target.value })
-              }
+              onChange={(e) => setForm({ ...form, mobile: e.target.value })}
               required
             />
           </label>
@@ -85,15 +105,28 @@ export default function ContactForm() {
               name="message"
               rows={4}
               value={form.message}
-              onChange={(event) =>
-                setForm({ ...form, message: event.target.value })
-              }
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
               required
             />
           </label>
 
-          <button type="submit" className={styles.submit}>
-            <span>SEND MESSAGE</span>
+          {status === "success" && (
+            <p style={{ color: "green", fontWeight: 600 }}>
+              ✅ Message sent successfully!
+            </p>
+          )}
+          {status === "error" && (
+            <p style={{ color: "red", fontWeight: 600 }}>
+              ❌ Something went wrong. Please try again.
+            </p>
+          )}
+
+          <button
+            type="submit"
+            className={styles.submit}
+            disabled={status === "loading"}
+          >
+            <span>{status === "loading" ? "Sending..." : "SEND MESSAGE"}</span>
             <span aria-hidden="true">→</span>
           </button>
         </form>

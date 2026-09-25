@@ -13,15 +13,15 @@ const images = [
 const links = [
   {
     name: "ENGINEERING",
-    href: "/engineering",
+    href: "/",
   },
   {
     name: "MANUFACTURING",
-    href: "/manufacturing",
+    href: "/",
   },
   {
     name: "TECHNOLOGY",
-    href: "/technology",
+    href: "/",
   },
 ];
 
