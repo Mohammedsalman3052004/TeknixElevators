@@ -3,20 +3,63 @@ import type { StandardConfigurationsProps } from "@/components/Product/StandardC
 import type { FeatureAccordionProps } from "@/components/Product/FeatureAccordion/FeatureAccordion";
 
 export const specifications: SpecificationsProps = {
-  title: "DIVE INTO LUXURY AND COMFORT.",
+  title: "FLUIDIC AND STYLISH ELEVATOR RIDE.",
+
   description:
-    "TEKNIX VILLAMATEK are specially designed for residential use; incorporating a mix of technology, aesthetics and craftsmanship to provide an essential service to homes whose residents have impaired mobility. Available only in gearless options, and in a wide range of Cabin options to suite diverse needs and tastes.",
-  brochureHref: "/documents/villa-matek-brochure.pdf",
-  brochureLabel: "DOWNLOAD VILLA MATEK BROCHURE",
+    "TekniX Hydratek is a new Generation vertical transportation system based on advanced progressive Fluid dynamics, researched and developed with the finest German Technology and Italian Craftmanship. Hydratek is born with state of the art critical components like new generation Ultra High Precision Submerged Drive for smooth fluid pressure with advanced Fluid control valves & stylish touch sensitive human interface devices together with technologically advanced components outperform to give you a impeccable elevator ride.",
+
+  brochureHref: "/documents/hydratek-brochure.pdf",
+  brochureLabel: "DOWNLOAD HYDRATEK BROCHURE",
+
   items: [
-    { label: "TYPE", value: "MRL", sub: "Powered by Gearless Traction Machine", icon: "type" },
-    { label: "CAPACITY", value: "UPTO 400 KG", sub: "", icon: "capacity" },
-    { label: "SPEED", value: "0.30 M/S", sub: "Metres per second", icon: "speed" },
-    { label: "LANDINGS", value: "2 – 5", sub: "Floors", icon: "landings" },
-    { label: "DRIVE", value: "GEARLESS PMSM", sub: "Frequency Controlled", icon: "drive" },
-    { label: "OPERATION", value: "FULL COLLECTIVE", sub: "Selective", icon: "operation" },
-    { label: "DOOR WIDTH", value: "600 / 800 MM", sub: "Clear opening", icon: "width" },
-    { label: "DOOR HEIGHT", value: "2100 MM", sub: "Standard clear height", icon: "height" },
+    {
+      label: "TYPE",
+      value: "Machine roomless/",
+      sub: "Pitless",
+      icon: "type",
+    },
+    {
+      label: "CAPACITY",
+      value: "272kgs – 2500kgs",
+      sub: "",
+      icon: "capacity",
+    },
+    {
+      label: "SPEED",
+      value: "0.30 – 1.00 m/s",
+      sub: "",
+      icon: "speed",
+    },
+    {
+      label: "LANDINGS",
+      value: "2 – 8",
+      sub: "",
+      icon: "landings",
+    },
+    {
+      label: "DRIVE",
+      value: "Submersible Fluid",
+      sub: "Hydraulic Drive",
+      icon: "drive",
+    },
+    {
+      label: "OPERATION",
+      value: "Full Collective",
+      sub: "Selective",
+      icon: "operation",
+    },
+    {
+      label: "DOOR WIDTH",
+      value: "700 / 800 / 900 /",
+      sub: "1000 / 1200mm",
+      icon: "width",
+    },
+    {
+      label: "DOOR HEIGHT",
+      value: "2100mm–2400mm",
+      sub: "",
+      icon: "height",
+    },
   ],
 };
 
@@ -47,12 +90,12 @@ export const standardConfigurations: StandardConfigurationsProps = {
 };
 
 // TEMP: image path assumed from the other products' naming pattern — confirm/replace
-// with Villa Matek's actual asset filename.
+// with Hydratek's actual asset filename.
 export const keySafetyFeatures: FeatureAccordionProps = {
-  heading: "FUNCTIONS OF VILLA MATEK",
+  heading: "FUNCTIONS OF Hydratek",
   image: {
     src: "/Images/Optima/optima-protection.jpg",
-    alt: "Villa Matek elevator interior",
+    alt: "Hydratek elevator interior",
   },
   items: [
     { title: "Control system", description: "Multiple microcomputer based close-loop control system with direct landing technology" },
