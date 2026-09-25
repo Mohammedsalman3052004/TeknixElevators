@@ -13,10 +13,17 @@
 
 /* =========================================
    OUTER NAVBAR
+   -----------------------------------------
+   Always position: fixed. Its look is driven entirely by [data-state]
+   (set from scroll position in Navbar.tsx):
+     "top"      -> transparent, sits over the hero, always visible
+     "hidden"   -> slid up out of view (any downward scroll)
+     "revealed" -> slid back down with a solid dark background
+                   (only triggered by scrolling up, deep in the page)
 ========================================= */
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 
@@ -30,18 +37,31 @@
   align-items: center;
 
   background: transparent;
+  border-bottom: 1px solid transparent;
+
+  transform: translateY(0);
+
+  transition:
+    transform 0.55s cubic-bezier(0.65, 0, 0.35, 1),
+    background-color 0.4s ease,
+    border-color 0.4s ease;
 
   z-index: 2000;
 }
 
+.navbar[data-state="hidden"] {
+  transform: translateY(-100%);
+}
+
+.navbar[data-state="revealed"] {
+  background: #050505;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
 
 /* =========================================
-   LEFT : HAMBURGER + LOGO
+   HAMBURGER + LOGO
 ========================================= */
-
-.spacer {
-  width: var(--icon);
-}
 
 .menuButton {
   display: flex;
@@ -96,6 +116,106 @@
 
   width: 130px;
   height: auto;
+}
+
+
+/* =========================================
+   RIGHT : CONTACT BUTTON
+========================================= */
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navContact {
+  position: relative;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 25px;
+
+  border: 1px solid #171717;
+  background: #ffffff;
+
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  color: #171717;
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: border-color 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Fill sweep on hover — same easing language as the site's other hovers */
+.navContact::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: #171717;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.navContact span {
+  position: relative;
+  z-index: 1;
+
+  transition: color 0.4s ease;
+}
+
+.contactArrow {
+  position: relative;
+  z-index: 1;
+
+  flex-shrink: 0;
+
+  color: #171717;
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+
+    height: 8px;
+    width: 8px;
+}
+
+.navContact:hover::before {
+  transform: scaleX(1);
+}
+
+.navContact:hover {
+  border-color: #ffffff;
+}
+
+.navContact:hover span {
+  color: #ffffff;
+}
+
+.navContact:hover .contactArrow {
+  color: #ffffff;
+
+  transform: translate(2px, -2px);
+}
+
+.navContact:focus-visible {
+  outline: 1px solid #9c8e70;
+  outline-offset: 3px;
 }
 
 
@@ -485,6 +605,12 @@
     width: 108px;
   }
 
+  .navContact {
+    padding: 11px 20px;
+
+    font-size: 10px;
+  }
+
   .panel {
     width: 420px;
   }
@@ -510,6 +636,15 @@
 
   .logo img {
     width: 100px;
+  }
+
+  .navContact {
+    gap: 6px;
+
+    padding: 9px 16px;
+
+    font-size: 9px;
+    letter-spacing: 0.1em;
   }
 
   .panel {
@@ -543,5 +678,13 @@
 
   .item {
     padding: 14px 0;
+  }
+
+  .navContact {
+    padding: 8px 14px;
+  }
+
+  .contactArrow {
+    display: none;
   }
 }

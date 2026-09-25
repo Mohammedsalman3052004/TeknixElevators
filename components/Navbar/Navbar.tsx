@@ -42,7 +42,7 @@ const panelLinks: NavItem[] = [
       { name: "VERTIX", href: "/vertix" },
       { name: "GREENTEK", href: "/greentek" },
       { name: "HYDRATEK", href: "/hydratek" },
-      { name: "VILLA MATEK", href: "/villamatek" },
+      { name: "VILLA MATEK", href: "/villa-matek" },
     ],
   },
   {
@@ -63,6 +63,25 @@ const panelLinks: NavItem[] = [
   { name: "BLOGS", href: "/blog" },
   { name: "CONTACT", href: "/contact" },
 ];
+
+/* =========================================
+   SCROLL-REVEAL CONFIG
+   -----------------------------------------
+   - TOP_ZONE_PX      : navbar stays fully transparent inside this zone
+                        (the top of the hero — matches the reference shot).
+   - REVEAL_AFTER_VH  : navbar can only reappear once the page has been
+                        scrolled further than this many viewport heights —
+                        i.e. "3rd / 4th section". Raise/lower to line it up
+                        with your actual section heights.
+   - SCROLL_DELTA_PX  : ignores tiny/jittery scroll movements (trackpads,
+                        mobile momentum) so the bar doesn't flicker.
+   ========================================= */
+
+const TOP_ZONE_PX = 40;
+const REVEAL_AFTER_VH = 2.2;
+const SCROLL_DELTA_PX = 6;
+
+type NavState = "top" | "hidden" | "revealed";
 
 /* =========================================
    ICONS
@@ -101,6 +120,25 @@ function BackArrow() {
   );
 }
 
+function ArrowIcon() {
+  return (
+    <svg
+      className={styles.contactArrow}
+      width="13"
+      height="13"
+      viewBox="0 0 13 13"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M1 12L12 1M12 1H3.5M12 1V9.5"
+        stroke="currentColor"
+        strokeWidth="1.3"
+      />
+    </svg>
+  );
+}
+
 /* =========================================
    NAVBAR
    ========================================= */
@@ -111,6 +149,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [subOpen, setSubOpen] = useState(false);
   const [subIndex, setSubIndex] = useState(0);
+  const [navState, setNavState] = useState<NavState>("top");
 
   const rootRef = useRef<HTMLDivElement>(null);
   const backdropRef = useRef<HTMLDivElement>(null);
@@ -332,6 +371,65 @@ export default function Navbar() {
     }
   }, [subOpen]);
 
+  /* -----------------------------------------
+     SCROLL REVEAL
+     -----------------------------------------
+     - At the very top          -> transparent, always visible.
+     - Scrolling down           -> hidden, no matter how far down.
+     - Scrolling up, but only
+       past REVEAL_AFTER_VH     -> reappears with a solid dark background.
+     ----------------------------------------- */
+
+  useEffect(() => {
+    if (open) return; // menu is open; page scroll is locked anyway
+
+    let lastY = window.scrollY;
+    let ticking = false;
+
+    const revealPoint = window.innerHeight * REVEAL_AFTER_VH;
+
+    const evaluate = () => {
+      const y = window.scrollY;
+      const diff = y - lastY;
+
+      if (y <= TOP_ZONE_PX) {
+        setNavState("top");
+      } else if (y < revealPoint) {
+        setNavState("hidden");
+      } else if (diff > SCROLL_DELTA_PX) {
+        setNavState("hidden");
+      } else if (diff < -SCROLL_DELTA_PX) {
+        setNavState("revealed");
+      }
+
+      lastY = y;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(evaluate);
+      }
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [open]);
+
+  /* Reset to the top state on every page change (skip the initial mount) */
+  const isFirstPathRun = useRef(true);
+
+  useEffect(() => {
+    if (isFirstPathRun.current) {
+      isFirstPathRun.current = false;
+      return;
+    }
+
+    setNavState("top");
+  }, [pathname]);
+
   /* =========================================
      RENDER
      ========================================= */
@@ -340,7 +438,7 @@ export default function Navbar() {
     <>
       {/* ---------- OUTER NAVBAR ---------- */}
 
-      <header className={styles.navbar}>
+      <header className={styles.navbar} data-state={navState}>
         <button
           ref={menuBtnRef}
           type="button"
@@ -365,7 +463,12 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className={styles.spacer} />
+        <div className={styles.right}>
+          <Link href="/contact" className={styles.navContact}>
+            <span>CONTACT</span>
+            <ArrowIcon />
+          </Link>
+        </div>
       </header>
 
       {/* ---------- SIDE PANEL ---------- */}
