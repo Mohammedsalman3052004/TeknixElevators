@@ -6,10 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import Button from "@/components/UI/Button/Button";
-import {
-  lockScroll,
-  unlockScroll,
-} from "@/components/Animations/Animations";
+import { lockScroll, unlockScroll } from "@/components/Animations/Animations";
 import styles from "./Navbar.module.css";
 
 /* =========================================
@@ -78,7 +75,7 @@ const panelLinks: NavItem[] = [
    ========================================= */
 
 const TOP_ZONE_PX = 40;
-const REVEAL_AFTER_VH = 2.2;
+const REVEAL_AFTER_PX = 120;
 const SCROLL_DELTA_PX = 6;
 
 type NavState = "top" | "hidden" | "revealed";
@@ -111,11 +108,7 @@ function BackArrow() {
       fill="none"
       aria-hidden="true"
     >
-      <path
-        d="M21 6H1M6 1L1 6l5 5"
-        stroke="currentColor"
-        strokeWidth="1"
-      />
+      <path d="M21 6H1M6 1L1 6l5 5" stroke="currentColor" strokeWidth="1" />
     </svg>
   );
 }
@@ -166,7 +159,9 @@ export default function Navbar() {
   const activeItem = panelLinks[subIndex];
 
   const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
 
   const closeMenu = () => setOpen(false);
 
@@ -386,15 +381,13 @@ export default function Navbar() {
     let lastY = window.scrollY;
     let ticking = false;
 
-    const revealPoint = window.innerHeight * REVEAL_AFTER_VH;
-
     const evaluate = () => {
       const y = window.scrollY;
       const diff = y - lastY;
 
       if (y <= TOP_ZONE_PX) {
         setNavState("top");
-      } else if (y < revealPoint) {
+      } else if (y < REVEAL_AFTER_PX) {
         setNavState("hidden");
       } else if (diff > SCROLL_DELTA_PX) {
         setNavState("hidden");
@@ -519,11 +512,7 @@ export default function Navbar() {
           {/* Views */}
           <div className={styles.views}>
             {/* MAIN LIST */}
-            <div
-              ref={mainViewRef}
-              className={styles.view}
-              data-lenis-prevent
-            >
+            <div ref={mainViewRef} className={styles.view} data-lenis-prevent>
               <ul className={styles.list}>
                 {panelLinks.map((item, index) => {
                   const active = item.children
@@ -588,11 +577,7 @@ export default function Navbar() {
             </div>
 
             {/* SUB LIST */}
-            <div
-              ref={subViewRef}
-              className={styles.view}
-              data-lenis-prevent
-            >
+            <div ref={subViewRef} className={styles.view} data-lenis-prevent>
               <button
                 type="button"
                 className={styles.backRow}
