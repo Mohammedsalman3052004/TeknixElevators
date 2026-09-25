@@ -6,13 +6,13 @@ const footerColumns = [
   {
     title: "PRODUCTS",
     links: [
-      { name: "EVO", href: "/elevators/evo" },
-      { name: "Optima", href: "/elevators/optima" },
-      { name: "Vertix", href: "/elevators/vertix" },
-      { name: "Greentek", href: "/elevators/greentek" },
-      { name: "Villa Matek", href: "/elevators/villa-matek" },
-      { name: "Hydratek", href: "/elevators/hydratek" },
-      { name: "Special Purpose", href: "/elevators/special-purpose" },
+      { name: "EVO", href: "/evo" },
+      { name: "Optima", href: "/optima" },
+      { name: "Vertix", href: "/vertix" },
+      { name: "Greentek", href: "/greentek" },
+      { name: "Villa Matek", href: "/villa-matek" },
+      { name: "Hydratek", href: "/hydratek" },
+      { name: "Special Purpose", href: "/special-purpose" },
     ],
   },
 
@@ -103,7 +103,6 @@ export default function Footer() {
         <div className={styles.legalLinks}>
           <Link href="/privacy-policy">Privacy Policy</Link>
           <Link href="/terms-of-use">Terms of Use</Link>
-          <Link href="/sitemap">Sitemap</Link>
         </div>
       </div>
     </footer>

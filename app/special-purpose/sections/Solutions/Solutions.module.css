@@ -1,0 +1,279 @@
+/* =========================================
+   SOLUTIONS SECTION
+   "Our Special Purpose Elevator Solutions"
+========================================= */
+
+.section {
+  width: 100%;
+  background: #080808;
+  padding: clamp(90px, 10vw, 150px) 0;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(1200px, 88%);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.headingBlock {
+  margin-bottom: clamp(60px, 8vw, 100px);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.30);
+}
+
+.headingBlock h2 {
+  margin: 0;
+  max-width: 680px;
+  font-family: "Alta", serif;
+  font-size: clamp(40px, 4.2vw, 62px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   ACCORDION LIST
+========================================= */
+
+.list {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* =========================================
+   ACCORDION ITEM
+========================================= */
+
+.item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 30px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: opacity 0.25s ease;
+}
+
+.header:hover {
+  opacity: 0.75;
+}
+
+
+/* =========================================
+   ITEM NUMBER
+========================================= */
+
+.num {
+  flex: 0 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.28);
+  min-width: 28px;
+}
+
+.num.active {
+  color: rgba(255,255,255,0.65);
+}
+
+
+/* =========================================
+   ITEM TITLE
+========================================= */
+
+.title {
+  flex: 1;
+  font-family: "Alta", serif;
+  font-size: clamp(22px, 2.4vw, 34px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.35s ease;
+}
+
+.title.active {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   CHEVRON ICON
+========================================= */
+
+.chevron {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+}
+
+.chevron svg {
+  width: 12px;
+  height: 12px;
+  stroke: rgba(255,255,255,0.5);
+  fill: none;
+  stroke-width: 1.5;
+  transition: stroke 0.35s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.chevron.open svg {
+  stroke: #ffffff;
+}
+
+
+/* =========================================
+   PANEL — GSAP-driven height
+========================================= */
+
+.panel {
+  overflow: hidden;
+}
+
+.panelInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  padding-bottom: 42px;
+  padding-left: calc(28px + 28px);   /* indent = num width + gap */
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.panelLeft p {
+  margin: 0 0 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.52);
+}
+
+.panelLeft p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   RIGHT APPS
+========================================= */
+
+.appsHeading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.32);
+  margin: 0 0 16px;
+}
+
+.apps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.app {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.45);
+}
+
+.note {
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.25);
+  font-style: italic;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .panelInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-left: 0;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding: clamp(70px, 15vw, 100px) 0;
+  }
+
+  .container {
+    width: 86%;
+  }
+
+  .header {
+    gap: 18px;
+    padding: 24px 0;
+  }
+
+  .title {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  .panelLeft p {
+    font-size: 12.5px;
+  }
+}

@@ -1,10 +1,11 @@
 import Hero from "./sections/Hero/Hero";
 import Overview from "./sections/Overview/Overview";
 import TheChallenge from "./sections/TheChallenge/TheChallenge";
-import OurSolutions from "./sections/OurSolutions/OurSolutions";
+// import OurSolutions from "./sections/OurSolutions/OurSolutions";
 import Certification from "./sections/Certification/Certification";
 import Applications from "./sections/Applications/Applications";
 import Approach from "./sections/Approach/Approach";
+import Solutions from "./sections/Solutions/Solutions";
 
 export default function SpecialPurposePage() {
   return (
@@ -12,7 +13,8 @@ export default function SpecialPurposePage() {
       <Hero />
       <Overview />
       <TheChallenge />
-      <OurSolutions />
+      {/* <OurSolutions /> */}
+      <Solutions />
       <Certification />
       <Applications />
       <Approach />
