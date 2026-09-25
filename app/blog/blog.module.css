@@ -1,0 +1,592 @@
+/* =========================================
+   BLOG PAGE – /blog
+========================================= */
+
+
+/* =========================================
+   HERO HEADER
+========================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  padding: 200px 7% 100px;
+  /* background: #080503; */
+  overflow: hidden;
+  background-image: url(../../public/Images/Vertix/vertix-hero.png);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 32px;
+
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(190, 177, 153, 0.75);
+}
+
+.heroEyebrow span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: rgba(190, 177, 153, 0.4);
+  flex-shrink: 0;
+}
+
+.heroTitle {
+  margin: 0;
+  font-family: "Alta", serif;
+  font-size: clamp(52px, 5.5vw, 100px);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.heroMeta {
+  margin-top: 40px;
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================
+   MAIN CONTENT AREA
+========================================= */
+
+.main {
+  background: #ffffff;
+  padding: 80px 7% 120px;
+}
+
+
+/* =========================================
+   FEATURED POST (NEWEST)
+========================================= */
+
+.featuredSection {
+  margin-bottom: 80px;
+  margin-top: 48px;
+}
+
+.featuredLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: var(--font-secondary);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9b9b9b;
+
+  margin-bottom: 30px;
+}
+
+.featuredLabel span {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: #d5d5d5;
+  flex-shrink: 0;
+}
+
+.featuredCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ebebeb;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease;
+}
+
+.featuredCard:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+}
+
+.featuredImageWrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.featuredImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featuredCard:hover .featuredImageWrapper img {
+  transform: scale(1.04);
+}
+
+.featuredContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(36px, 4vw, 64px);
+  background: #fafafa;
+}
+
+.featuredContentTop {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.categoryBadge {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #171717;
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
+  width: fit-content;
+}
+
+.featuredTitle {
+  margin: 0;
+  font-family: "Alta", serif;
+  font-size: clamp(28px, 2.8vw, 52px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: #111111;
+}
+
+.featuredExcerpt {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #767676;
+}
+
+.featuredMeta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.metaDate,
+.metaRead {
+  font-family: var(--font-secondary);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaaaaa;
+}
+
+.metaDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.featuredArrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: var(--font-secondary);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+
+  transition: gap 0.3s ease;
+}
+
+.featuredArrow span {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.featuredCard:hover .featuredArrow {
+  gap: 16px;
+}
+
+.featuredCard:hover .featuredArrow span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+  border: none;
+  border-top: 1px solid #ebebeb;
+  margin: 0 0 72px;
+}
+
+
+/* =========================================
+   POSTS GRID
+========================================= */
+
+.gridSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 36px;
+}
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.postImageWrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f0f0f0;
+  margin-bottom: 24px;
+}
+
+.postImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.postCard:hover .postImageWrapper img {
+  transform: scale(1.05);
+}
+
+.postCategory {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9b9b9b;
+  margin-bottom: 12px;
+}
+
+.postTitle {
+  margin: 0 0 14px;
+  font-family: "Alta", serif;
+  font-size: clamp(20px, 1.6vw, 28px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: #111111;
+  transition: color 0.3s ease;
+}
+
+.postCard:hover .postTitle {
+  color: #444444;
+}
+
+.postExcerpt {
+  margin: 0 0 20px;
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #888888;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.postFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.postMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.postArrow {
+  font-size: 16px;
+  color: #cccccc;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.postCard:hover .postArrow {
+  transform: translateX(5px);
+  color: #111111;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.emptyState {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.emptyState p {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  color: #aaaaaa;
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .gridSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .featuredCard {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredImageWrapper {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .hero {
+    padding: 160px 6% 70px;
+  }
+
+  .main {
+    padding: 60px 6% 90px;
+  }
+
+  .gridSection {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .featuredSection {
+    margin-bottom: 60px;
+  }
+
+  .featuredContent {
+    padding: 32px 28px;
+    gap: 28px;
+  }
+}
+
+
+/* =========================================
+   CATEGORY FILTER BAR
+========================================= */
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.filterTab {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  font-family: var(--font-secondary);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #aaaaaa;
+
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.filterTab:hover {
+  color: #333333;
+  border-color: #e0e0e0;
+}
+
+.filterTabActive {
+  color: #111111;
+  border-color: #111111;
+  background: #111111;
+  color: #ffffff;
+}
+
+.filterTabActive:hover {
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.filterCount {
+  margin-left: auto;
+  font-family: var(--font-secondary);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #cccccc;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.emptyState {
+  padding: 80px 20px;
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #888888;
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid #ebebeb;
+}
+
+.pageBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #888888;
+
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.pageBtn:hover:not(:disabled) {
+  color: #111111;
+  border-color: #e0e0e0;
+}
+
+.pageBtn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.pageBtnActive {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+.pageBtnActive:hover {
+  color: #ffffff;
+  background: #111111;
+}
+
+.pageBtnArrow {
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.pageEllipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  color: #cccccc;
+  user-select: none;
+}
+
+
+/* =========================================
+   RESPONSIVE — FILTER BAR & PAGINATION
+========================================= */
+
+@media (max-width: 650px) {
+  .filterBar {
+    gap: 6px;
+  }
+
+  .filterCount {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .pagination {
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .pageBtn {
+    min-width: 34px;
+    height: 34px;
+    font-size: 10px;
+  }
+}

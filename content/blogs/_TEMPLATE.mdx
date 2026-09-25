@@ -1,0 +1,127 @@
+---
+# ============================================================
+# HOW TO ADD A NEW BLOG POST
+# 1. Copy this file as:  content/blogs/your-slug-here.mdx
+# 2. Fill in the fields below
+# 3. Set isPublished: true when ready
+# 4. Commit and push — the site rebuilds in ~60 seconds
+# ============================================================
+
+
+# ============================================================
+# REQUIRED FIELDS
+# ============================================================
+
+title: "Your Blog Post Title Here"
+
+# Format: YYYY-MM-DD — newest date appears FIRST on the blog page
+date: "2026-09-24"
+
+# Author name displayed on the post
+author: "TekniX Team"
+
+# Category label shown on cards and the post header
+# Suggested values: Engineering | Architecture | Safety | Sustainability | Industry
+category: "Engineering"
+
+# Short tags shown as badges on the post header
+tags: ["Tag1", "Tag2", "Tag3"]
+
+# Approximate reading time shown on cards and header
+readTime: "5 min read"
+
+# Path to the cover image (relative to /public)
+# Use 1200×630px for best OG sharing results
+coverImage: "/Images/your-image.png"
+
+# 1–2 sentence summary shown on the blog listing card
+excerpt: "A compelling one or two sentence summary of the post, shown on the blog listing page."
+
+# ⚠️  SET TO true WHEN READY TO PUBLISH.
+# While false, the post is invisible on the site.
+isPublished: false
+
+
+# ============================================================
+# SEO FIELDS (filled in by SEO team)
+# All fields below are OPTIONAL.
+# If left blank, sensible defaults are used automatically.
+# ============================================================
+
+seo:
+  # The <title> tag for this page (appears in Google search results).
+  # Max 60 characters. If omitted, uses: "[title] | TekniX Elevators"
+  metaTitle: ""
+
+  # The <meta name="description"> shown in Google snippet.
+  # Max 160 characters. If omitted, uses the excerpt above.
+  metaDescription: ""
+
+  # Keywords for this post. Provide as a list.
+  keywords: []
+
+  # Override the canonical URL if this post is syndicated elsewhere.
+  # If omitted, defaults to: https://teknixelevators.com/blog/[slug]
+  canonical: ""
+
+  # Set to true to prevent Google from indexing this post.
+  # Leave false for all normal published posts.
+  noIndex: false
+
+  # Custom Open Graph title (appears in social media link previews).
+  # If omitted, uses metaTitle.
+  ogTitle: ""
+
+  # Custom Open Graph description (appears in social media link previews).
+  # If omitted, uses metaDescription.
+  ogDescription: ""
+
+  # Social media share image. 1200×630px recommended.
+  # If omitted, uses the coverImage above.
+  ogImage: ""
+
+  # FAQ schema for Google rich snippets.
+  # These appear as expandable FAQ entries below your listing in Google.
+  # Provide at least 2 for best results. Remove this block if not needed.
+  faqs:
+    - question: "Question one?"
+      answer: "Answer to question one."
+    - question: "Question two?"
+      answer: "Answer to question two."
+
+---
+
+## Introduction
+
+Write your introduction paragraph here. This is the first text readers see after the cover image.
+
+## Main Section Heading
+
+Use `##` for main section headings and `###` for sub-headings.
+
+Normal paragraph text goes here. You can **bold text** or _italicise text_ inline.
+
+### Sub-section Heading
+
+- Bullet point one
+- Bullet point two
+- Bullet point three
+
+1. Numbered step one
+2. Numbered step two
+3. Numbered step three
+
+## Using Tables
+
+| Column 1 | Column 2 | Column 3 |
+| :--- | :--- | :--- |
+| Row 1 data | Row 1 data | Row 1 data |
+| Row 2 data | Row 2 data | Row 2 data |
+
+## Conclusion
+
+Wrap up the post here. End with a call to action or a thought-provoking statement.
+
+---
+
+*Contact the TekniX team to learn more.*
