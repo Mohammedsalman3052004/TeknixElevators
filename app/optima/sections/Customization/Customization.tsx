@@ -8,20 +8,20 @@ import styles from "./Customization.module.css";
 const slides = [
   {
     image: "/Images/Optima/optima-custom-1.png",
-    label: "STANDARD CONFIGURATION",
+    // label: "STANDARD CONFIGURATION",
   },
-  {
-    image: "/Images/Optima/optima-custom-2.jpg",
-    label: "GLASS DOOR",
-  },
-  {
-    image: "/Images/Optima/optima-custom-3.jpg",
-    label: "TOUCH SCREEN",
-  },
-  {
-    image: "/Images/Optima/optima-custom-4.jpg",
-    label: "ROSE GOLD CABIN",
-  },
+  // {
+  //   image: "/Images/Optima/optima-custom-2.jpg",
+  //   label: "GLASS DOOR",
+  // },
+  // {
+  //   image: "/Images/Optima/optima-custom-3.jpg",
+  //   label: "TOUCH SCREEN",
+  // },
+  // {
+  //   image: "/Images/Optima/optima-custom-4.jpg",
+  //   label: "ROSE GOLD CABIN",
+  // },
 ];
 
 const options = [
