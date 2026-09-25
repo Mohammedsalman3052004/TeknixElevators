@@ -1,0 +1,83 @@
+/* =========================================
+   SPECS EXPLODED (Screenshot 6: specs-exploded.png)
+========================================= */
+
+.section {
+  width: 100%;
+  background: #ded7ce;
+  color: #1a1a1a;
+  padding: clamp(90px, 10vw, 150px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  background: #ded7ce;
+  display: flex;
+  justify-content: center;
+}
+
+.explodedImg {
+  width: 100%;
+  height: auto;
+  max-height: 800px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Quick specs ribbon underneath */
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin-top: clamp(40px, 5vw, 60px);
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.specLabel {
+  font-family: var(--font-primary, sans-serif);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #7a7065;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.specValue {
+  font-family: var(--font-heading, "Alta", serif);
+  font-size: clamp(20px, 1.8vw, 24px);
+  color: #111;
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .specsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

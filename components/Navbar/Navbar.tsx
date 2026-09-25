@@ -57,6 +57,8 @@ const panelLinks: NavItem[] = [
       { name: "SAFETY", href: "/safety" },
     ],
   },
+  { name: "EVO", href: "/evo" },
+  { name: "SPECIAL PURPOSE", href: "/special-purpose" },
   { name: "BLOGS", href: "/blog" },
   { name: "CONTACT", href: "/contact" },
 ];

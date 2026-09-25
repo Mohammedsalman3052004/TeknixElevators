@@ -1,0 +1,175 @@
+/* =========================================
+   CERTIFICATIONS SECTION
+========================================= */
+
+.section {
+  width: 100%;
+  background: #f5f2ee;
+  padding: clamp(90px, 10vw, 150px) 0;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(1200px, 88%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(60px, 8vw, 120px);
+  align-items: start;
+}
+
+
+/* =========================================
+   LEFT
+========================================= */
+
+.left {}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.left h2 {
+  margin: 0;
+  font-family: "Alta", serif;
+  font-size: clamp(38px, 3.8vw, 58px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: #111111;
+}
+
+.left p {
+  margin: 22px 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
+  max-width: 380px;
+}
+
+
+/* =========================================
+   RIGHT — STANDARDS LIST
+========================================= */
+
+.right {}
+
+.list {
+  border-top: 1px solid rgba(0,0,0,0.10);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  cursor: default;
+  transition: padding-left 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+
+.listItem:hover {
+  padding-left: 8px;
+}
+
+.dot {
+  flex: 0 0 auto;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #bbb;
+  transition: transform 0.45s cubic-bezier(0.22,1,0.36,1),
+              background 0.35s ease;
+}
+
+.listItem:hover .dot {
+  transform: scale(1.8);
+  background: #333;
+}
+
+.listText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #222;
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   FOOTNOTE
+========================================= */
+
+.footnote {
+  margin-top: 48px;
+  grid-column: 1 / -1;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.65;
+  color: #888;
+  max-width: 700px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .left p {
+    max-width: 100%;
+  }
+
+  .footnote {
+    grid-column: 1;
+    margin-top: 32px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .section {
+    padding: clamp(70px, 15vw, 100px) 0;
+  }
+
+  .container {
+    width: 86%;
+  }
+
+  .left h2 {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .left p {
+    font-size: 12.5px;
+  }
+
+  .listText {
+    font-size: 10.5px;
+  }
+}

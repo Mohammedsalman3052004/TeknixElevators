@@ -1,0 +1,192 @@
+/* =========================================
+   CHALLENGES SECTION
+   "When a Standard Elevator Isn't Enough"
+========================================= */
+
+.section {
+  width: 100%;
+  background: #f5f2ee;
+  padding: clamp(90px, 10vw, 150px) 0;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  width: min(1200px, 88%);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING BLOCK
+========================================= */
+
+.headingBlock {
+  margin-bottom: clamp(56px, 7vw, 96px);
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.headingBlock h2 {
+  margin: 0;
+  max-width: 700px;
+  font-family: "Alta", serif;
+  font-size: clamp(40px, 4.2vw, 62px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: #111111;
+}
+
+.intro {
+  margin: 20px 0 0;
+  max-width: 560px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #666;
+}
+
+
+/* =========================================
+   CHALLENGES GRID
+========================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(0,0,0,0.10);
+  border-left: 1px solid rgba(0,0,0,0.10);
+}
+
+
+/* =========================================
+   CHALLENGE ITEM
+========================================= */
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 28px 30px;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  border-right: 1px solid rgba(0,0,0,0.10);
+  background: transparent;
+  transition: background 0.4s ease;
+  cursor: default;
+}
+
+.item:hover {
+  background: rgba(0,0,0,0.03);
+}
+
+
+/* =========================================
+   ITEM NUMBER
+========================================= */
+
+.num {
+  flex: 0 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: #bbb;
+  padding-top: 3px;
+  min-width: 22px;
+}
+
+
+/* =========================================
+   ITEM TEXT
+========================================= */
+
+.text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   FOOTER NOTE
+========================================= */
+
+.note {
+  margin: 48px 0 0;
+  max-width: 600px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #888;
+  font-style: italic;
+}
+
+.note strong {
+  font-style: normal;
+  font-weight: 600;
+  color: #444;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .container {
+    width: 86%;
+  }
+
+  .headingBlock h2 {
+    font-size: clamp(36px, 7vw, 54px);
+  }
+}
+
+
+/* =========================================
+   MOBILE — SINGLE COLUMN
+========================================= */
+
+@media (max-width: 580px) {
+  .section {
+    padding: clamp(70px, 15vw, 100px) 0;
+  }
+
+  .container {
+    width: 86%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    padding: 22px 0;
+  }
+
+  .headingBlock h2 {
+    font-size: clamp(34px, 10.5vw, 48px);
+  }
+
+  .intro {
+    font-size: 13px;
+  }
+}
