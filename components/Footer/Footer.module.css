@@ -110,6 +110,145 @@
 
 
 /* =========================================
+   APPLICATIONS FLYOUT
+   ========================================= */
+
+.appItem {
+  position: relative;
+
+  width: fit-content;
+}
+
+.appItemTrigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  font-weight: 400;
+
+  color: #222222;
+
+  transition: opacity 0.3s ease;
+}
+
+.appItemTrigger:hover {
+  opacity: 0.55;
+}
+
+.appArrow {
+  font-size: 9px;
+
+  transform: rotate(90deg);
+
+  transition: transform 0.3s ease;
+}
+
+.appArrowOpen {
+  transform: rotate(90deg) translateX(3px);
+}
+
+.subMenu {
+  position: absolute;
+  left: calc(100% + 14px);
+  top: -6px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  min-width: 110px;
+
+  padding: 12px 16px;
+
+  background: #ffffff;
+  border: 1px solid #ececec;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0.25s;
+
+  z-index: 5;
+}
+
+.subMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.subMenuLink {
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  color: #222222;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.subMenuLink:hover {
+  opacity: 0.55;
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   SOCIAL ICONS
+   ========================================= */
+
+.socialIcons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 50%;
+
+  color: #222222;
+
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  border-color: #9c8e70;
+  color: #9c8e70;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
    BOTTOM BAR
    ========================================= */
 
@@ -188,6 +327,23 @@
   .bottomBar {
     padding: 20px 5%;
   }
+
+  /* Flyout can't overflow the tablet column — drop it inline below the item */
+  .subMenu {
+    position: static;
+    min-width: 0;
+    margin-top: 4px;
+    padding: 0 0 0 14px;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    display: none;
+  }
+
+  .subMenuOpen {
+    display: flex;
+    transform: none;
+  }
 }
 
 
@@ -232,8 +388,15 @@
     gap: 11px;
   }
 
-  .links a {
+  .links a,
+  .appItemTrigger,
+  .subMenuLink {
     font-size: 9px;
+  }
+
+  .socialIcons {
+    flex-direction: row;
+    gap: 14px;
   }
 
   .bottomBar {
