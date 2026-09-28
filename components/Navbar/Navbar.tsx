@@ -40,6 +40,8 @@ const panelLinks: NavItem[] = [
       { name: "GREENTEK", href: "/greentek" },
       { name: "HYDRATEK", href: "/hydratek" },
       { name: "VILLA MATEK", href: "/villa-matek" },
+      { name: "EVO", href: "/evo" },
+      { name: "SPECIAL PURPOSE", href: "/special-purpose" },
     ],
   },
   {
@@ -57,8 +59,6 @@ const panelLinks: NavItem[] = [
       { name: "SAFETY", href: "/safety" },
     ],
   },
-  { name: "EVO", href: "/evo" },
-  { name: "SPECIAL PURPOSE", href: "/special-purpose" },
   { name: "BLOGS", href: "/blog" },
   { name: "CONTACT", href: "/contact" },
 ];
@@ -534,9 +534,8 @@ export default function Navbar() {
                         <div className={styles.splitItem}>
                           <Link
                             href={item.href}
-                            className={`${styles.item} ${
-                              active ? styles.itemActive : ""
-                            }`}
+                            className={`${styles.item} ${active ? styles.itemActive : ""
+                              }`}
                             onClick={closeMenu}
                           >
                             <span>{item.name}</span>
@@ -553,9 +552,8 @@ export default function Navbar() {
                       ) : item.children ? (
                         <button
                           type="button"
-                          className={`${styles.item} ${
-                            active ? styles.itemActive : ""
-                          }`}
+                          className={`${styles.item} ${active ? styles.itemActive : ""
+                            }`}
                           onClick={() => openSub(index)}
                         >
                           <span>{item.name}</span>
@@ -564,9 +562,8 @@ export default function Navbar() {
                       ) : (
                         <Link
                           href={item.href ?? "/"}
-                          className={`${styles.item} ${
-                            active ? styles.itemActive : ""
-                          }`}
+                          className={`${styles.item} ${active ? styles.itemActive : ""
+                            }`}
                           onClick={closeMenu}
                         >
                           <span>{item.name}</span>
@@ -600,9 +597,8 @@ export default function Navbar() {
                   >
                     <Link
                       href={child.href}
-                      className={`${styles.subItem} ${
-                        isActive(child.href) ? styles.itemActive : ""
-                      }`}
+                      className={`${styles.subItem} ${isActive(child.href) ? styles.itemActive : ""
+                        }`}
                       onClick={closeMenu}
                     >
                       {child.name}

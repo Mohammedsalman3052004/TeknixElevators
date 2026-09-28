@@ -1,25 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./ExperienceCentre.module.css";
 import Button from "@/components/UI/Button/Button";
 
-const images = [
-  "/Images/Home/experience-1.png",
-  // "/Images/Home/experience-2.jpg",
-  // "/Images/Home/experience-3.jpg",
-  // "/Images/Home/experience-4.jpg",
-];
-
 export default function ExperienceCentre() {
-  const [activeImage, setActiveImage] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
+  // React doesn't always render the `muted` attribute, which blocks
+  // autoplay on iOS/Safari. Setting it manually fixes that.
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveImage((current) => (current + 1) % images.length);
-    }, 5000);
+    const video = videoRef.current;
+    if (!video) return;
 
-    return () => clearInterval(interval);
+    video.muted = true;
+    video.play().catch(() => {});
   }, []);
 
   return (
@@ -61,22 +56,26 @@ export default function ExperienceCentre() {
           />
         </div>
 
-        {/* RIGHT IMAGE SLIDER */}
+        {/* RIGHT VIDEO */}
         <div
           className={styles.imageWrapper}
           data-reveal-image
           data-parallax="60"
         >
-          {images.map((image, index) => (
-            <img
-              key={image}
-              src={image}
-              alt="TekniX Experience Centre"
-              className={`${styles.image} ${
-                index === activeImage ? styles.active : ""
-              }`}
-            />
-          ))}
+          <video
+            ref={videoRef}
+            className={`${styles.image} ${styles.active}`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/Images/Home/experience-1.png"
+            aria-label="TekniX Experience Centre"
+          >
+            <source src="/Videos/Home/experience.webm" type="video/webm" />
+            <source src="/Videos/Home/experience.mp4" type="video/mp4" />
+          </video>
 
           {/* GRADIENT OVERLAY */}
           <div className={styles.gradient}></div>

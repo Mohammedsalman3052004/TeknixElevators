@@ -108,6 +108,24 @@
   transform: translateX(3px);
 }
 
+/* =========================================
+   CONTACT LINKS
+   ========================================= */
+
+.links .contactLink {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.contactLink svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.contactLink span {
+  overflow-wrap: anywhere;
+}
 
 /* =========================================
    APPLICATIONS FLYOUT

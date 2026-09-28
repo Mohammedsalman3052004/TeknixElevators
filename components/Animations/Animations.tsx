@@ -139,53 +139,51 @@ export default function Animations() {
         });
 
       // 3) Image open reveal — clip grows top-to-bottom + scale settle
-      // 3) Image open reveal — clip grows top-to-bottom + scale settle
-      // 3) Image open reveal — clip grows top-to-bottom + scale settle
-gsap.utils
-  .toArray<HTMLElement>("[data-reveal-image]")
-  .forEach((wrapper) => {
-    const imgs = wrapper.querySelectorAll("img");
+      gsap.utils
+        .toArray<HTMLElement>("[data-reveal-image]")
+        .forEach((wrapper) => {
+          const imgs = wrapper.querySelectorAll("img");
 
-    if (!imgs.length) return;
+          if (!imgs.length) return;
 
-    gsap.set(wrapper, {
-      clipPath: "inset(0% 0% 100% 0%)",
-    });
+          gsap.set(wrapper, {
+            clipPath: "inset(0% 0% 100% 0%)",
+          });
 
-    gsap.set(imgs, {
-      scale: 1.15,
-    });
+          gsap.set(imgs, {
+            scale: 1.15,
+          });
 
-    ScrollTrigger.create({
-      trigger: wrapper,
-      start: "top 80%",
-      once: true,
+          ScrollTrigger.create({
+            trigger: wrapper,
+            start: "top 80%",
+            once: true,
 
-      onEnter: () => {
-        // IMAGE REVEAL
-        gsap.to(wrapper, {
-          clipPath: "inset(0% 0% 0% 0%)",
-          duration: 1.2,
-          ease: "power4.inOut",
+            onEnter: () => {
+              // IMAGE REVEAL
+              gsap.to(wrapper, {
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration: 1.2,
+                ease: "power4.inOut",
 
-          // IMPORTANT
-          // Tell Hero that image animation is finished
-          onComplete: () => {
-            wrapper.dispatchEvent(
-              new CustomEvent("reveal-image-complete")
-            );
-          },
+                // IMPORTANT
+                // Tell Hero that image animation is finished
+                onComplete: () => {
+                  wrapper.dispatchEvent(
+                    new CustomEvent("reveal-image-complete")
+                  );
+                },
+              });
+
+              // IMAGE SCALE
+              gsap.to(imgs, {
+                scale: 1,
+                duration: 1.4,
+                ease: "power3.out",
+              });
+            },
+          });
         });
-
-        // IMAGE SCALE
-        gsap.to(imgs, {
-          scale: 1,
-          duration: 1.4,
-          ease: "power3.out",
-        });
-      },
-    });
-  });
 
       // 4) Parallax — data-parallax="60" moves the image slower/faster than scroll
       gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((wrapper) => {
@@ -213,7 +211,7 @@ gsap.utils
       ScrollTrigger.refresh();
     };
 
-    const ctx = gsap.context(() => {});
+    const ctx = gsap.context(() => { });
     let onIntroStart: (() => void) | null = null;
 
     if (document.documentElement.dataset.preloading === "true") {

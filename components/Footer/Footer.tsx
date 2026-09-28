@@ -6,12 +6,12 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 
 const productLinks = [
-  { name: "EVO", href: "/evo" },
   { name: "Optima", href: "/optima" },
   { name: "Vertix", href: "/vertix" },
   { name: "Greentek", href: "/greentek" },
   { name: "Villa Matek", href: "/villa-matek" },
   { name: "Hydratek", href: "/hydratek" },
+  { name: "EVO", href: "/evo" },
   { name: "Special Purpose", href: "/special-purpose" },
 ];
 
@@ -45,17 +45,20 @@ const applicationLinks: AppLink[] = [
 
 const teknixLinks = [
   { name: "Why TekniX", href: "/about" },
-  { name: "Engineering", href: "/engineering" },
-  { name: "Manufacturing", href: "/manufacturing" },
-  { name: "Technology", href: "/technology" },
-  { name: "Experience Centre", href: "/experience-centre" },
+  { name: "Sustainability", href: "/sustainability" },
+  { name: "Corporate Profile", href: "/corporate-profile" },
+  { name: "Blogs", href: "/blogs" },
 ];
 
-const resourceLinks = [
-  { name: "Blogs", href: "/blog" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Brochures & Downloads", href: "/downloads" },
-];
+const contactLinks = [
+  {
+    name: "sales@teknixelevators.com",
+    href: "mailto:sales@teknixelevators.com",
+    icon: "mail",
+  },
+  { name: "+91 9148788011", href: "tel:+919148788011", icon: "phone" },
+  { name: "+91 9141413435", href: "tel:+919141413435", icon: "phone" },
+] as const;
 
 const socialLinks = [
   { name: "Facebook", href: "https://www.facebook.com/teknixelevators/", icon: "facebook" },
@@ -93,6 +96,22 @@ function SocialIcon({ name }: { name: (typeof socialLinks)[number]["icon"] }) {
         </svg>
       );
   }
+}
+function ContactIcon({ name }: { name: (typeof contactLinks)[number]["icon"] }) {
+  if (name === "mail") {
+    return (
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="M3.5 7l8.5 6 8.5-6" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" />
+    </svg>
+  );
 }
 
 /* -----------------------------------------
@@ -227,12 +246,17 @@ export default function Footer() {
         </div>
 
         <div className={styles.column}>
-          <h3>RESOURCES</h3>
+          <h3>GET IN TOUCH</h3>
           <div className={styles.links}>
-            {resourceLinks.map((link) => (
-              <Link key={link.name} href={link.href}>
-                {link.name}
-              </Link>
+            {contactLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={styles.contactLink}
+              >
+                <ContactIcon name={link.icon} />
+                <span>{link.name}</span>
+              </a>
             ))}
           </div>
         </div>

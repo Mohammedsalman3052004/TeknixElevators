@@ -43,7 +43,7 @@ export const elevators: Elevator[] = [
     href: "/hydratek",
   },
   {
-    image: "/Images/Home/elevator-5.jpg",
+    image: "/Images/Optima/optima-hero.png",
     title: "OPTIMA",
     description:
       "For environments where standard solutions aren't enough.",
