@@ -22,25 +22,58 @@ type AppLink =
   | { name: string; href?: undefined; children: { name: string; href: string }[] };
 
 const applicationLinks: AppLink[] = [
-  { name: "Villas", href: "/villa-matek" },
+  {
+    name: "Villas",
+    children: [
+      { name: "Villa Matek", href: "/villa-matek" },
+      { name: "Greentek", href: "/greentek" },
+      { name: "Optima", href: "/optima" },
+      { name: "EVO", href: "/optima" },
+      { name: "Hydratek", href: "/hydratek" },
+    ],
+  },
   {
     name: "Apartments",
     children: [
       { name: "Optima", href: "/optima" },
+      { name: "Vertix", href: "/vertix" },
       { name: "Greentek", href: "/greentek" },
     ],
   },
-  { name: "Hotels", href: "/vertix" },
+  {
+    name: "Hotels",
+    children: [
+      { name: "Greentek", href: "/greentek" },
+      { name: "Vertix", href: "/vertix" },
+    ],
+  },
   {
     name: "Offices",
     children: [
-      { name: "Optima", href: "/optima" },
+      { name: "Vertix", href: "/vertix" },
       { name: "Greentek", href: "/greentek" },
     ],
   },
-  { name: "Hospitals", href: "/vertix" },
-  { name: "Data Centres", href: "/vertix" },
-  { name: "Industry", href: "/hydratek" },
+  {
+    name: "Hospitals",
+    children: [
+      { name: "Greentek", href: "/greentek" },
+      { name: "Vertix", href: "/vertix" },
+    ],
+  },
+  {
+    name: "Data Centres",
+    children: [
+      { name: "Greentek", href: "/greentek" },
+    ],
+  },
+  {
+    name: "Industry",
+    children: [
+      { name: "Greentek", href: "/greentek" },
+      { name: "Vertix", href: "/vertix" },
+    ],
+  },
 ];
 
 const teknixLinks = [

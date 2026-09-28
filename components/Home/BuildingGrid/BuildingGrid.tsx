@@ -10,7 +10,13 @@ const projects = [
     number: "01",
     title: "VILLAS & PRIVATE HOMES",
     image: "/Images/Home/villas.png",
-    links: [{ name: "Villa Matek", href: "/villa-matek" }],
+    links: [
+      { name: "Villa Matek", href: "/villa-matek" },
+      { name: "Greentek", href: "/greentek" },
+      { name: "Optima", href: "/optima" },
+      { name: "EVO", href: "/optima" },
+      { name: "Hydratek", href: "/hydratek" },
+    ],
   },
   {
     number: "02",
@@ -18,6 +24,7 @@ const projects = [
     image: "/Images/Home/apartments.png",
     links: [
       { name: "Optima", href: "/optima" },
+      { name: "Vertix", href: "/vertix" },
       { name: "Greentek", href: "/greentek" },
     ],
   },
@@ -25,14 +32,16 @@ const projects = [
     number: "03",
     title: "HOTELS",
     image: "/Images/Home/hotels.png",
-    links: [{ name: "Vertix", href: "/vertix" }],
+    links: [
+      { name: "Greentek", href: "/greentek" },
+      { name: "Vertix", href: "/vertix" }],
   },
   {
     number: "04",
     title: "OFFICES",
     image: "/Images/Home/offices.png",
     links: [
-      { name: "Optima", href: "/optima" },
+      { name: "Vertix", href: "/vertix" },
       { name: "Greentek", href: "/greentek" },
     ],
   },
@@ -46,13 +55,15 @@ const projects = [
     number: "06",
     title: "HOSPITALS",
     image: "/Images/Home/hospitals.png",
-    links: [{ name: "Vertix", href: "/vertix" }],
+    links: [
+      { name: "Greentek", href: "/greentek" },
+      { name: "Vertix", href: "/vertix" }],
   },
   {
     number: "07",
     title: "DATA CENTRES",
     image: "/Images/Home/data-centres.png",
-    links: [{ name: "Vertix", href: "/vertix" }],
+    links: [{ name: "Greentek", href: "/greentek" },],
   },
   {
     number: "08",
@@ -194,9 +205,8 @@ export default function BuildingGrid() {
               {cardInner}
 
               <div
-                className={`${styles.options} ${
-                  isOpen ? styles.optionsOpen : ""
-                }`}
+                className={`${styles.options} ${isOpen ? styles.optionsOpen : ""
+                  }`}
               >
                 <span className={styles.optionsClose}>CLOSE ×</span>
 
