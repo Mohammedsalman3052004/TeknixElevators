@@ -8,7 +8,7 @@ const categories = [
   {
     id: "residential",
     label: "RESIDENTIAL",
-    image: "/Images/Vertix/residential.png",
+    image: "/Images/Vertix/residential-new.png",
     description:
       "An architecture-first approach for premium residences where every detail is curated.",
   },

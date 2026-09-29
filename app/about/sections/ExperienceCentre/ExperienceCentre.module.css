@@ -18,18 +18,11 @@
 ========================================= */
 
 .container {
-  width: min(980px, 86%);
-
+  width: min(1420px, 88%);          /* was min(980px, 86%) */
   margin: 0 auto;
-
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(360px, 1fr);
-
+  grid-template-columns: minmax(0, 1fr) minmax(0, 688px);  /* image column = 688px like Figma */
   align-items: center;
-
   column-gap: clamp(60px, 8vw, 110px);
 }
 
@@ -40,10 +33,8 @@
 
 .content {
   width: 100%;
-
-  max-width: 410px;
-
-  justify-self: center;
+  max-width: 520px;                 /* was 410px */
+  justify-self: start;  
 }
 
 

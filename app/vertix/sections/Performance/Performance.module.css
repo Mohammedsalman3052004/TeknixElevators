@@ -4,13 +4,9 @@
 
 .section {
   width: 100%;
-
   background: #0b0b0b;
-
   color: #ffffff;
-
   overflow: hidden;
-
   padding: clamp(90px, 9vw, 125px) 0;
 }
 
@@ -21,7 +17,6 @@
 
 .container {
   width: min(1080px, 90%);
-
   margin: 0 auto;
 }
 
@@ -32,117 +27,79 @@
 
 .header {
   text-align: center;
-
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .header h2 {
   margin: 0;
-
   font-family: "Alta", serif;
-
   font-size: clamp(36px, 4vw, 48px);
-
   font-weight: 400;
-
   line-height: 1.05;
-
   letter-spacing: -0.025em;
-
   color: #f1eee8;
 }
 
 .header p {
   margin: 10px 0 0;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 10px;
-
   font-weight: 400;
-
   color: #8d8d8d;
 }
 
 
 /* =========================================
-   CENTER IMAGE
-========================================= */
-
-.imageWrapper {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 2.75 / 1;
-
-  overflow: hidden;
-
-  background: #151515;
-}
-
-.image {
-  object-fit: cover;
-
-  object-position: center;
-
-  transition:
-    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-
-/* Subtle professional hover */
-
-.imageWrapper:hover .image {
-  transform: scale(1.025);
-}
-
-
-/* =========================================
-   THREE FEATURES
+   THREE FEATURES (image + text)
 ========================================= */
 
 .features {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 
-  gap: 55px;
-
-  width: min(750px, 80%);
-
-  margin: 20px auto 0;
+  width: min(770px, 100%);
+  margin: 0 auto;
 }
 
 .feature {
   min-width: 0;
 }
 
+.featureImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.12 / 1;
+  overflow: hidden;
+  background: #151515;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Subtle hover zoom */
+.featureImage:hover .image {
+  transform: scale(1.04);
+}
+
 .feature h3 {
-  margin: 0;
-
+  margin: 22px 0 0;
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 21px;
-
   font-weight: 400;
-
   line-height: 1.2;
-
   color: #f0eee9;
 }
 
 .feature p {
-  max-width: 180px;
-
-  margin: 7px 0 0;
-
+  max-width: 200px;
+  margin: 8px 0 0;
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 7px;
-
   line-height: 1.5;
-
   color: #777777;
 }
 
@@ -153,17 +110,12 @@
 
 .specifications {
   width: 100%;
-
-  margin-top: 28px;
-
+  margin-top: 40px;
   padding-top: 20px;
-
   border-top: 1px solid #202020;
 
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
-
   gap: 25px;
 }
 
@@ -173,29 +125,19 @@
 
 .spec h4 {
   margin: 0;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 6.5px;
-
   font-weight: 500;
-
   line-height: 1.3;
-
   letter-spacing: 0.04em;
-
   color: #ddd9d0;
 }
 
 .spec p {
   margin: 5px 0 0;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 5.5px;
-
   line-height: 1.4;
-
   color: #666666;
 }
 
@@ -205,7 +147,6 @@
 ========================================= */
 
 @media (max-width: 900px) {
-
   .section {
     padding: 85px 0 100px;
   }
@@ -215,55 +156,42 @@
   }
 
   .header {
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
 
   .header h2 {
     font-size: clamp(34px, 5vw, 44px);
   }
 
-  .imageWrapper {
-    aspect-ratio: 2.4 / 1;
-  }
-
   .features {
-    width: 85%;
-
-    gap: 35px;
-
-    margin-top: 20px;
+    width: 100%;
+    gap: 14px;
   }
 
   .feature h3 {
     font-size: 19px;
+    margin-top: 18px;
   }
 
   .specifications {
     grid-template-columns: repeat(3, 1fr);
-
     row-gap: 25px;
-
     margin-top: 30px;
   }
 }
 
 
 /* =========================================
-   TABLET PORTRAIT
+   TABLET PORTRAIT (stack into one column)
 ========================================= */
 
 @media (max-width: 650px) {
-
   .section {
     padding: 75px 0 85px;
   }
 
-  .container {
-    width: 88%;
-  }
-
   .header {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
   }
 
   .header h2 {
@@ -274,34 +202,13 @@
     font-size: 9px;
   }
 
-
-  /* Image */
-
-  .imageWrapper {
-    aspect-ratio: 1.8 / 1;
-  }
-
-
-  /* Features */
-
   .features {
-    width: 100%;
-
     grid-template-columns: 1fr;
-
-    gap: 25px;
-
-    margin-top: 25px;
+    gap: 40px;
   }
 
-  .feature {
-    padding-bottom: 20px;
-
-    border-bottom: 1px solid #1e1e1e;
-  }
-
-  .feature:last-child {
-    border-bottom: none;
+  .featureImage {
+    aspect-ratio: 1.6 / 1;
   }
 
   .feature h3 {
@@ -310,19 +217,13 @@
 
   .feature p {
     max-width: 260px;
-
     font-size: 8px;
   }
 
-
-  /* Bottom specifications */
-
   .specifications {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px 20px;
-
-    margin-top: 10px;
+    margin-top: 40px;
   }
 
   .spec h4 {
@@ -340,7 +241,6 @@
 ========================================= */
 
 @media (max-width: 400px) {
-
   .section {
     padding: 65px 0 75px;
   }
@@ -357,12 +257,8 @@
     font-size: 8px;
   }
 
-  .imageWrapper {
-    aspect-ratio: 1.65 / 1;
-  }
-
   .features {
-    gap: 22px;
+    gap: 32px;
   }
 
   .feature h3 {
@@ -392,12 +288,11 @@
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .image {
     transition: none;
   }
 
-  .imageWrapper:hover .image {
+  .featureImage:hover .image {
     transform: none;
   }
 }

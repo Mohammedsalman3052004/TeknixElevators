@@ -8,16 +8,22 @@ const features = [
     title: "Smoother",
     description:
       "Controlled starts and stops designed to create a more refined journey.",
+    image: "/Images/Vertix/refine-1.png",
+    alt: "Vertix elevator lobby with panoramic city view",
   },
   {
     title: "Quieter",
     description:
       "Technology designed to reduce unwanted vibration and operational noise.",
+    image: "/Images/Vertix/refine2.png",
+    alt: "Vertix elevator interior with brushed steel finish",
   },
   {
     title: "More Precise",
     description:
       "Accurate levelling and controlled movement from floor to floor.",
+    image: "/Images/Vertix/refine-3.png",
+    alt: "Vertix elevator beside a floating staircase",
   },
 ];
 
@@ -48,10 +54,7 @@ export default function Performance() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* =========================================
-            HEADER
-        ========================================= */}
-
+        {/* HEADER */}
         <div className={styles.header} data-reveal="up">
           <h2 data-reveal-lines>
             <span data-reveal-line-mask>
@@ -66,47 +69,35 @@ export default function Performance() {
           </p>
         </div>
 
-        {/* =========================================
-            SINGLE CENTER IMAGE
-        ========================================= */}
-
-        <div className={styles.imageWrapper} data-reveal-image data-parallax="40">
-          <Image
-            src="/Images/Vertix/performance.png"
-            alt="Vertix refined performance"
-            fill
-            sizes="(max-width: 650px) 90vw, 70vw"
-            className={styles.image}
-          />
-        </div>
-
-        {/* =========================================
-            THREE MAIN FEATURES
-        ========================================= */}
-
+        {/* THREE FEATURES: image + text together */}
         <div className={styles.features}>
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
               key={feature.title}
               className={styles.feature}
               data-reveal="up"
             >
-              <h3>{feature.title}</h3>
+              <div className={styles.featureImage} data-reveal-image>
+                <Image
+                  src={feature.image}
+                  alt={feature.alt}
+                  fill
+                  sizes="(max-width: 650px) 90vw, 260px"
+                  className={styles.image}
+                />
+              </div>
 
+              <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </div>
           ))}
         </div>
 
-        {/* =========================================
-            BOTTOM SPECIFICATIONS
-        ========================================= */}
-
+        {/* BOTTOM SPECIFICATIONS */}
         <div className={styles.specifications}>
           {specifications.map((spec) => (
             <div key={spec.title} className={styles.spec} data-reveal="up">
               <h4>{spec.title}</h4>
-
               <p>{spec.description}</p>
             </div>
           ))}

@@ -8,7 +8,7 @@ export interface Elevator {
 
 export const elevators: Elevator[] = [
   {
-    image: "/Images/Home/elevator-1.png",
+    image: "/Images/Home/elevator.png",
     title: "VERTIX",
     description:
       "Designed for larger-scale and demanding environments.",

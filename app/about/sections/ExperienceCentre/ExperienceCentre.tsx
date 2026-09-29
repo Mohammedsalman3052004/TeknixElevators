@@ -57,7 +57,7 @@ export default function ExperienceCentre() {
           >
             {/* Add image / video here later */}
             <Image
-              src="/Images/About/philosophy.png"
+              src="/Images/About/expriance.png"
               alt="TekniX elevator cabin"
               fill
               className={styles.image}

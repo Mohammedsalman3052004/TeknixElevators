@@ -30,8 +30,8 @@
 
   width: 100%;
 
-  /* aspect-ratio: 960 / 1080; */
-  height: 90vh;
+  aspect-ratio: 960 / 1080;
+  /* height: 90vh; */
 
   overflow: hidden;
 }

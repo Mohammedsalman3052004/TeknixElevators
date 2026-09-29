@@ -3,9 +3,9 @@ import type { StandardConfigurationsProps } from "@/components/Product/StandardC
 import type { FeatureAccordionProps } from "@/components/Product/FeatureAccordion/FeatureAccordion";
 
 export const specifications: SpecificationsProps = {
-  title: "THE SIMPLE YET EFFECTIVE ONE.",
+  title: "The essentials. Engineered with precision.",
   description:
-    "The all new OPTIMA redefines simplicity giving you vertical mobility solution with a range of technologically advanced features with German craftsmanship at its heart. Experience elevators crafted for unparalleled comfort and performance to suit you.",
+    "A refined gearless elevator solution designed around the requirements of modern low-rise buildings.",
   brochureHref: "/documents/optima-brochure.pdf",
   brochureLabel: "DOWNLOAD OPTIMA BROCHURE",
   items: [
@@ -45,9 +45,9 @@ export const standardConfigurations: StandardConfigurationsProps = {
 
 
 export const keySafetyFeatures: FeatureAccordionProps = {
-  heading: "FUNCTIONS OF OPTIMA",
+  heading: "Intelligent control. Refined movement. Thoughtful protection",
   image: {
-    src: "/Images/Optima/optima-protection.jpg",
+    src: "/Images/Optima/optima-protection.png",
     alt: "Optima elevator interior",
   },
   items: [
