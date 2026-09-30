@@ -11,7 +11,7 @@ export default function Ethos() {
         data-parallax="40"
       >
         <Image
-          src="/Images/Vertix/vertix-hero.png"
+          src="/Images/About/sustainable-ethos.png"
           alt="Teknix sustainability in practice"
           fill
           sizes="100vw"

@@ -15,21 +15,21 @@ const categories = [
   {
     id: "hospitality",
     label: "HOSPITALITY",
-    image: "/Images/Vertix/residential.png",
+    image: "/Images/Vertix/residential-2.png",
     description:
       "Designed to create a refined arrival experience where comfort and movement come together.",
   },
   {
     id: "commercial",
     label: "COMMERCIAL",
-    image: "/Images/Vertix/residential.png",
+    image: "/Images/Vertix/residential-3.png",
     description:
       "Reliable vertical transportation designed around the demands of modern commercial spaces.",
   },
   {
     id: "premium",
     label: "PREMIUM DEVELOPMENTS",
-    image: "/Images/Vertix/residential.png",
+    image: "/Images/Vertix/residential-4.png",
     description:
       "Elevator solutions that complement distinctive architecture and premium developments.",
   },

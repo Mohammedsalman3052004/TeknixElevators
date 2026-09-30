@@ -16,7 +16,7 @@ const rows: VisionMissionRow[] = [
     description:
       "At Teknix, we envision a future where vertical transportation transcends mere functionality, becoming a hallmark of elegance and innovation. Our dedication lies in crafting an experience that embodies safety, reliability, and unparalleled luxury. Each of our products is meticulously engineered to ensure energy efficiency while exuding an aura of sophistication. We are committed to redefining urban mobility, minimizing our carbon footprint through avant-garde technology and exquisite design. Together, we will create a refined and sustainable urban landscape, elevating life to unparalleled heights for discerning individuals who demand nothing less than excellence.",
     image: {
-      src: "/Images/Home/elevator-1.png",
+      src: "/Images/About/vision.jpeg",
       alt: "Teknix vision",
     },
   },
@@ -26,7 +26,7 @@ const rows: VisionMissionRow[] = [
     description:
       "Teknix, at all times maintain and embody the principles of integrity, honesty and quality. These efforts bring prosperity to our business associates and our customers, and robust growth in us.",
     image: {
-      src: "/Images/Home/elevator-2.png",
+      src: "/Images/About/mission.png",
       alt: "Teknix mission",
     },
     reverse: true,

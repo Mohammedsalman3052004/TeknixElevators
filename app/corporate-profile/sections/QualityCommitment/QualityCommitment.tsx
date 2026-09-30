@@ -18,7 +18,7 @@ export default function QualityCommitment() {
           data-parallax="30"
         >
           <Image
-            src="/Images/Home/elevator-1.png"
+            src="/Images/About/quality-commitment.jpeg"
             alt="Teknix manufacturing"
             fill
             sizes="(max-width: 900px) 100vw, 420px"
