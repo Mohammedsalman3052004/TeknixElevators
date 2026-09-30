@@ -25,7 +25,7 @@ export default function Overview() {
             <p data-reveal-lines>
               <span data-reveal-line-mask>
                 <span data-reveal-line>
-                  Optima brings the essential elements of a modern TekniX
+                  Optima brings the essential elements of a modern Teknix
                   elevator into a refined and practical solution.
                 </span>
               </span>

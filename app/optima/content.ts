@@ -8,6 +8,7 @@ export const specifications: SpecificationsProps = {
     "A refined gearless elevator solution designed around the requirements of modern low-rise buildings.",
   brochureHref: "/documents/optima-brochure.pdf",
   brochureLabel: "DOWNLOAD OPTIMA BROCHURE",
+  brochureFormName: "Optima Download Form",
   items: [
     { label: "TYPE", value: "MRL / MMR", sub: "Machine Room-Less", icon: "type" },
     { label: "CAPACITY", value: "408 – 884 KG", sub: "6 – 13 Persons", icon: "capacity" },

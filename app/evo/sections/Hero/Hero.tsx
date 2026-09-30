@@ -7,7 +7,7 @@ export default function Hero() {
 
       {/* Background hero image */}
       <Image
-        src="/Images/Evo/evo-hero.webp"
+        src="/Images/Evo/evo-hero.png"
         alt="Teknix Special Purpose Elevator in modern environment"
         fill
         priority

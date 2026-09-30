@@ -6,8 +6,8 @@ export const specifications: SpecificationsProps = {
   title: "DIVE INTO LUXURY AND COMFORT.",
   description:
     "TEKNIX VILLAMATEK are specially designed for residential use; incorporating a mix of technology, aesthetics and craftsmanship to provide an essential service to homes whose residents have impaired mobility. Available only in gearless options, and in a wide range of Cabin options to suite diverse needs and tastes.",
-  brochureHref: "/documents/villa-matek-brochure.pdf",
-  brochureLabel: "DOWNLOAD VILLA MATEK BROCHURE",
+  // brochureHref: "/documents/villa-matek-brochure.pdf",
+  // brochureLabel: "DOWNLOAD VILLA MATEK BROCHURE",
   items: [
     { label: "TYPE", value: "MRL", sub: "Powered by Gearless Traction Machine", icon: "type" },
     { label: "CAPACITY", value: "UPTO 400 KG", sub: "", icon: "capacity" },
@@ -51,7 +51,7 @@ export const standardConfigurations: StandardConfigurationsProps = {
 export const keySafetyFeatures: FeatureAccordionProps = {
   heading: "FUNCTIONS OF VILLA MATEK",
   image: {
-    src: "/Images/Optima/optima-protection.jpg",
+    src: "/Images/VillaMatek/protection.png",
     alt: "Villa Matek elevator interior",
   },
   items: [

@@ -33,22 +33,27 @@ export default function Hero() {
         <div className={styles.content} data-reveal="left">
           <h1 data-reveal-lines>
             <span data-reveal-line-mask>
-              <span data-reveal-line>MADE TO</span>
+              <span data-reveal-line>WHERE PRECISION</span>
             </span>
             <span data-reveal-line-mask>
-              <span data-reveal-line>BECOME YOURS</span>
+              <span data-reveal-line>MEETS FLUIDITY</span>
             </span>
           </h1>
 
           <p data-reveal-lines>
             <span data-reveal-line-mask>
               <span data-reveal-line>
-                A refined gearless elevator combining performance,
+                Hydratek brings advanced hydraulic technology, refined
               </span>
             </span>
             <span data-reveal-line-mask>
               <span data-reveal-line>
-                material quality and greater freedom in design.
+                engineering and Italian-inspired craftsmanship together.
+              </span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>
+                for an exceptionally smooth elevator experience.
               </span>
             </span>
           </p>

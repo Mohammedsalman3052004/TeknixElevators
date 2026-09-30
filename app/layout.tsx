@@ -13,8 +13,8 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "TekniX Elevators",
-  description: "TekniX Vertical Transport Solution",
+  title: "Teknix Elevators",
+  description: "Teknix Vertical Transport Solution",
 };
 
 export default function RootLayout({

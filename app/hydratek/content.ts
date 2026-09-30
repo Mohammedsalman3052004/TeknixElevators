@@ -6,10 +6,10 @@ export const specifications: SpecificationsProps = {
   title: "FLUIDIC AND STYLISH ELEVATOR RIDE.",
 
   description:
-    "TekniX Hydratek is a new Generation vertical transportation system based on advanced progressive Fluid dynamics, researched and developed with the finest German Technology and Italian Craftmanship. Hydratek is born with state of the art critical components like new generation Ultra High Precision Submerged Drive for smooth fluid pressure with advanced Fluid control valves & stylish touch sensitive human interface devices together with technologically advanced components outperform to give you a impeccable elevator ride.",
+    "Teknix Hydratek is a new Generation vertical transportation system based on advanced progressive Fluid dynamics, researched and developed with the finest German Technology and Italian Craftmanship. Hydratek is born with state of the art critical components like new generation Ultra High Precision Submerged Drive for smooth fluid pressure with advanced Fluid control valves & stylish touch sensitive human interface devices together with technologically advanced components outperform to give you a impeccable elevator ride.",
 
-  brochureHref: "/documents/hydratek-brochure.pdf",
-  brochureLabel: "DOWNLOAD HYDRATEK BROCHURE",
+  // brochureHref: "/documents/hydratek-brochure.pdf",
+  // brochureLabel: "DOWNLOAD HYDRATEK BROCHURE",
 
   items: [
     {
@@ -94,7 +94,7 @@ export const standardConfigurations: StandardConfigurationsProps = {
 export const keySafetyFeatures: FeatureAccordionProps = {
   heading: "FUNCTIONS OF Hydratek",
   image: {
-    src: "/Images/Optima/optima-protection.jpg",
+    src: "/Images/Hydratek/protection.png",
     alt: "Hydratek elevator interior",
   },
   items: [

@@ -27,7 +27,7 @@ export default function OurApproach() {
         >
           <Image
             src="/Images/Home/elevator-1.png"
-            alt="TekniX sustainable engineering"
+            alt="Teknix sustainable engineering"
             fill
             sizes="(max-width: 900px) 100vw, 420px"
             className={styles.image}

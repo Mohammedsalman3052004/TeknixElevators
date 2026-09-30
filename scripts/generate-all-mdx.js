@@ -178,7 +178,7 @@ for (const dir of dirs) {
   categoryCounts[category] = (categoryCounts[category] || 0) + 1;
 
   const date = parseDate(post.date);
-  const author = (post.author && post.author !== 'Author Name') ? post.author : 'TekniX Elevators';
+  const author = (post.author && post.author !== 'Author Name') ? post.author : 'Teknix Elevators';
 
   // Resolve cover image
   let coverImage = '';

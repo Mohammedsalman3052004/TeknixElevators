@@ -12,7 +12,7 @@ export default function Ethos() {
       >
         <Image
           src="/Images/Vertix/vertix-hero.png"
-          alt="TekniX sustainability in practice"
+          alt="Teknix sustainability in practice"
           fill
           sizes="100vw"
           className={styles.bannerImage}

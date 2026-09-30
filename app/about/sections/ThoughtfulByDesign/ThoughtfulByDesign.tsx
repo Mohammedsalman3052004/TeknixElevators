@@ -43,7 +43,7 @@ export default function ThoughtfulByDesign() {
 
           <p data-reveal-lines>
             <span data-reveal-line-mask>
-              <span data-reveal-line>Every TekniX elevator begins with a</span>
+              <span data-reveal-line>Every Teknix elevator begins with a</span>
             </span>
             <span data-reveal-line-mask>
               <span data-reveal-line>considered approach to :</span>
@@ -68,7 +68,7 @@ export default function ThoughtfulByDesign() {
             >
               <Image
                 src="/Images/About/thoughtful.png"
-                alt="TekniX elevator engineering"
+                alt="Teknix elevator engineering"
                 fill
                 sizes="(max-width: 768px) 90vw, 45vw"
                 className={styles.image}

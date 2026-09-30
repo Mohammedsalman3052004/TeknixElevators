@@ -8,6 +8,7 @@ export const specifications: SpecificationsProps = {
     "Teknix Greentek is a new generation elevators made with finest german craftship and years of research and development that has gone into the minutest detail to make it technological marvel. Teknix Greentek is born with state of the art critical components like new generation ultra high precision integrated close loop VVVF drive with DTI and Direct Landing Technology and stylish human interface devices together outperform to give a impeccable elevator ride.",
   brochureHref: "/documents/greentek-brochure.pdf",
   brochureLabel: "DOWNLOAD Greentek BROCHURE",
+  brochureFormName: "Greentek Download Form",
   items: [
     { label: "TYPE", value: "MRL / MMR", sub: "Machine Room-Less", icon: "type" },
     { label: "CAPACITY", value: "408 – 1632 KG", sub: "6 – 24 Persons", icon: "capacity" },

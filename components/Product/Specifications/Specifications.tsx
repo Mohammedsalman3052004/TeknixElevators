@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./Specifications.module.css";
+import BrochureModal from "@/components/BrochureModal/BrochureModal";
 
 export type SpecIcon =
   | "type"
@@ -22,8 +26,10 @@ export interface SpecificationsProps {
   title: string;
   description: string;
   items: SpecItem[];
-  brochureHref: string;
-  brochureLabel: string;
+  /* All three are optional now — leave them out to hide the button entirely */
+  brochureHref?: string;
+  brochureLabel?: string;
+  brochureFormName?: string; // e.g. "Optima Download Form" — shown in the submitted lead
 }
 
 const iconMap: Record<SpecIcon, string> = {
@@ -43,7 +49,12 @@ export default function Specifications({
   items,
   brochureHref,
   brochureLabel,
+  brochureFormName,
 }: SpecificationsProps) {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const showBrochureButton = Boolean(brochureHref && brochureLabel);
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -61,6 +72,7 @@ export default function Specifications({
             </span>
           </p>
         </div>
+
         {/* SPECIFICATION GRID */}
         <div className={styles.grid}>
           {items.map((item, index) => (
@@ -91,12 +103,28 @@ export default function Specifications({
           ))}
         </div>
 
-        {/* DOWNLOAD */}
-        <a href={brochureHref} className={styles.download} data-reveal="up">
-          <span>{brochureLabel}</span>
-          <span className={styles.arrow}>→</span>
-        </a>
+        {/* DOWNLOAD — only rendered when the page provides brochure data */}
+        {showBrochureButton && (
+          <button
+            type="button"
+            className={styles.download}
+            data-reveal="up"
+            onClick={() => setModalOpen(true)}
+          >
+            <span>{brochureLabel}</span>
+            <span className={styles.arrow}>→</span>
+          </button>
+        )}
       </div>
+
+      {showBrochureButton && (
+        <BrochureModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          brochureHref={brochureHref as string}
+          formName={brochureFormName ?? (brochureLabel as string)}
+        />
+      )}
     </section>
   );
 }

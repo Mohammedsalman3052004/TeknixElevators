@@ -19,7 +19,7 @@ export default function QualityCommitment() {
         >
           <Image
             src="/Images/Home/elevator-1.png"
-            alt="TekniX manufacturing"
+            alt="Teknix manufacturing"
             fill
             sizes="(max-width: 900px) 100vw, 420px"
             className={styles.image}

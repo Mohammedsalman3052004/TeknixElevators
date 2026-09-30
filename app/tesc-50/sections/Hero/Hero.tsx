@@ -89,7 +89,7 @@ export default function Hero() {
         data-parallax="40"
       >
         <Image
-          src="/Images/Tesc50/Escalator-2-banner.webp"
+          src="/Images/Tesc50/hero.png"
           alt="TESC-50 escalator in a premium retail space"
           fill
           priority

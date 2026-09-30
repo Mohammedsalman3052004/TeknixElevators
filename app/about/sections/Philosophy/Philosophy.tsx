@@ -37,7 +37,7 @@ export default function Philosophy() {
             <p data-reveal-lines>
               <span data-reveal-line-mask>
                 <span data-reveal-line>
-                  At TekniX, we believe every journey deserves
+                  At Teknix, we believe every journey deserves
                 </span>
               </span>
               <span data-reveal-line-mask>
@@ -62,7 +62,7 @@ export default function Philosophy() {
           <div className={styles.imageWrapper}>
             <Image
               src="/Images/About/philosophy.png"
-              alt="TekniX elevator cabin"
+              alt="Teknix elevator cabin"
               fill
               sizes="
                 (max-width: 700px) 88vw,

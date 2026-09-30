@@ -8,16 +8,16 @@ import styles from "./blog.module.css";
 ========================================= */
 
 export const metadata: Metadata = {
-  title: "Blog | TekniX Elevators",
+  title: "Blog | Teknix Elevators",
   description:
-    "Insights, engineering perspectives, and design thinking from the TekniX team — covering elevator technology, architecture, safety, and vertical mobility.",
+    "Insights, engineering perspectives, and design thinking from the Teknix team — covering elevator technology, architecture, safety, and vertical mobility.",
   alternates: {
     canonical: "https://teknixelevators.com/blog",
   },
   openGraph: {
-    title: "Blog | TekniX Elevators",
+    title: "Blog | Teknix Elevators",
     description:
-      "Engineering perspectives and design insights on vertical mobility from TekniX.",
+      "Engineering perspectives and design insights on vertical mobility from Teknix.",
     url: "https://teknixelevators.com/blog",
     type: "website",
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: "/Images/logo.png",
         width: 1200,
         height: 630,
-        alt: "TekniX Elevators Blog",
+        alt: "Teknix Elevators Blog",
       },
     ],
   },

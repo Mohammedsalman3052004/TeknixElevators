@@ -45,7 +45,7 @@ export default function Approach() {
         >
           <Image
             src="/Images/special-purpose/approach.png"
-            alt="TekniX special purpose elevator"
+            alt="Teknix special purpose elevator"
             fill
             sizes="(max-width: 900px) 100vw, 480px"
             className={styles.image}

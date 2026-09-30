@@ -14,7 +14,7 @@ export default function Gallery() {
       >
         <Image
           src="/Images/Tesc20/gallery.jpg"
-          alt="Experience curated TekniX elevators"
+          alt="Experience curated Teknix elevators"
           fill
           sizes="100vw"
           className={styles.image}

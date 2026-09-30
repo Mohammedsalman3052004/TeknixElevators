@@ -168,7 +168,7 @@ export default function Hero() {
       >
         <Image
           src="/Images/Home/hero.png"
-          alt="TekniX Elevators"
+          alt="Teknix Elevators"
           fill
           priority
           className={styles.heroImage}

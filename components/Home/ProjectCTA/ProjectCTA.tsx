@@ -50,7 +50,7 @@ export default function ProjectCTA() {
 
         {/* Secondary link */}
         <Link href="/contact" className={styles.contactLink} data-reveal="up">
-          CONTACT TEKNIX
+          CONTACT Teknix
         </Link>
       </div>
     </section>

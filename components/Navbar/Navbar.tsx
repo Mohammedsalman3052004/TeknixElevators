@@ -448,10 +448,10 @@ export default function Navbar() {
           <span />
         </button>
 
-        <Link href="/" className={styles.logo} aria-label="TekniX Elevators">
+        <Link href="/" className={styles.logo} aria-label="Teknix Elevators">
           <Image
             src="/Images/logo.png"
-            alt="TekniX Elevators"
+            alt="Teknix Elevators"
             width={130}
             height={50}
             priority
@@ -500,11 +500,11 @@ export default function Navbar() {
               href="/"
               className={styles.logo}
               onClick={closeMenu}
-              aria-label="TekniX Elevators"
+              aria-label="Teknix Elevators"
             >
               <Image
                 src="/Images/logo-black.png"
-                alt="TekniX Elevators"
+                alt="Teknix Elevators"
                 width={214}
                 height={67}
               />

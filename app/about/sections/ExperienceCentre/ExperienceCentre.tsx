@@ -29,7 +29,7 @@ export default function ExperienceCentre() {
           <p data-reveal-lines>
             <span data-reveal-line-mask>
               <span data-reveal-line>
-                Visit the TekniX Experience Centre to experience the
+                Visit the Teknix Experience Centre to experience the
               </span>
             </span>
             <span data-reveal-line-mask>
@@ -58,7 +58,7 @@ export default function ExperienceCentre() {
             {/* Add image / video here later */}
             <Image
               src="/Images/About/expriance.png"
-              alt="TekniX elevator cabin"
+              alt="Teknix elevator cabin"
               fill
               className={styles.image}
             />

@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className={styles.background} data-reveal-image data-parallax="40">
         <Image
-          src="/Images/Home/hero.png"
+          src="/Images/About/service-hero.png"
           alt="TekniX lift service and maintenance"
           fill
           priority

@@ -84,8 +84,8 @@ export default function Hero() {
         data-parallax="40"
       >
         <Image
-          src="/Images/Home/hero.png"
-          alt="Contact TekniX Elevators"
+          src="/Images/Contact/hero.png"
+          alt="Contact Teknix Elevators"
           fill
           priority
           sizes="100vw"

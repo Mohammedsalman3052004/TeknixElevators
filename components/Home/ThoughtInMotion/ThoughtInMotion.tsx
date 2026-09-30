@@ -42,7 +42,7 @@ export default function ThoughtInMotion() {
             <Image
               key={image}
               src={image}
-              alt="TekniX elevator engineering"
+              alt="Teknix elevator engineering"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               priority={index === 0}

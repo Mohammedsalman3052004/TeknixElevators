@@ -77,7 +77,7 @@ const applicationLinks: AppLink[] = [
 ];
 
 const teknixLinks = [
-  { name: "Why TekniX", href: "/about" },
+  { name: "Why Teknix", href: "/about" },
   { name: "Sustainability", href: "/sustainability" },
   { name: "Corporate Profile", href: "/corporate-profile" },
   { name: "Blogs", href: "/blogs" },
@@ -238,7 +238,7 @@ export default function Footer() {
         <Link href="/" className={styles.logo}>
           <Image
             src="/Images/logo-black.png"
-            alt="TekniX Elevators"
+            alt="Teknix Elevators"
             width={160}
             height={60}
           />
@@ -268,7 +268,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.column}>
-          <h3>TEKNIX</h3>
+          <h3>Teknix</h3>
           <div className={styles.links}>
             {teknixLinks.map((link) => (
               <Link key={link.name} href={link.href}>

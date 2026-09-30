@@ -10,7 +10,7 @@ export default function Hero() {
       <div className={styles.background} data-reveal-image data-parallax="40">
         <Image
           src="/Images/About/about-hero.png"
-          alt="TekniX Privacy Policy & Data Integrity"
+          alt="Teknix Privacy Policy & Data Integrity"
           fill
           priority
           sizes="100vw"

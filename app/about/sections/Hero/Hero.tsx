@@ -10,7 +10,7 @@ export default function Hero() {
       <div className={styles.imageWrapper} data-reveal-image data-parallax="40">
         <Image
           src="/Images/About/about-hero.png"
-          alt="TekniX elevator interior"
+          alt="Teknix elevator interior"
           fill
           priority
           sizes="100vw"

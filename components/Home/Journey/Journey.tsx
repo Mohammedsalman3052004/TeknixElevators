@@ -42,7 +42,7 @@ export default function Journey() {
         >
           <Image
             src="/Images/Home/journey.png"
-            alt="Family using a TekniX elevator"
+            alt="Family using a Teknix elevator"
             fill
             className={styles.image}
           />

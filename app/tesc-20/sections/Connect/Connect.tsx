@@ -101,7 +101,7 @@ export default function Connect() {
           <div className={styles.imageWrapper} data-reveal-image>
             <Image
               src="/Images/Tesc20/connect.jpg"
-              alt="Speak with TekniX"
+              alt="Speak with Teknix"
               fill
               sizes="(max-width: 900px) 100vw, 50vw"
               className={styles.image}

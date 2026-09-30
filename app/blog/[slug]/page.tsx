@@ -39,7 +39,7 @@ export async function generateMetadata({
 
   const { title, excerpt, date, author, seo, coverImage } = post;
 
-  const resolvedTitle = seo.metaTitle ?? `${title} | TekniX Elevators`;
+  const resolvedTitle = seo.metaTitle ?? `${title} | Teknix Elevators`;
   const resolvedDescription = seo.metaDescription ?? excerpt;
   const resolvedImage = seo.ogImage ?? coverImage;
   const resolvedCanonical =
@@ -133,7 +133,7 @@ function ArticleJsonLd({ post }: { post: BlogPost }) {
     },
     publisher: {
       "@type": "Organization",
-      name: "TekniX Elevators",
+      name: "Teknix Elevators",
       logo: {
         "@type": "ImageObject",
         url: "https://teknixelevators.com/Images/logo.png",

@@ -33,22 +33,27 @@ export default function Hero() {
         <div className={styles.content} data-reveal="left">
           <h1 data-reveal-lines>
             <span data-reveal-line-mask>
-              <span data-reveal-line>MADE TO</span>
+              <span data-reveal-line>WHERE ELEGANCE</span>
             </span>
             <span data-reveal-line-mask>
-              <span data-reveal-line>BECOME YOURS</span>
+              <span data-reveal-line>MOVES WITH YOU</span>
             </span>
           </h1>
 
           <p data-reveal-lines>
             <span data-reveal-line-mask>
               <span data-reveal-line>
-                A refined gearless elevator combining performance,
+                A residential elevator designed to become part of your home
               </span>
             </span>
             <span data-reveal-line-mask>
               <span data-reveal-line>
-                material quality and greater freedom in design.
+                — combining refined design, gearless technology and a
+              </span>
+            </span>
+            <span data-reveal-line-mask>
+              <span data-reveal-line>
+                choice of cabin styles.
               </span>
             </span>
           </p>

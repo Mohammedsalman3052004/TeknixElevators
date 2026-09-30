@@ -8,8 +8,8 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.background} data-reveal-image data-parallax="40">
         <Image
-          src="/Images/Home/hero.png"
-          alt="TekniX safety"
+          src="/Images/About/safety-hero.png"
+          alt="Teknix safety"
           fill
           priority
           sizes="100vw"
@@ -37,7 +37,7 @@ export default function Hero() {
             </span>
             <span data-reveal-line-mask>
               <span data-reveal-line>
-                TekniX elevator is engineered around, from day one.
+                Teknix elevator is engineered around, from day one.
               </span>
             </span>
           </p>

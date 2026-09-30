@@ -9,7 +9,7 @@ import SpecsExploded from "./sections/SpecsExploded/SpecsExploded";
 import ContactCTA from "./sections/ContactCTA/ContactCTA";
 
 export const metadata: Metadata = {
-  title: "EVO — The Evolution of Home Elevators | TekniX",
+  title: "EVO — The Evolution of Home Elevators | Teknix",
   description:
     "Teknix EVO — Compact belt-drive luxury residential elevators engineered to bring effortless vertical mobility into homes with limited space.",
 };

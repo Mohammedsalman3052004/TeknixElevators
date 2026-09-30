@@ -35,7 +35,7 @@ export default function ExperienceCentre() {
               <span data-reveal-line>EXPERIENCE</span>
             </span>
             <span data-reveal-line-mask>
-              <span data-reveal-line>TEKNIX</span>
+              <span data-reveal-line>Teknix</span>
             </span>
           </h2>
 
@@ -71,7 +71,7 @@ export default function ExperienceCentre() {
             playsInline
             preload="metadata"
             poster="/Images/Home/experience-1.png"
-            aria-label="TekniX Experience Centre"
+            aria-label="Teknix Experience Centre"
           >
             <source src="/Videos/Home/experience.webm" type="video/webm" />
             <source src="/Videos/Home/experience.mp4" type="video/mp4" />
