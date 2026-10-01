@@ -89,7 +89,7 @@ export default function Hero() {
         data-parallax="40"
       >
         <Image
-          src="/Images/Tmw15/Escalator-3-banner.webp"
+          src="/Images/Tmw15/hero.png"
           alt="TMW-15 moving walk in a transit concourse"
           fill
           priority

@@ -1,22 +1,8 @@
-"use client";
-
-import { useEffect, useRef } from "react";
+import Image from "next/image";
 import styles from "./ExperienceCentre.module.css";
 import Button from "@/components/UI/Button/Button";
 
 export default function ExperienceCentre() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  // React doesn't always render the `muted` attribute, which blocks
-  // autoplay on iOS/Safari. Setting it manually fixes that.
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = true;
-    video.play().catch(() => {});
-  }, []);
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -56,26 +42,19 @@ export default function ExperienceCentre() {
           />
         </div>
 
-        {/* RIGHT VIDEO */}
+        {/* RIGHT IMAGE */}
         <div
           className={styles.imageWrapper}
           data-reveal-image
           data-parallax="60"
         >
-          <video
-            ref={videoRef}
+          <Image
+            src="/Images/Home/experiance.png"
+            alt="Teknix Experience Centre"
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
             className={`${styles.image} ${styles.active}`}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/Images/Home/experience-1.png"
-            aria-label="Teknix Experience Centre"
-          >
-            <source src="/Videos/Home/experience.webm" type="video/webm" />
-            <source src="/Videos/Home/experience.mp4" type="video/mp4" />
-          </video>
+          />
 
           {/* GRADIENT OVERLAY */}
           <div className={styles.gradient}></div>
