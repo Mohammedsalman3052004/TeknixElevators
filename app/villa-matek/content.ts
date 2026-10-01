@@ -5,7 +5,7 @@ import type { FeatureAccordionProps } from "@/components/Product/FeatureAccordio
 export const specifications: SpecificationsProps = {
   title: "DIVE INTO LUXURY AND COMFORT.",
   description:
-    "TEKNIX VILLAMATEK are specially designed for residential use; incorporating a mix of technology, aesthetics and craftsmanship to provide an essential service to homes whose residents have impaired mobility. Available only in gearless options, and in a wide range of Cabin options to suite diverse needs and tastes.",
+    "TEKNIX VILLAMATEK is specially designed for residential villas; incorporating modern gearless technology and exquisite craftsmanship. Featuring an ultra-low 60 mm pit depth and a compact 2250 mm overhead clearance, it installs seamlessly into homes with minimal civil disruption.",
   // brochureHref: "/documents/villa-matek-brochure.pdf",
   // brochureLabel: "DOWNLOAD VILLA MATEK BROCHURE",
   items: [
@@ -13,6 +13,8 @@ export const specifications: SpecificationsProps = {
     { label: "CAPACITY", value: "UPTO 400 KG", sub: "", icon: "capacity" },
     { label: "SPEED", value: "0.30 M/S", sub: "Metres per second", icon: "speed" },
     { label: "LANDINGS", value: "2 – 5", sub: "Floors", icon: "landings" },
+    { label: "MINIMUM PIT", value: "60 MM", sub: "Ultra-low pit depth", icon: "height" },
+    { label: "MINIMUM OVERHEAD", value: "2250 MM", sub: "Low headroom clearance", icon: "height" },
     { label: "DRIVE", value: "GEARLESS PMSM", sub: "Frequency Controlled", icon: "drive" },
     { label: "OPERATION", value: "FULL COLLECTIVE", sub: "Selective", icon: "operation" },
     { label: "DOOR WIDTH", value: "600 / 800 MM", sub: "Clear opening", icon: "width" },
@@ -26,26 +28,55 @@ export const specifications: SpecificationsProps = {
 export const standardConfigurations: StandardConfigurationsProps = {
   title: "STANDARD CONFIGURATIONS",
   columns: [
-    { key: "persons", label: "PERSONS" },
-    { key: "capacity", label: "CAPACITY" },
-    { key: "carWidth", label: "CAR WIDTH" },
-    { key: "carDepth", label: "CAR DEPTH" },
-    { key: "hoistwayWidth", label: "HOISTWAY WIDTH" },
-    { key: "hoistwayDepth", label: "HOISTWAY DEPTH" },
-    { key: "doorWidth", label: "DOOR WIDTH" },
-    { key: "doorHeight", label: "DOOR HEIGHT" },
+    { key: "weightPerson", label: "WEIGHT / PERSON" },
+    { key: "platformWidth", label: "PLATFORM WIDTH" },
+    { key: "platformDepth", label: "PLATFORM DEPTH" },
+    { key: "shaftWidth", label: "SHAFT WIDTH" },
+    { key: "shaftDepth", label: "SHAFT DEPTH" },
+    { key: "cutoutWidth", label: "CUTOUT WIDTH" },
+    { key: "cutoutDepth", label: "CUTOUT DEPTH" },
   ],
   rows: [
-    { persons: "6", capacity: "408 kg", carWidth: "1160 mm", carDepth: "960 mm", hoistwayWidth: "1600 mm", hoistwayDepth: "1500 mm", doorWidth: "700 mm", doorHeight: "2000 mm" },
-    { persons: "8", capacity: "544 kg", carWidth: "1300 mm", carDepth: "1100 mm", hoistwayWidth: "1800 mm", hoistwayDepth: "1600 mm", doorWidth: "800 mm", doorHeight: "2000 mm" },
-    { persons: "10", capacity: "680 kg", carWidth: "1350 mm", carDepth: "1300 mm", hoistwayWidth: "1800 mm", hoistwayDepth: "1900 mm", doorWidth: "800 mm", doorHeight: "2000 mm" },
-    { persons: "13", capacity: "884 kg", carWidth: "1400 mm", carDepth: "1600 mm", hoistwayWidth: "2100 mm", hoistwayDepth: "2000 mm", doorWidth: "900 mm", doorHeight: "2000 mm" },
-    { persons: "15", capacity: "1020 kg", carWidth: "1600 mm", carDepth: "2400 mm", hoistwayWidth: "1800 mm", hoistwayDepth: "3000 mm", doorWidth: "1000 mm", doorHeight: "2000 mm" },
+    {
+      weightPerson: "180 kg / 2",
+      platformWidth: "850 mm",
+      platformDepth: "660 mm",
+      shaftWidth: "900 mm",
+      shaftDepth: "1010 mm",
+      cutoutWidth: "930 mm",
+      cutoutDepth: "1040 mm",
+    },
+    {
+      weightPerson: "250 kg / 3",
+      platformWidth: "950 mm",
+      platformDepth: "810 mm",
+      shaftWidth: "1000 mm",
+      shaftDepth: "1160 mm",
+      cutoutWidth: "1030 mm",
+      cutoutDepth: "1190 mm",
+    },
+    {
+      weightPerson: "300 kg / 4",
+      platformWidth: "1050 mm",
+      platformDepth: "860 mm",
+      shaftWidth: "1100 mm",
+      shaftDepth: "1210 mm",
+      cutoutWidth: "1130 mm",
+      cutoutDepth: "1240 mm",
+    },
+    {
+      weightPerson: "400 kg / 5",
+      platformWidth: "1150 mm",
+      platformDepth: "960 mm",
+      shaftWidth: "1200 mm",
+      shaftDepth: "1310 mm",
+      cutoutWidth: "1230 mm",
+      cutoutDepth: "1340 mm",
+    },
   ],
   note:
-    "The specifications shown are standard reference configurations. Final dimensions and requirements may vary depending on the selected configuration and project requirements.",
+    "The specifications shown are standard reference configurations with a minimum pit depth of 60 mm and overhead of 2250 mm. Final dimensions and requirements may vary depending on the selected configuration and project requirements.",
 };
-
 // TEMP: image path assumed from the other products' naming pattern — confirm/replace
 // with Villa Matek's actual asset filename.
 export const keySafetyFeatures: FeatureAccordionProps = {

@@ -5,6 +5,10 @@ import StandardConfigurations from "@/components/Product/StandardConfigurations/
 import FeatureAccordion from "@/components/Product/FeatureAccordion/FeatureAccordion";
 import Specifications from "@/components/Product/Specifications/Specifications";
 import { specifications, standardConfigurations, keySafetyFeatures } from "./content";
+import Prowess from "./sections/Prowess/Prowess";
+import Mastery from "./sections/Mastery/Mastery";
+
+
 
 export const metadata: Metadata = {
   title: "HYDRATEK | Top Elevator Company in India",
@@ -33,8 +37,10 @@ export default function VertixPage() {
   return (
     <>
       <Hero />
+      <Mastery />
       <Specifications {...specifications} />
       <StandardConfigurations {...standardConfigurations} />
+      <Prowess />
       <FeatureAccordion {...keySafetyFeatures} />
     </>
   );

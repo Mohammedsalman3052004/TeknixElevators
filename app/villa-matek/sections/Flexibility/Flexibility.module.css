@@ -1,0 +1,95 @@
+.section {
+  background: #fff;
+  color: #111;
+  padding: 96px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  margin: 0 0 56px;
+  text-align: center;
+  font-family: var(--font-display, "Cormorant Garamond", "Times New Roman", serif);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3.4vw, 3rem);
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.scroller {
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* Same ratio as the Figma container (1601 x 508) */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1601 / 508;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.hint {
+  display: none;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .section {
+    padding: 72px 20px;
+  }
+
+  .heading {
+    margin-bottom: 40px;
+  }
+}
+
+/* Mobile: keep the drawings legible by letting the image scroll sideways */
+@media (max-width: 768px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .heading {
+    padding: 0 20px;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  .scroller {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .scroller::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroller:focus-visible {
+    outline: 2px solid #111;
+    outline-offset: -2px;
+  }
+
+  .imageWrapper {
+    width: 760px;
+    flex-shrink: 0;
+    margin: 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .hint {
+    display: block;
+    margin: 16px 0 0;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+}
