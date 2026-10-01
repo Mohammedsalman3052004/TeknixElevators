@@ -14,8 +14,24 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Teknix Elevators",
-  description: "Teknix Vertical Transport Solution",
+  title: "Elevator Company in Bangalore, India | Teknix Elevators",
+  description:
+    "Teknix Elevators supplies quality elevator solutions in Bangalore, offering reliable products for homes and businesses at competitive prices across India.",
+  keywords: [
+    "Best elevator companies in India",
+    "Best elevator company in Bangalore",
+    "Best home elevators in Bangalore",
+    "Elevator suppliers in Bangalore",
+  ],
+  metadataBase: new URL("https://teknixelevators.com"),
+  openGraph: {
+    title: "Elevator Company in Bangalore, India | Teknix Elevators",
+    description:
+      "Teknix Elevators supplies quality elevator solutions in Bangalore, offering reliable products for homes and businesses at competitive prices across India.",
+    siteName: "Teknix Elevators",
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -24,10 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={instrumentSans.variable}
-    >
+    <html lang="en" className={instrumentSans.variable}>
       <body>
         <Navbar />
         <Animations />
