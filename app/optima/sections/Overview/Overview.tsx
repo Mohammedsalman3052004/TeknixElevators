@@ -56,7 +56,7 @@ export default function Overview() {
             data-parallax="40"
           >
             <Image
-              src="/Images/Optima/optima-overview.png"
+              src="/Images/Optima/optima-overview.webp"
               alt="Optima elevator"
               fill
               sizes="(max-width: 650px) 80vw, 320px"

@@ -36,7 +36,7 @@ export default function TechnicalHighlights() {
 
         <div className={styles.media} data-reveal-image data-parallax="40">
           <Image
-            src="/Images/Greentek/greentek-details.png"
+            src="/Images/Greentek/greentek-details.webp"
             alt="Greentek elevator engineering"
             fill
             sizes="(max-width: 800px) 88vw, 420px"

@@ -9,7 +9,7 @@ const projects = [
   {
     number: "01",
     title: "VILLAS & PRIVATE HOMES",
-    image: "/Images/Home/villas.png",
+    image: "/Images/Home/villas.webp",
     links: [
       { name: "Villa Matek", href: "/villa-matek" },
       { name: "Greentek", href: "/greentek" },
@@ -21,7 +21,7 @@ const projects = [
   {
     number: "02",
     title: "APARTMENTS & RESIDENTIAL",
-    image: "/Images/Home/apartments.png",
+    image: "/Images/Home/apartments.webp",
     links: [
       { name: "Optima", href: "/optima" },
       { name: "Vertix", href: "/vertix" },
@@ -31,7 +31,7 @@ const projects = [
   {
     number: "03",
     title: "HOTELS",
-    image: "/Images/Home/hotels.png",
+    image: "/Images/Home/hotels.webp",
     links: [
       { name: "Greentek", href: "/greentek" },
       { name: "Vertix", href: "/vertix" }],
@@ -39,7 +39,7 @@ const projects = [
   {
     number: "04",
     title: "OFFICES",
-    image: "/Images/Home/offices.png",
+    image: "/Images/Home/offices.webp",
     links: [
       { name: "Vertix", href: "/vertix" },
       { name: "Greentek", href: "/greentek" },
@@ -48,13 +48,13 @@ const projects = [
   {
     number: "05",
     title: "RETAIL",
-    image: "/Images/Home/retail.png",
+    image: "/Images/Home/retail.webp",
     links: [{ name: "EVO", href: "/evo" }],
   },
   {
     number: "06",
     title: "HOSPITALS",
-    image: "/Images/Home/hospitals.png",
+    image: "/Images/Home/hospitals.webp",
     links: [
       { name: "Greentek", href: "/greentek" },
       { name: "Vertix", href: "/vertix" }],
@@ -62,13 +62,13 @@ const projects = [
   {
     number: "07",
     title: "DATA CENTRES",
-    image: "/Images/Home/data-centres.png",
+    image: "/Images/Home/data-centres.webp",
     links: [{ name: "Greentek", href: "/greentek" },],
   },
   {
     number: "08",
     title: "INDUSTRY",
-    image: "/Images/Home/industry.png",
+    image: "/Images/Home/industry.webp",
     links: [
       { name: "Greentek", href: "/greentek" },
       { name: "Vertix", href: "/vertix" },
@@ -77,7 +77,7 @@ const projects = [
   {
     number: "09",
     title: "SPECIAL APPLICATIONS",
-    image: "/Images/Home/special-applications.png",
+    image: "/Images/Home/special-applications.webp",
     links: [{ name: "Special Purpose", href: "/special-purpose" }],
   },
 ];

@@ -44,7 +44,7 @@ export default function Approach() {
           data-parallax="30"
         >
           <Image
-            src="/Images/special-purpose/approach.png"
+            src="/Images/special-purpose/approach.webp"
             alt="Teknix special purpose elevator"
             fill
             sizes="(max-width: 900px) 100vw, 480px"

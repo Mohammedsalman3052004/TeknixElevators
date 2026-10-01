@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Background Image with Reveal & Parallax */}
       <div className={styles.background} data-reveal-image data-parallax="40">
         <Image
-          src="/Images/About/about-hero.png"
+          src="/Images/About/about-hero.webp"
           alt="Teknix Privacy Policy & Data Integrity"
           fill
           priority

@@ -8,21 +8,21 @@ const features = [
     title: "Smoother",
     description:
       "Controlled starts and stops designed to create a more refined journey.",
-    image: "/Images/Vertix/refine-1.png",
+    image: "/Images/Vertix/refine-1.webp",
     alt: "Vertix elevator lobby with panoramic city view",
   },
   {
     title: "Quieter",
     description:
       "Technology designed to reduce unwanted vibration and operational noise.",
-    image: "/Images/Vertix/refine2.png",
+    image: "/Images/Vertix/refine2.webp",
     alt: "Vertix elevator interior with brushed steel finish",
   },
   {
     title: "More Precise",
     description:
       "Accurate levelling and controlled movement from floor to floor.",
-    image: "/Images/Vertix/refine-3.png",
+    image: "/Images/Vertix/refine-3.webp",
     alt: "Vertix elevator beside a floating staircase",
   },
 ];

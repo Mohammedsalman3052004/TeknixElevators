@@ -61,7 +61,7 @@ export default function Philosophy() {
         <div className={styles.visual} data-reveal-image data-parallax="40">
           <div className={styles.imageWrapper}>
             <Image
-              src="/Images/About/philosophy.png"
+              src="/Images/About/philosophy.webp"
               alt="Teknix elevator cabin"
               fill
               sizes="

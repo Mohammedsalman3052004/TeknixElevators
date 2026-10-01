@@ -79,7 +79,7 @@ export default function Difference() {
           data-parallax="40"
         >
           <Image
-            src="/Images/Villamatek/villamatek-difference.png"
+            src="/Images/Villamatek/villamatek-difference.webp"
             alt="Villamatek home elevator interior"
             fill
             sizes="(max-width: 800px) 85vw, 420px"

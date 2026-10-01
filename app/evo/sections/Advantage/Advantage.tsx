@@ -45,7 +45,7 @@ export default function Advantage() {
         <div className={styles.right}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/Images/Evo/technical-drawing.png"
+              src="/Images/Evo/technical-drawing.webp"
               alt="Teknix EVO minimum overhead and pit technical cross-section diagram"
               width={420}
               height={580}

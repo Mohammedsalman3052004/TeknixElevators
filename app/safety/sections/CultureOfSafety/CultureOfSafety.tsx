@@ -7,7 +7,7 @@ export default function CultureOfSafety() {
       <div className={styles.container}>
         <div className={styles.imageWrapper} data-reveal-image data-parallax="30">
           <Image
-            src="/Images/About/safety-container.png"
+            src="/Images/About/safety-container.webp"
             alt="Teknix elevator passengers"
             fill
             sizes="(max-width: 900px) 90vw, 380px"

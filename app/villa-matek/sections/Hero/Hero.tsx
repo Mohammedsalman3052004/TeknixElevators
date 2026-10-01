@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className={styles.background} data-reveal-image data-parallax="40">
         <Image
-          src="/Images/VillaMatek/hero.png"
+          src="/Images/VillaMatek/hero.webp"
           alt="Villa Matek elevator"
           fill
           priority

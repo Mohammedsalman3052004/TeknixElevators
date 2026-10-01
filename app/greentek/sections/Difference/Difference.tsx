@@ -79,7 +79,7 @@ export default function Difference() {
           data-parallax="40"
         >
           <Image
-            src="/Images/Greentek/greentek-difference.png"
+            src="/Images/Greentek/greentek-difference.webp"
             alt="Greentek elevator interior"
             fill
             sizes="(max-width: 800px) 85vw, 420px"

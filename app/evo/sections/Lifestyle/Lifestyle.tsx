@@ -8,7 +8,7 @@ export default function Lifestyle() {
         {/* Left Column: Image */}
         <div className={styles.imageCol}>
           <Image
-            src="/Images/Evo/lifestyle.png"
+            src="/Images/Evo/lifestyle.webp"
             alt="Family enjoying the seamless accessibility of Teknix EVO home elevator"
             width={760}
             height={520}

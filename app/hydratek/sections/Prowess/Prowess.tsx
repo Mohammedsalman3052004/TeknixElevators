@@ -55,7 +55,7 @@ export default function Prowess() {
             data-parallax="40"
           >
             <Image
-              src="/Images/Hydratek/hydratek-advantages.png"
+              src="/Images/Hydratek/hydratek-advantages.webp"
               alt="Hydratek elevator interior"
               fill
               sizes="(max-width: 800px) 85vw, 390px"

@@ -47,7 +47,7 @@ export const standardConfigurations: StandardConfigurationsProps = {
 export const keySafetyFeatures: FeatureAccordionProps = {
   heading: "UNMATCHED SAFETY FEATURES OF THE GREENTEK",
   image: {
-    src: "/Images/Greentek/technology.png",
+    src: "/Images/Greentek/technology.webp",
     alt: "Greentek elevator interior",
   },
   items: [

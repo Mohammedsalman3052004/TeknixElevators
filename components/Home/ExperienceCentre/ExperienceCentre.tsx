@@ -49,7 +49,7 @@ export default function ExperienceCentre() {
           data-parallax="60"
         >
           <Image
-            src="/Images/Home/experiance.png"
+            src="/Images/Home/experiance.webp"
             alt="Teknix Experience Centre"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"

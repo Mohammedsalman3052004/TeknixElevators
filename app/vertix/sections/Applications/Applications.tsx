@@ -8,28 +8,28 @@ const categories = [
   {
     id: "residential",
     label: "RESIDENTIAL",
-    image: "/Images/Vertix/residential-new.png",
+    image: "/Images/Vertix/residential-new.webp",
     description:
       "An architecture-first approach for premium residences where every detail is curated.",
   },
   {
     id: "hospitality",
     label: "HOSPITALITY",
-    image: "/Images/Vertix/residential-2.png",
+    image: "/Images/Vertix/residential-2.webp",
     description:
       "Designed to create a refined arrival experience where comfort and movement come together.",
   },
   {
     id: "commercial",
     label: "COMMERCIAL",
-    image: "/Images/Vertix/residential-3.png",
+    image: "/Images/Vertix/residential-3.webp",
     description:
       "Reliable vertical transportation designed around the demands of modern commercial spaces.",
   },
   {
     id: "premium",
     label: "PREMIUM DEVELOPMENTS",
-    image: "/Images/Vertix/residential-4.png",
+    image: "/Images/Vertix/residential-4.webp",
     description:
       "Elevator solutions that complement distinctive architecture and premium developments.",
   },

@@ -8,7 +8,7 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.background} data-reveal-image data-parallax="40">
         <Image
-          src="/Images/special-purpose/hero.png"
+          src="/Images/special-purpose/hero.webp"
           alt="Teknix special purpose elevators"
           fill
           priority

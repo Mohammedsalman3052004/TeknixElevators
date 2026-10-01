@@ -7,8 +7,9 @@ export const specifications: SpecificationsProps = {
   title: "WHERE TECHNOLOGY MEETS COMFORT.",
   description:
     "A refined gearless elevator solution designed around the requirements of modern low-rise buildings.",
-  // brochureHref: "/documents/vertix-brochure.pdf",
-  // brochureLabel: "DOWNLOAD VERTIX BROCHURE",
+  brochureHref: "/documents/vertix-brochure.pdf",
+  brochureLabel: "DOWNLOAD VERTIX BROCHURE",
+  brochureFormName: "Vertix Download Form",
   items: [
     { label: "TYPE", value: "MRL / MMR", sub: "Machine Room-Less", icon: "type" },
     { label: "CAPACITY", value: "408 – 1020 KG", sub: "6 – 15 Persons", icon: "capacity" },
@@ -103,7 +104,7 @@ export const standardConfigurations: StandardConfigurationsProps = {
 export const keySafetyFeatures: FeatureAccordionProps = {
   heading: "KEY SAFETY FEATURES",
   image: {
-    src: "/Images/Vertix/vertix-technology.png",
+    src: "/Images/Vertix/vertix-technology.webp",
     alt: "Vertix elevator interior",
   },
   items: [

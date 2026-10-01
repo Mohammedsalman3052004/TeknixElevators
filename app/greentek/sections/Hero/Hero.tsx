@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className={styles.imageWrapper} data-reveal-image data-parallax="40">
         <Image
-          src="/Images/Greentek/greentek-hero.png"
+          src="/Images/Greentek/greentek-hero.webp"
           alt="Greentek elevator"
           fill
           priority

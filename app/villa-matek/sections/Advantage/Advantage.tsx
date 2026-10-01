@@ -53,7 +53,7 @@ export default function Advantage() {
         <div className={styles.right} data-reveal-image data-parallax="40">
           <div className={styles.imageWrapper}>
             <Image
-              src="/Images/Evo/technical-drawing.png"
+              src="/Images/Evo/technical-drawing.webp"
               alt="Teknix Villa Matek minimum overhead and pit technical cross-section diagram"
               width={420}
               height={580}

@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./ThoughtInMotion.module.css";
 
 const images = [
-  "/Images/Home/thought.png",
+  "/Images/Home/thought.webp",
   // "/Images/Home/thought-2.jpg",
   // "/Images/Home/thought-3.jpg",
   // "/Images/Home/thought-4.jpg",

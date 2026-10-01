@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className={styles.background} data-reveal-image data-parallax="40">
         <Image
-          src="/Images/Vertix/hero.png"
+          src="/Images/Vertix/hero.webp"
           alt="Vertix elevator"
           fill
           priority

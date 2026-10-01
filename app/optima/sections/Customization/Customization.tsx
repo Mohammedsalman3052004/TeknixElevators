@@ -7,7 +7,7 @@ import styles from "./Customization.module.css";
 
 const slides = [
   {
-    image: "/Images/Optima/optima-custom.png",
+    image: "/Images/Optima/optima-custom.webp",
     label: "STANDARD CONFIGURATION",
   },
   // {

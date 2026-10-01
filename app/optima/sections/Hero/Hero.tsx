@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className={styles.hero} data-reveal-image data-parallax="40">
       <Image
-        src="/Images/Optima/optima-hero.png"
+        src="/Images/Optima/optima-hero.webp"
         alt="Optima elevator"
         fill
         priority

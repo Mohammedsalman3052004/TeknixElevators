@@ -17,7 +17,7 @@ export default function ShaftOptions() {
           <div className={styles.card}>
             <div className={styles.cardImageWrapper}>
               <Image
-                src="/Images/Evo/shaft-3d.png"
+                src="/Images/Evo/shaft-3d.webp"
                 alt="3D isometric cutaway diagram of Teknix EVO installed in an existing concrete shaft"
                 width={220}
                 height={380}
@@ -50,7 +50,7 @@ export default function ShaftOptions() {
           <div className={styles.card}>
             <div className={styles.cardImageWrapper}>
               <Image
-                src="/Images/Evo/cabin-structure.png"
+                src="/Images/Evo/cabin-structure.webp"
                 alt="Teknix EVO self-supporting panoramic glass and architectural metal profile shaft"
                 width={220}
                 height={380}

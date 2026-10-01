@@ -26,7 +26,7 @@ export default function OurApproach() {
           data-parallax="30"
         >
           <Image
-            src="/Images/About/Our-approach.png"
+            src="/Images/About/Our-approach.webp"
             alt="Teknix sustainable engineering"
             fill
             sizes="(max-width: 900px) 100vw, 420px"

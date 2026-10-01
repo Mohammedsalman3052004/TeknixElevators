@@ -93,7 +93,7 @@ export const standardConfigurations: StandardConfigurationsProps = {
 export const keySafetyFeatures: FeatureAccordionProps = {
   heading: "Intelligent control. Refined movement. Thoughtful protection",
   image: {
-    src: "/Images/Optima/optima-protection.png",
+    src: "/Images/Optima/optima-protection.webp",
     alt: "Optima elevator interior",
   },
   items: [

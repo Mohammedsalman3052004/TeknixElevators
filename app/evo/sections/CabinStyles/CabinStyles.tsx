@@ -86,7 +86,7 @@ export default function CabinStyles() {
           {/* Right: Cabin Image */}
           <div className={styles.imageContainer}>
             <Image
-              src="/Images/Evo/cabin-interior.png"
+              src="/Images/Evo/cabin-interior.webp"
               alt={`Teknix EVO ${cabinStyles[activeIndex].name} Luxury Interior Finish`}
               width={780}
               height={520}

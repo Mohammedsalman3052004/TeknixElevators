@@ -40,7 +40,7 @@ export default function Features() {
           data-parallax="40"
         >
           <Image
-            src="/Images/Optima/optima-features.png"
+            src="/Images/Optima/optima-features.webp"
             alt="Optima elevator"
             fill
             sizes="

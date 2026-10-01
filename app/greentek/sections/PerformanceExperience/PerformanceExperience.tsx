@@ -52,7 +52,7 @@ export default function PerformanceExperience() {
         {/* RIGHT IMAGE */}
         <div className={styles.visual} data-reveal-image data-parallax="40">
           <Image
-            src="/Images/Greentek/greentek-performance.jpg"
+            src="/Images/Greentek/greentek-performance.webp"
             alt="Greentek elevator technician"
             fill
             sizes="(max-width: 768px) 88vw, 500px"

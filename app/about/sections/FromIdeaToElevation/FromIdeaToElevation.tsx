@@ -5,17 +5,17 @@ import styles from "./FromIdeaToElevation.module.css";
 
 const cards = [
   {
-    image: "/Images/About/engineering.png",
+    image: "/Images/About/engineering.webp",
     title: "ENGINEERING",
     subtitle: "Thoughtfully in motion",
   },
   {
-    image: "/Images/About/manufacturing.png",
+    image: "/Images/About/manufacturing.webp",
     title: "MANUFACTURING",
     subtitle: "Made with intention",
   },
   {
-    image: "/Images/About/technology.png",
+    image: "/Images/About/technology.webp",
     title: "TECHNOLOGY",
     subtitle: "Precision, you can feel",
   },

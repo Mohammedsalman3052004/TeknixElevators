@@ -6,8 +6,9 @@ export const specifications: SpecificationsProps = {
   title: "DIVE INTO LUXURY AND COMFORT.",
   description:
     "TEKNIX VILLAMATEK is specially designed for residential villas; incorporating modern gearless technology and exquisite craftsmanship. Featuring an ultra-low 60 mm pit depth and a compact 2250 mm overhead clearance, it installs seamlessly into homes with minimal civil disruption.",
-  // brochureHref: "/documents/villa-matek-brochure.pdf",
-  // brochureLabel: "DOWNLOAD VILLA MATEK BROCHURE",
+  brochureHref: "/documents/villa-matek-brochure.pdf",
+  brochureLabel: "DOWNLOAD VILLA MATEK BROCHURE",
+  brochureFormName: "Villa Matek Download Form",
   items: [
     { label: "TYPE", value: "MRL", sub: "Powered by Gearless Traction Machine", icon: "type" },
     { label: "CAPACITY", value: "UPTO 400 KG", sub: "", icon: "capacity" },
@@ -82,7 +83,7 @@ export const standardConfigurations: StandardConfigurationsProps = {
 export const keySafetyFeatures: FeatureAccordionProps = {
   heading: "FUNCTIONS OF VILLA MATEK",
   image: {
-    src: "/Images/VillaMatek/protection.png",
+    src: "/Images/VillaMatek/protection.webp",
     alt: "Villa Matek elevator interior",
   },
   items: [

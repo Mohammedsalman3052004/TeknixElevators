@@ -78,7 +78,7 @@ export default function Hotspots() {
           {/* Center Isometric Elevator Diagram */}
           <div className={styles.centerGraphic}>
             <Image
-              src="/Images/Evo/sometric-elevator-system-diagram.png"
+              src="/Images/Evo/sometric-elevator-system-diagram.webp"
               alt="Teknix EVO isometric elevator system diagram highlighting numbered precision safety components"
               width={640}
               height={640}

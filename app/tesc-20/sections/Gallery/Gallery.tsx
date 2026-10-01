@@ -13,7 +13,7 @@ export default function Gallery() {
         data-parallax="40"
       >
         <Image
-          src="/Images/Tesc20/gallery.jpg"
+          src="/Images/Tesc20/gallery.webp"
           alt="Experience curated Teknix elevators"
           fill
           sizes="100vw"

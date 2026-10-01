@@ -41,7 +41,7 @@ export default function Journey() {
           data-parallax="60"
         >
           <Image
-            src="/Images/Home/journey.png"
+            src="/Images/Home/journey.webp"
             alt="Family using a Teknix elevator"
             fill
             className={styles.image}

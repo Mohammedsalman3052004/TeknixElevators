@@ -41,14 +41,14 @@ export const solutions = [
 ];
 
 export const applications = [
-  { name: "Chemical", image: "/Images/special-purpose/image1.jpg" },
-  { name: "Oil & Gas", image: "/Images/special-purpose/image2.jpg" },
-  { name: "Pharmaceutical", image: "/Images/special-purpose/image3.jpg" },
-  { name: "Food & Beverages", image: "/Images/special-purpose/image4.jpg" },
-  { name: "Manufacturing", image: "/Images/special-purpose/image5.jpg" },
-  { name: "Warehousing & Logistics", image: "/Images/special-purpose/image6.jpg" },
-  { name: "Cement & Minerals", image: "/Images/special-purpose/image7.jpg" },
-  { name: "Power & Utilities", image: "/Images/special-purpose/image8.jpg" },
+  { name: "Chemical", image: "/Images/special-purpose/image1.webp" },
+  { name: "Oil & Gas", image: "/Images/special-purpose/image2.webp" },
+  { name: "Pharmaceutical", image: "/Images/special-purpose/image3.webp" },
+  { name: "Food & Beverages", image: "/Images/special-purpose/image4.webp" },
+  { name: "Manufacturing", image: "/Images/special-purpose/image5.webp" },
+  { name: "Warehousing & Logistics", image: "/Images/special-purpose/image6.webp" },
+  { name: "Cement & Minerals", image: "/Images/special-purpose/image7.webp" },
+  { name: "Power & Utilities", image: "/Images/special-purpose/image8.webp" },
 ];
 
 export const approachSteps = [

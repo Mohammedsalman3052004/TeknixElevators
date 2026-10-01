@@ -16,7 +16,7 @@ export default function SpecsExploded() {
       <div className={styles.container}>
         <div className={styles.imageWrapper}>
           <Image
-            src="/Images/Evo/specs-exploded.png"
+            src="/Images/Evo/specs-exploded.webp"
             alt="Teknix EVO exploded technical components diagram and specifications"
             width={1297}
             height={591}

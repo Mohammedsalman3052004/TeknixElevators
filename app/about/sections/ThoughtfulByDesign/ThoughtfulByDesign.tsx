@@ -67,7 +67,7 @@ export default function ThoughtfulByDesign() {
               data-parallax="40"
             >
               <Image
-                src="/Images/About/thoughtful.png"
+                src="/Images/About/thoughtful.webp"
                 alt="Teknix elevator engineering"
                 fill
                 sizes="(max-width: 768px) 90vw, 45vw"

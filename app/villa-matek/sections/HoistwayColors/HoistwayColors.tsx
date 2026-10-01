@@ -21,7 +21,7 @@ export default function HoistwayColors() {
 
       <div className={styles.imageWrapper}>
         <Image
-          src="/Images/VillaMatek/hoistway-frame-colors.png"
+          src="/Images/VillaMatek/hoistway-frame-colors.webp"
           alt="Hoistway frame colors: Deep Gray, Champagne Gold and Porcelain White"
           fill
           sizes="(max-width: 768px) 100vw, 1200px"

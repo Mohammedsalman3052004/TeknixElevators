@@ -11,9 +11,9 @@ const items = [
     description:
       "The all-new OPTIMA redefines simplicity, giving you a vertical mobility solution with a range of technologically advanced features with German craftsmanship at its heart.",
     images: [
-      "/Images/Tesc20/collection/optima-1.jpg",
-      "/Images/Tesc20/collection/optima-2.jpg",
-      "/Images/Tesc20/collection/optima-3.jpg",
+      "/Images/Tesc20/collection/optima-1.webp",
+      "/Images/Tesc20/collection/optima-2.webp",
+      "/Images/Tesc20/collection/optima-3.webp",
     ],
   },
   {
@@ -21,9 +21,9 @@ const items = [
     description:
       "The all-new, next-generation VERTIX range of elevators from Teknix, in collaboration with SRH Aufzüge GmbH, brings you the pinnacle of German engineering and craftsmanship. Designed with cutting-edge, eco-friendly technology, the VERTIX elevators offer an unparalleled combination of essential features and unrivaled comfort, ensuring a smooth and luxurious ride every time.",
     images: [
-      "/Images/Tesc20/collection/vertix-1.jpg",
-      "/Images/Tesc20/collection/vertix-2.jpg",
-      "/Images/Tesc20/collection/vertix-3.jpg",
+      "/Images/Tesc20/collection/vertix-1.webp",
+      "/Images/Tesc20/collection/vertix-2.webp",
+      "/Images/Tesc20/collection/vertix-3.webp",
     ],
   },
   {
@@ -31,9 +31,9 @@ const items = [
     description:
       "Teknix GREENTEK exemplifies the pinnacle of German engineering, blending precision craftsmanship with years of innovation. With cutting-edge features like the VVVF drive with DTI, Direct Landing Technology, and sleek interface devices, it delivers an unparalleled, ultra-smooth ride—setting a new benchmark in luxury elevators.",
     images: [
-      "/Images/Tesc20/collection/greentek-1.jpg",
-      "/Images/Tesc20/collection/greentek-2.jpg",
-      "/Images/Tesc20/collection/greentek-3.jpg",
+      "/Images/Tesc20/collection/greentek-1.webp",
+      "/Images/Tesc20/collection/greentek-2.webp",
+      "/Images/Tesc20/collection/greentek-3.webp",
     ],
   },
   {
@@ -41,8 +41,8 @@ const items = [
     description:
       "Teknix Hydratek is an advanced vertical transportation system, crafted with precision using cutting-edge German technology and Italian craftsmanship, based on progressive fluid dynamics.",
     images: [
-      "/Images/Tesc20/collection/hydratek-1.png",
-      "/Images/Tesc20/collection/hydratek-2.png",
+      "/Images/Tesc20/collection/hydratek-1.webp",
+      "/Images/Tesc20/collection/hydratek-2.webp",
     ],
   },
   {
@@ -50,9 +50,9 @@ const items = [
     description:
       "TEKNIX VILLAMATEK, designed exclusively for residential use, combines technology, aesthetics, and craftsmanship to enhance accessibility for residents with mobility challenges. Available in gearless models and a variety of cabin styles to suit diverse preferences.",
     images: [
-      "/Images/Tesc20/collection/villa-matek-1.jpg",
-      "/Images/Tesc20/collection/villa-matek-2.jpg",
-      "/Images/Tesc20/collection/villa-matek-3.jpg",
+      "/Images/Tesc20/collection/villa-matek-1.webp",
+      "/Images/Tesc20/collection/villa-matek-2.webp",
+      "/Images/Tesc20/collection/villa-matek-3.webp",
     ],
   },
 ];

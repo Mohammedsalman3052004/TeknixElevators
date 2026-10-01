@@ -8,7 +8,7 @@ export interface Elevator {
 
 export const elevators: Elevator[] = [
   {
-    image: "/Images/Home/elevator.png",
+    image: "/Images/Home/elevator.webp",
     title: "VERTIX",
     description:
       "Designed for larger-scale and demanding environments.",
@@ -17,7 +17,7 @@ export const elevators: Elevator[] = [
   },
 
   {
-    image: "/Images/Home/elevator-2.png",
+    image: "/Images/Home/elevator-2.webp",
     title: "GREENTEK",
     description:
       "Engineered with efficiency and application in mind.",
@@ -26,7 +26,7 @@ export const elevators: Elevator[] = [
   },
 
   {
-    image: "/Images/Home/elevator-3.png",
+    image: "/Images/Home/elevator-3.webp",
     title: "VILLA MATEK",
     description:
       "A dedicated solution for villas and private homes.",
@@ -35,7 +35,7 @@ export const elevators: Elevator[] = [
   },
 
   {
-    image: "/Images/Home/elevator-4.png",
+    image: "/Images/Home/elevator-4.webp",
     title: "Hydratek",
     description:
       "A specialised elevator solution.",
@@ -43,7 +43,7 @@ export const elevators: Elevator[] = [
     href: "/hydratek",
   },
   {
-    image: "/Images/Optima/optima-hero.png",
+    image: "/Images/Optima/optima-hero.webp",
     title: "OPTIMA",
     description:
       "For environments where standard solutions aren't enough.",

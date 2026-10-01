@@ -19,7 +19,7 @@ const locations: Location[] = [
     id: "bengaluru",
     city: "Bengaluru",
     role: "head",
-    image: "/Images/Contact/bengaluru.jpg",
+    image: "/Images/Contact/bengaluru.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Teknix+Elevators+3354+KR+Road+Tata+Silk+Farm+Bengaluru",
     x: 50,
@@ -29,7 +29,7 @@ const locations: Location[] = [
     id: "hyderabad",
     city: "Hyderabad",
     role: "branch",
-    image: "/Images/Contact/hyderabad.jpg",
+    image: "/Images/Contact/hyderabad.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Indus+Space+Centre+Kavuri+Hills+Madhapur+Hyderabad",
     x: 50,
@@ -39,7 +39,7 @@ const locations: Location[] = [
     id: "coimbatore",
     city: "Coimbatore",
     role: "branch",
-    image: "/Images/Contact/coimbatore.jpg",
+    image: "/Images/Contact/coimbatore.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Sambandam+Road+East+RS+Puram+Coimbatore",
     x: 76,
@@ -49,7 +49,7 @@ const locations: Location[] = [
     id: "chennai",
     city: "Chennai",
     role: "branch",
-    image: "/Images/Contact/chennai.jpg",
+    image: "/Images/Contact/chennai.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Anna+Vazham+82+Arcot+Road+Kodambakkam+Chennai",
     x: 86,
@@ -59,7 +59,7 @@ const locations: Location[] = [
     id: "visakhapatnam",
     city: "Visakhapatnam",
     role: "branch",
-    image: "/Images/Contact/visakhapatnam.jpg",
+    image: "/Images/Contact/visakhapatnam.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Sri+Muktha+Residency+PM+Palem+Madhurwada+Visakhapatnam",
     x: 76,
@@ -69,7 +69,7 @@ const locations: Location[] = [
     id: "uae",
     city: "UAE",
     role: "branch",
-    image: "/Images/Contact/uae.jpg",
+    image: "/Images/Contact/uae.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Vesla+Business+Center+Al+Quoz+Dubai",
     x: 50,
@@ -79,7 +79,7 @@ const locations: Location[] = [
     id: "nepal",
     city: "Nepal",
     role: "branch",
-    image: "/Images/Contact/nepal.jpg",
+    image: "/Images/Contact/nepal.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Nagapokhari+Kathmandu+Nepal",
     x: 24,
@@ -89,7 +89,7 @@ const locations: Location[] = [
     id: "rajkot",
     city: "Rajkot",
     role: "branch",
-    image: "/Images/Contact/rajkot.jpg",
+    image: "/Images/Contact/rajkot.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Samrudhi+Bhavan+Gondal+Road+Rajkot",
     x: 14,
@@ -99,7 +99,7 @@ const locations: Location[] = [
     id: "belgaum",
     city: "Belgaum",
     role: "branch",
-    image: "/Images/Contact/belgaum.png",
+    image: "/Images/Contact/belgaum.webp",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Hanuman+Nagar+Scheme+No+40+Belgaum",
     x: 24,

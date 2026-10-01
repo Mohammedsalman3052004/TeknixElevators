@@ -84,7 +84,7 @@ export default function Hero() {
         data-parallax="40"
       >
         <Image
-          src="/Images/Contact/hero.png"
+          src="/Images/Contact/hero.webp"
           alt="Contact Teknix Elevators"
           fill
           priority

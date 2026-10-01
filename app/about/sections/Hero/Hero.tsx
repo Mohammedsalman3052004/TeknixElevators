@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className={styles.imageWrapper} data-reveal-image data-parallax="40">
         <Image
-          src="/Images/About/about-hero.png"
+          src="/Images/About/about-hero.webp"
           alt="Teknix elevator interior"
           fill
           priority
