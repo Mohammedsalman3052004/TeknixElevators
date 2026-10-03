@@ -6,7 +6,7 @@
   width: 100%;
   background: #000000;
   color: #fff;
-  padding: clamp(90px, 10vw, 150px) 0;
+  padding: clamp(90px, 10vw, 150px) 0 60px 0;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.05);

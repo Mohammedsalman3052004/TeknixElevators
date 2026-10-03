@@ -9,25 +9,25 @@ const cabinStyles = [
     id: "modern",
     name: "Modern",
     desc: "Advanced machine-room-less design with gearless technology, delivering efficient performance while maximizing usable space.",
-    image: "/Images/Evo/cabin-interior.webp",
+    image: "/Images/Vertix/cabin-interior.webp",
   },
   {
     id: "signature",
     name: "Signature",
     desc: "State-of-the-art control technology with direct landing and self-diagnostic systems for precise and reliable operation.",
-    image: "/Images/Evo/cabin-signature.webp",
+    image: "/Images/Vertix/cabin-signature.webp",
   },
   {
     id: "noire",
     name: "Noire",
     desc: "Servo PMSM technology with precise rotary-encoder leveling for a smooth, silent and comfortable ride.",
-    image: "/Images/Evo/cabin-noir.webp",
+    image: "/Images/Vertix/cabin-noir.webp",
   },
   {
     id: "vittoria",
     name: "Vittoria",
     desc: "Advanced safety systems including anti-squeeze doors, dual disc brakes and automatic rescue functionality for enhanced passenger protection.",
-    image: "/Images/Evo/cabin-vittoria.webp",
+    image: "/Images/Vertix/cabin-vittoria.webp",
   },
 ];
 
