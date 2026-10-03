@@ -8,6 +8,7 @@ import StandardConfigurations from "@/components/Product/StandardConfigurations/
 import FeatureAccordion from "@/components/Product/FeatureAccordion/FeatureAccordion";
 import Specifications from "@/components/Product/Specifications/Specifications";
 import { specifications, standardConfigurations, keySafetyFeatures } from "./content";
+import CabinStyles from "./sections/CabinStyles/CabinStyles";
 
 export const metadata: Metadata = {
   title: "VERTIX | Residential Elevators in Hyderabad",
@@ -42,6 +43,7 @@ export default function VertixPage() {
       <Applications />
       <Specifications {...specifications} />
       <StandardConfigurations {...standardConfigurations} />
+      <CabinStyles />
       <FeatureAccordion {...keySafetyFeatures} />
     </>
   );
