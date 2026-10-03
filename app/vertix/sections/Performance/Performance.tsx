@@ -45,7 +45,7 @@ const specifications = [
     description: "Efficient and controlled door operation.",
   },
   {
-    title: "SORBOTANE GUIDES",
+    title: "SORBOTHANE GUIDES",
     description: "Designed to reduce vibration and improve ride comfort.",
   },
 ];

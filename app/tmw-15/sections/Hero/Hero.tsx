@@ -88,13 +88,24 @@ export default function Hero() {
         data-reveal-image
         data-parallax="40"
       >
+        {/* Desktop Banner */}
         <Image
           src="/Images/Tmw15/hero.webp"
           alt="TMW-15 moving walk in a transit concourse"
           fill
           priority
           sizes="100vw"
-          className={styles.heroImage}
+          className={`${styles.heroImage} ${styles.desktopBanner}`}
+        />
+
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/Tmw15/mobilebanner.webp"
+          alt="TMW-15 moving walk in a transit concourse"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.heroImage} ${styles.mobileBanner}`}
         />
       </div>
 
@@ -120,6 +131,7 @@ export default function Hero() {
               An escalator engineered for high-traffic
             </span>
           </span>
+
           <span className={styles.lineMask}>
             <span className={styles.line} data-reveal-line>
               transit spaces and the movement of many.

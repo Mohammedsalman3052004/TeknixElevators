@@ -3,14 +3,35 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.hero} data-reveal-image data-parallax="40">
+    <section
+      className={styles.hero}
+      data-reveal-image
+      data-parallax="40"
+    >
+      {/* =========================================
+          DESKTOP HERO IMAGE
+      ========================================= */}
+
       <Image
         src="/Images/Optima/optima-hero.webp"
         alt="Optima elevator"
         fill
         priority
         sizes="100vw"
-        className={styles.image}
+        className={`${styles.image} ${styles.desktopBanner}`}
+      />
+
+      {/* =========================================
+          MOBILE HERO IMAGE
+      ========================================= */}
+
+      <Image
+        src="/Images/Optima/mobilebanner.webp"
+        alt="Optima elevator"
+        fill
+        priority
+        sizes="100vw"
+        className={`${styles.image} ${styles.mobileBanner}`}
       />
 
       <div className={styles.overlay} />
@@ -20,6 +41,7 @@ export default function Hero() {
           <span data-reveal-line-mask>
             <span data-reveal-line>EVERYTHING YOU NEED</span>
           </span>
+
           <span data-reveal-line-mask>
             <span data-reveal-line>NOTHING YOU NEED</span>
           </span>
@@ -31,8 +53,11 @@ export default function Hero() {
               Thoughtful engineering. Refined design.
             </span>
           </span>
+
           <span data-reveal-line-mask>
-            <span data-reveal-line>Made around the way you move.</span>
+            <span data-reveal-line>
+              Made around the way you move.
+            </span>
           </span>
         </p>
       </div>

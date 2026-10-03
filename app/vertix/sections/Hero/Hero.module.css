@@ -43,6 +43,19 @@
 
 
 /* =========================================
+   DESKTOP / MOBILE BANNER
+========================================= */
+
+.desktopBanner {
+  display: block;
+}
+
+.mobileBanner {
+  display: none;
+}
+
+
+/* =========================================
    DARK OVERLAY
 ========================================= */
 
@@ -237,11 +250,24 @@
 
 
   /* -----------------------------------------
+     MOBILE BANNER
+  ----------------------------------------- */
+
+  .desktopBanner {
+    display: none;
+  }
+
+  .mobileBanner {
+    display: block;
+  }
+
+
+  /* -----------------------------------------
      IMAGE
   ----------------------------------------- */
 
   .backgroundImage {
-    object-position: 57% center;
+    object-position: center center;
 
     transform: scale(1.015);
   }

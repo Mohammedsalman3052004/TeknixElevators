@@ -6,45 +6,91 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      {/* Background Image */}
-      <div className={styles.imageWrapper} data-reveal-image data-parallax="40">
+
+      {/* =========================================
+          BACKGROUND IMAGE
+      ========================================= */}
+
+      <div
+        className={styles.imageWrapper}
+        data-reveal-image
+        data-parallax="40"
+      >
+
+        {/* Desktop Banner */}
         <Image
           src="/Images/About/about-hero.webp"
           alt="Teknix elevator interior"
           fill
           priority
           sizes="100vw"
-          className={styles.image}
+          className={`${styles.image} ${styles.desktopBanner}`}
         />
 
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/About/mobilebanner.webp"
+          alt="Teknix elevator interior"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.image} ${styles.mobileBanner}`}
+        />
+
+        {/* Dark Overlay */}
         <div className={styles.overlay} />
+
       </div>
+
 
       {/* =========================================
           HERO CONTENT
       ========================================= */}
 
-      <div className={styles.content} data-reveal="left">
+      <div
+        className={styles.content}
+        data-reveal="left"
+      >
+
+        {/* Heading */}
+
         <h1 data-reveal-lines>
+
           <span data-reveal-line-mask>
-            <span data-reveal-line>MORE BEHIND</span>
+            <span data-reveal-line>
+              MORE BEHIND
+            </span>
           </span>
+
           <span data-reveal-line-mask>
-            <span data-reveal-line>EVERY JOURNEY</span>
+            <span data-reveal-line>
+              EVERY JOURNEY
+            </span>
           </span>
+
         </h1>
 
+
+        {/* Description */}
+
         <p data-reveal-lines>
+
           <span data-reveal-line-mask>
             <span data-reveal-line>
               Thoughtful engineering. Refined design.
             </span>
           </span>
+
           <span data-reveal-line-mask>
-            <span data-reveal-line>Made around the way you move.</span>
+            <span data-reveal-line>
+              Made around the way you move.
+            </span>
           </span>
+
         </p>
+
       </div>
+
     </section>
   );
 }

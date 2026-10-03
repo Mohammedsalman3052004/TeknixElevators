@@ -22,6 +22,7 @@ export default function Hero() {
 
     const titleLines =
       title?.querySelectorAll<HTMLElement>("[data-reveal-line]");
+
     const descriptionLines =
       description?.querySelectorAll<HTMLElement>("[data-reveal-line]");
 
@@ -66,62 +67,128 @@ export default function Hero() {
       });
     };
 
-    wrapper.addEventListener("reveal-image-complete", onImageDone);
+    wrapper.addEventListener(
+      "reveal-image-complete",
+      onImageDone
+    );
 
     return () => {
-      wrapper.removeEventListener("reveal-image-complete", onImageDone);
+      wrapper.removeEventListener(
+        "reveal-image-complete",
+        onImageDone
+      );
 
-      gsap.killTweensOf([titleLines, descriptionLines, eyebrow]);
+      gsap.killTweensOf([
+        titleLines,
+        descriptionLines,
+        eyebrow,
+      ]);
     };
   }, []);
 
   return (
     <section className={styles.hero}>
+
+      {/* =========================================
+          HERO IMAGE
+      ========================================= */}
+
       <div
         ref={imageWrapperRef}
         className={styles.heroImageWrapper}
         data-reveal-image
         data-parallax="40"
       >
+
+        {/* Desktop Banner */}
         <Image
           src="/Images/Contact/hero.webp"
           alt="Contact Teknix Elevators"
           fill
           priority
           sizes="100vw"
-          className={styles.heroImage}
+          className={`${styles.heroImage} ${styles.desktopBanner}`}
         />
+
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/Contact/mobilebanner.webp"
+          alt="Contact Teknix Elevators"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.heroImage} ${styles.mobileBanner}`}
+        />
+
       </div>
+
+      {/* =========================================
+          OVERLAY
+      ========================================= */}
 
       <div className={styles.overlay} />
 
+      {/* =========================================
+          HERO CONTENT
+      ========================================= */}
+
       <div className={styles.content}>
-        <div className={styles.eyebrow} ref={eyebrowRef}>
+
+        {/* EYEBROW */}
+
+        <div
+          className={styles.eyebrow}
+          ref={eyebrowRef}
+        >
           <span className={styles.eyebrowLine} />
           <span>GET IN TOUCH</span>
         </div>
 
-        <h1 className={styles.heroTitle} ref={titleRef}>
+
+        {/* TITLE */}
+
+        <h1
+          className={styles.heroTitle}
+          ref={titleRef}
+        >
           <span className={styles.lineMask}>
-            <span className={styles.line} data-reveal-line>
+            <span
+              className={styles.line}
+              data-reveal-line
+            >
               CONTACT
             </span>
           </span>
         </h1>
 
-        <p className={styles.description} ref={descRef}>
+
+        {/* DESCRIPTION */}
+
+        <p
+          className={styles.description}
+          ref={descRef}
+        >
           <span className={styles.lineMask}>
-            <span className={styles.line} data-reveal-line>
+            <span
+              className={styles.line}
+              data-reveal-line
+            >
               Speak with our teams across India,
             </span>
           </span>
+
           <span className={styles.lineMask}>
-            <span className={styles.line} data-reveal-line>
+            <span
+              className={styles.line}
+              data-reveal-line
+            >
               Nepal, and the UAE.
             </span>
           </span>
         </p>
+
       </div>
+
     </section>
   );
 }

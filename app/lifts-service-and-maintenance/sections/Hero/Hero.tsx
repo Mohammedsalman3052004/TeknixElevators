@@ -10,18 +10,32 @@ export default function Hero() {
           BACKGROUND IMAGE
       ========================================= */}
 
-      <div className={styles.background} data-reveal-image data-parallax="40">
+      <div
+        className={styles.background}
+        data-reveal-image
+        data-parallax="40"
+      >
+        {/* Desktop Banner */}
         <Image
           src="/Images/About/service-hero.webp"
-          alt="TekniX lift service and maintenance"
+          alt="Teknix lift service and maintenance"
           fill
           priority
           sizes="100vw"
-          className={styles.backgroundImage}
+          className={`${styles.backgroundImage} ${styles.desktopBanner}`}
+        />
+
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/About/service-mobilebanner.webp"
+          alt="Teknix lift service and maintenance"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.backgroundImage} ${styles.mobileBanner}`}
         />
 
         {/* Dark overlay */}
-
         <div className={styles.overlay} />
       </div>
 
@@ -35,6 +49,7 @@ export default function Hero() {
             <span data-reveal-line-mask>
               <span data-reveal-line>KEEPING EVERY</span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>JOURNEY RUNNING</span>
             </span>
@@ -46,6 +61,7 @@ export default function Hero() {
                 Proactive service and maintenance plans that keep your
               </span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>
                 elevators safe, reliable and running without interruption.

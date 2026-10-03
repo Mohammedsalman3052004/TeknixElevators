@@ -1,3 +1,7 @@
+/* =========================================
+   HERO
+========================================= */
+
 .hero {
   position: relative;
 
@@ -14,17 +18,45 @@
   background: #080503;
 }
 
+
+/* =========================================
+   HERO IMAGE WRAPPER
+========================================= */
+
 .heroImageWrapper {
   position: absolute;
 
   inset: 0;
 }
 
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
 .heroImage {
   object-fit: cover;
 
   object-position: center;
 }
+
+
+/* =========================================
+   DESKTOP / MOBILE BANNER
+========================================= */
+
+.desktopBanner {
+  display: block;
+}
+
+.mobileBanner {
+  display: none;
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
 
 .overlay {
   position: absolute;
@@ -49,6 +81,11 @@
 
   pointer-events: none;
 }
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
 
 .content {
   position: absolute;
@@ -75,6 +112,11 @@
 
   padding-left: clamp(40px, 9vw, 180px);
 }
+
+
+/* =========================================
+   EYEBROW
+========================================= */
 
 .eyebrow {
   display: flex;
@@ -104,6 +146,11 @@
   flex-shrink: 0;
 }
 
+
+/* =========================================
+   HEADING
+========================================= */
+
 .heroTitle {
   margin: 0;
 
@@ -119,6 +166,11 @@
 
   color: #f4f1eb;
 }
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .description {
   margin: 0;
@@ -136,6 +188,11 @@
   color: rgba(255, 255, 255, 0.68);
 }
 
+
+/* =========================================
+   TEXT REVEAL
+========================================= */
+
 .lineMask {
   display: block;
 
@@ -148,7 +205,14 @@
   will-change: transform;
 }
 
+
+/* =========================================
+   TABLET
+   1024px
+========================================= */
+
 @media (max-width: 1024px) {
+
   .hero {
     min-height: 100svh;
   }
@@ -174,10 +238,20 @@
   }
 }
 
+
+/* =========================================
+   TABLET / MOBILE
+   768px
+========================================= */
+
 @media (max-width: 768px) {
+
   .hero {
     min-height: 100svh;
   }
+
+
+  /* Mobile overlay */
 
   .overlay {
     background:
@@ -189,8 +263,10 @@
       );
   }
 
+
   .content {
     left: 0;
+
     right: 0;
 
     top: 52%;
@@ -219,10 +295,31 @@
   }
 }
 
-@media (max-width: 480px) {
-  .hero {
-    min-height: 100svh;
+
+/* =========================================
+   MOBILE
+   600px
+========================================= */
+
+@media (max-width: 600px) {
+
+  /* Switch desktop image to mobile image */
+
+  .desktopBanner {
+    display: none;
   }
+
+  .mobileBanner {
+    display: block;
+  }
+
+
+  /* Mobile image positioning */
+
+  .heroImage {
+    object-position: center center;
+  }
+
 
   .content {
     top: 55%;
@@ -247,9 +344,79 @@
 
     max-width: 270px;
   }
+
+  .eyebrow {
+    font-size: 9px;
+
+    gap: 10px;
+  }
+
+  .eyebrowLine {
+    width: 16px;
+  }
 }
 
+
+/* =========================================
+   SMALL MOBILE
+   480px
+========================================= */
+
+@media (max-width: 480px) {
+
+  .content {
+    top: 55%;
+
+    padding: 0 8vw;
+
+    gap: 0.9rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(30px, 11vw, 44px);
+  }
+
+  .description {
+    font-size: 11px;
+
+    max-width: 270px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   380px
+========================================= */
+
+@media (max-width: 380px) {
+
+  .content {
+    top: 55%;
+
+    padding: 0 18px;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+  }
+
+  .description {
+    font-size: 10px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
+
   .heroImage {
     transform: none;
   }

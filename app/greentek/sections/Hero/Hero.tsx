@@ -10,14 +10,29 @@ export default function Hero() {
           HERO IMAGE
       ========================================= */}
 
-      <div className={styles.imageWrapper} data-reveal-image data-parallax="40">
+      <div
+        className={styles.imageWrapper}
+        data-reveal-image
+        data-parallax="40"
+      >
+        {/* Desktop Banner */}
         <Image
           src="/Images/Greentek/greentek-hero.webp"
           alt="Greentek elevator"
           fill
           priority
           sizes="100vw"
-          className={styles.image}
+          className={`${styles.image} ${styles.desktopBanner}`}
+        />
+
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/Greentek/mobilebanner.webp"
+          alt="Greentek elevator"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.image} ${styles.mobileBanner}`}
         />
       </div>
 
@@ -45,6 +60,7 @@ export default function Hero() {
             <span data-reveal-line-mask>
               <span data-reveal-line>WHEN EVERY DETAIL</span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>GOES FURTHER</span>
             </span>
@@ -58,13 +74,17 @@ export default function Hero() {
                 An advanced elevator engineered for greater
               </span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>
                 performance, refined movement, and the demands of
               </span>
             </span>
+
             <span data-reveal-line-mask>
-              <span data-reveal-line>premium buildings.</span>
+              <span data-reveal-line>
+                premium buildings.
+              </span>
             </span>
           </p>
         </div>

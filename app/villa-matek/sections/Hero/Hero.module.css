@@ -31,6 +31,10 @@
 }
 
 
+/* =========================================
+   BACKGROUND IMAGE
+========================================= */
+
 .backgroundImage {
   object-fit: cover;
 
@@ -39,6 +43,17 @@
   transform: scale(1.01);
 
   will-change: transform;
+}
+
+
+/* Desktop / Mobile image switching */
+
+.desktopBanner {
+  display: block;
+}
+
+.mobileBanner {
+  display: none;
 }
 
 
@@ -237,11 +252,24 @@
 
 
   /* -----------------------------------------
-     IMAGE
+     IMAGE SWITCH
+  ----------------------------------------- */
+
+  .desktopBanner {
+    display: none;
+  }
+
+  .mobileBanner {
+    display: block;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE IMAGE
   ----------------------------------------- */
 
   .backgroundImage {
-    object-position: 57% center;
+    object-position: center center;
 
     transform: scale(1.015);
   }

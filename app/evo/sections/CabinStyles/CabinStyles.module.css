@@ -139,29 +139,39 @@
   transform: translateY(-2px);
 }
 
+/* ---------- CHANGED: image stage (stacked images) ---------- */
 .imageContainer {
   position: relative;
   width: 100%;
+  aspect-ratio: 3 / 2;          /* NEW: reserves space since images are absolute now */
   border-radius: 0;
   overflow: hidden;
   background: #0d0d0d;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  justify-content: center;
+  /* removed: display:flex + justify-content:center (not needed with fill) */
 }
 
+/* ---------- CHANGED: every image is stacked, hidden by default ---------- */
 .cabinImg {
-  width: 100%;
-  max-width: 780px;
-  height: auto;
   object-fit: cover;
-  display: block;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.04);       /* subtle zoom-out settle on entry */
+  transition:
+    opacity 0.7s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  /* removed: width/max-width/height/display (fill handles sizing) */
 }
 
-.imageContainer:hover .cabinImg {
-  transform: scale(1.02);
+/* ---------- NEW: the visible image ---------- */
+.cabinImgActive {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.imageContainer:hover .cabinImgActive {
+  transform: scale(1.02);       /* keeps your original hover zoom */
 }
 
 @media (max-width: 991px) {
@@ -178,5 +188,16 @@
 
   .controlsRow {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cabinImg {
+    transition: opacity 0.2s ease;
+    transform: none;
+  }
+
+  .imageContainer:hover .cabinImgActive {
+    transform: none;
   }
 }

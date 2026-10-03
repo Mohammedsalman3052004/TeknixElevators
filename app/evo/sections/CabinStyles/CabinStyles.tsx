@@ -9,21 +9,25 @@ const cabinStyles = [
     id: "modern",
     name: "Modern",
     desc: "Brushed stainless steel, flush architectural seams, honed natural marble floor, and perimeter cove lighting.",
+    image: "/Images/Evo/cabin-interior.webp",
   },
   {
     id: "signature",
     name: "Signature",
     desc: "Warm champagne bronze accents, fine textured architectural walls, and bespoke minimalist push buttons.",
+    image: "/Images/Evo/cabin-signature.webp",
   },
   {
-    id: "noir",
-    name: "Noir",
+    id: "noire",
+    name: "Noire",
     desc: "Matte obsidian steel panels, dark smoked mirror rear wall, and focused recessed warm micro-downlights.",
+    image: "/Images/Evo/cabin-noir.webp",
   },
   {
-    id: "victoria",
-    name: "Victoria",
+    id: "vittoria",
+    name: "Vittoria",
     desc: "Polished classical trims, rich architectural moldings, and opulent luxury stone appointments.",
+    image: "/Images/Evo/cabin-vittoria.webp",
   },
 ];
 
@@ -53,6 +57,7 @@ export default function CabinStyles() {
               <button
                 key={item.id}
                 type="button"
+                aria-pressed={activeIndex === idx}
                 className={`${styles.styleBtn} ${
                   activeIndex === idx ? styles.active : ""
                 }`}
@@ -83,16 +88,22 @@ export default function CabinStyles() {
             </div>
           </div>
 
-          {/* Right: Cabin Image */}
+          {/* Right: Cabin Images (all stacked, active one fades in) */}
           <div className={styles.imageContainer}>
-            <Image
-              src="/Images/Evo/cabin-interior.webp"
-              alt={`Teknix EVO ${cabinStyles[activeIndex].name} Luxury Interior Finish`}
-              width={780}
-              height={520}
-              className={styles.cabinImg}
-              priority={false}
-            />
+            {cabinStyles.map((item, idx) => (
+              <Image
+                key={item.id}
+                src={item.image}
+                alt={`Teknix EVO ${item.name} Luxury Interior Finish`}
+                fill
+                sizes="(max-width: 900px) 100vw, 60vw"
+                priority={idx === 0}
+                aria-hidden={activeIndex !== idx}
+                className={`${styles.cabinImg} ${
+                  activeIndex === idx ? styles.cabinImgActive : ""
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

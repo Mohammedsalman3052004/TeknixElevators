@@ -3,18 +3,41 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+
   display: flex;
   justify-content: start;
   align-items: center;
 }
 
-/* Hero image */
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.heroImageWrapper {
+  position: absolute;
+  inset: 0;
+}
+
 .heroImage {
   object-fit: cover;
   object-position: center;
 }
 
-/* Gradient overlay */
+/* Desktop image visible by default */
+.desktopBanner {
+  display: block;
+}
+
+/* Mobile image hidden by default */
+.mobileBanner {
+  display: none;
+}
+
+
+/* =========================================
+   GRADIENT OVERLAY
+========================================= */
+
 .gradient {
   position: absolute;
   inset: 0;
@@ -34,11 +57,18 @@
       rgba(0, 0, 0, 0.45) 100%
     );
 }
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
 .content {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
+
   z-index: 2;
 
   display: flex;
@@ -52,29 +82,67 @@
 
   padding-left: clamp(40px, 9vw, 180px);
 }
+
+
+/* =========================================
+   TITLE
+========================================= */
+
 .heroTitle {
   font-family: "Alta";
   font-weight: 400;
+
   font-size: 85px;
-  /* font-size: clamp(48px, 4vw, 76px); */
   line-height: 90.8px;
+
   color: #000000;
+
   vertical-align: middle;
   letter-spacing: 0px;
 }
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
 .description {
   font-family: var(--font-secondary);
   font-weight: 400;
+
   font-size: 20px;
   line-height: 24.92px;
+
   color: #00000080;
+
   padding-bottom: 1rem;
+
   letter-spacing: 0.42px;
 }
-/* =========================
-   Large Tablet (1024px)
-========================= */
+
+
+/* =========================================
+   TEXT REVEAL
+========================================= */
+
+.lineMask {
+  display: block;
+  overflow: hidden;
+}
+
+.line {
+  display: block;
+  will-change: transform;
+}
+
+
+/* =========================================
+   LARGE TABLET
+   1024px
+========================================= */
+
 @media (max-width: 1024px) {
+
   .hero {
     min-height: 100svh;
   }
@@ -97,23 +165,57 @@
   }
 }
 
-/* =========================
-   Tablet (768px)
-========================= */
+
+/* =========================================
+   TABLET / MOBILE
+   768px
+========================================= */
+
 @media (max-width: 768px) {
+
   .hero {
     min-height: 100svh;
   }
 
+  /*
+  -----------------------------------------
+  SWITCH TO MOBILE BANNER
+  -----------------------------------------
+  */
+
+  .desktopBanner {
+    display: none;
+  }
+
+  .mobileBanner {
+    display: block;
+  }
+
+  /*
+  -----------------------------------------
+  CONTENT
+  -----------------------------------------
+  */
+
   .content {
     left: 0;
     right: 0;
+
     top: 52%;
     transform: translateY(-50%);
+
     padding: 0 7vw;
+
     max-width: 100%;
+
     gap: 1rem;
   }
+
+  /*
+  -----------------------------------------
+  TITLE
+  -----------------------------------------
+  */
 
   .heroTitle {
     font-size: clamp(42px, 8vw, 60px);
@@ -121,11 +223,23 @@
     letter-spacing: -0.02em;
   }
 
+  /*
+  -----------------------------------------
+  DESCRIPTION
+  -----------------------------------------
+  */
+
   .description {
     font-size: 17px;
     line-height: 1.45;
     max-width: 340px;
   }
+
+  /*
+  -----------------------------------------
+  MOBILE GRADIENT
+  -----------------------------------------
+  */
 
   .gradient {
     background:
@@ -143,38 +257,77 @@
   }
 }
 
-/* =========================
-   Mobile (480px)
-========================= */
+
+/* =========================================
+   MOBILE
+   480px
+========================================= */
+
 @media (max-width: 480px) {
+
   .hero {
     min-height: 100svh;
   }
 
+  /*
+  -----------------------------------------
+  CONTENT
+  -----------------------------------------
+  */
+
   .content {
     top: 55%;
+
     transform: translateY(-50%);
+
     padding: 0 8vw;
+
     gap: 0.9rem;
   }
+
+  /*
+  -----------------------------------------
+  TITLE
+  -----------------------------------------
+  */
 
   .heroTitle {
     font-size: clamp(30px, 11vw, 44px);
     line-height: 0.92;
+
     max-width: 100%;
   }
+
+  /*
+  -----------------------------------------
+  DESCRIPTION
+  -----------------------------------------
+  */
 
   .description {
     font-size: 15px;
     line-height: 1.45;
+
     max-width: 270px;
+
     color: rgba(0, 0, 0, 0.72);
   }
 
-  /* Button becomes touch-friendly */
+  /*
+  -----------------------------------------
+  BUTTON
+  -----------------------------------------
+  */
+
   .content a {
     min-width: 170px;
   }
+
+  /*
+  -----------------------------------------
+  MOBILE GRADIENT
+  -----------------------------------------
+  */
 
   .gradient {
     background:
@@ -190,18 +343,4 @@
         rgba(0, 0, 0, 0.5) 100%
       );
   }
-}
-
-.lineMask {
-  display: block;
-  overflow: hidden;
-}
-
-.line {
-  display: block;
-  will-change: transform;
-}
-.heroImageWrapper {
-  position: absolute;
-  inset: 0;
 }

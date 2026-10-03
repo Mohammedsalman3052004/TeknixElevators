@@ -639,12 +639,13 @@
   }
 
   .navContact {
-    gap: 6px;
+    /* gap: 6px;
 
     padding: 9px 16px;
 
     font-size: 9px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1em; */
+    display: none;
   }
 
   .panel {

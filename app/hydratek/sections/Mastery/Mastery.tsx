@@ -16,8 +16,8 @@ const items = [
   },
   {
     icon: "/Icons/Hydratek/sheave.svg",
-    title: "MONOMER-CAST POLAMIDE TRANSMISSION SHEAVE",
-    text: "Teknix Hydratek elevators are pre-fitted with monomer-cast Polamide sheaves which reduce the noise levels due to friction and therby increasing the life of ropes by upto 50%.",
+    title: "MONOMER-CAST POLYAMIDE TRANSMISSION SHEAVE",
+    text: "Teknix Hydratek elevators are pre-fitted with monomer-cast Polyamide sheaves which reduce the noise levels due to friction and thereby increasing the life of ropes by up to 50%.",
   },
   {
     icon: "/Icons/Hydratek/smooth-ride.svg",

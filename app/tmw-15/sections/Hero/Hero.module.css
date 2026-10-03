@@ -26,6 +26,20 @@
   object-position: center;
 }
 
+
+/* =========================================
+   DESKTOP / MOBILE BANNER
+========================================= */
+
+.desktopBanner {
+  display: block;
+}
+
+.mobileBanner {
+  display: none;
+}
+
+
 .overlay {
   position: absolute;
 
@@ -148,7 +162,13 @@
   will-change: transform;
 }
 
+
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 1024px) {
+
   .hero {
     min-height: 100svh;
   }
@@ -174,7 +194,13 @@
   }
 }
 
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
 @media (max-width: 768px) {
+
   .hero {
     min-height: 100svh;
   }
@@ -219,9 +245,25 @@
   }
 }
 
-@media (max-width: 480px) {
-  .hero {
-    min-height: 100svh;
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .desktopBanner {
+    display: none;
+  }
+
+  .mobileBanner {
+    display: block;
+  }
+
+  .heroImage {
+    object-position: center center;
+
+    transform: scale(1.015);
   }
 
   .content {
@@ -249,7 +291,31 @@
   }
 }
 
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .heroImage {
+    object-position: center center;
+
+    transform: scale(1.015);
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
+
   .heroImage {
     transform: none;
   }

@@ -24,7 +24,7 @@ const stats = [
   },
   {
     value: "ADVANCED",
-    label: "Rine Refinement",
+    label: "Line Refinement",
   },
 ];
 

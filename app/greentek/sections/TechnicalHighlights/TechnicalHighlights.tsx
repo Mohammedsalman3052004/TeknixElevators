@@ -11,7 +11,7 @@ const highlights = [
   },
   {
     number: "02",
-    title: "SORBOTANE GUIDE TECHNOLOGY",
+    title: "SORBOTHANE GUIDE TECHNOLOGY",
     description: "Designed to reduce unwanted vibration",
   },
   {

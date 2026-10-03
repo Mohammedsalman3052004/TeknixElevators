@@ -315,7 +315,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className={styles.bottomBar}>
-        <p>© 2026 TekniX Elevators. All rights reserved.</p>
+        <p>© 2026 Teknix Elevators. All rights reserved.</p>
 
         <div className={styles.legalLinks}>
           <Link href="/privacy-policy">Privacy Policy</Link>

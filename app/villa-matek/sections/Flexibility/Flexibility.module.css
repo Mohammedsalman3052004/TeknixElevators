@@ -1,5 +1,5 @@
 .section {
-  background: #fff;
+  background: #F9F9F7;
   color: #111;
   padding: 96px 24px;
   display: flex;
@@ -10,9 +10,9 @@
 .heading {
   margin: 0 0 56px;
   text-align: center;
-  font-family: var(--font-display, "Cormorant Garamond", "Times New Roman", serif);
-  font-weight: 300;
-  font-size: clamp(1.5rem, 3.4vw, 3rem);
+  font-family: Alta, serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4vw, 3rem);
   letter-spacing: 0.04em;
   line-height: 1.15;
 }

@@ -10,18 +10,32 @@ export default function Hero() {
           BACKGROUND IMAGE
       ========================================= */}
 
-      <div className={styles.background} data-reveal-image data-parallax="40">
+      <div
+        className={styles.background}
+        data-reveal-image
+        data-parallax="40"
+      >
+        {/* Desktop Banner */}
         <Image
           src="/Images/Vertix/hero.webp"
           alt="Vertix elevator"
           fill
           priority
           sizes="100vw"
-          className={styles.backgroundImage}
+          className={`${styles.backgroundImage} ${styles.desktopBanner}`}
+        />
+
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/Vertix/mobilebanner.webp"
+          alt="Vertix elevator"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.backgroundImage} ${styles.mobileBanner}`}
         />
 
         {/* Dark overlay */}
-
         <div className={styles.overlay} />
       </div>
 
@@ -35,6 +49,7 @@ export default function Hero() {
             <span data-reveal-line-mask>
               <span data-reveal-line>MADE TO</span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>BECOME YOURS</span>
             </span>
@@ -46,6 +61,7 @@ export default function Hero() {
                 A refined gearless elevator combining performance,
               </span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>
                 material quality and greater freedom in design.

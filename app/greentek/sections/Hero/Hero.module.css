@@ -41,6 +41,19 @@
 
 
 /* =========================================
+   DESKTOP / MOBILE BANNER
+========================================= */
+
+.desktopBanner {
+  display: block;
+}
+
+.mobileBanner {
+  display: none;
+}
+
+
+/* =========================================
    DARK OVERLAY
 ========================================= */
 
@@ -492,9 +505,24 @@
     height: 100svh;
   }
 
-  .image {
-    object-position: 58% center;
+
+  /* Switch to mobile banner */
+
+  .desktopBanner {
+    display: none;
   }
+
+  .mobileBanner {
+    display: block;
+  }
+
+
+  .image {
+    object-position: center center;
+
+    transform: scale(1.01);
+  }
+
 
   .navbar {
     height: 88px;

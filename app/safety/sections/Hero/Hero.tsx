@@ -6,15 +6,31 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.background} data-reveal-image data-parallax="40">
+      <div
+        className={styles.background}
+        data-reveal-image
+        data-parallax="40"
+      >
+        {/* Desktop Banner */}
         <Image
           src="/Images/About/safety-hero.webp"
           alt="Teknix safety"
           fill
           priority
           sizes="100vw"
-          className={styles.backgroundImage}
+          className={`${styles.backgroundImage} ${styles.desktopBanner}`}
         />
+
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/About/safety-mobilebanner.webp"
+          alt="Teknix safety"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.backgroundImage} ${styles.mobileBanner}`}
+        />
+
         <div className={styles.overlay} />
       </div>
 
@@ -24,6 +40,7 @@ export default function Hero() {
             <span data-reveal-line-mask>
               <span data-reveal-line>PEOPLE FIRST.</span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>SAFETY ALWAYS.</span>
             </span>
@@ -35,6 +52,7 @@ export default function Hero() {
                 Safety isn't a feature we add — it's the standard every
               </span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>
                 Teknix elevator is engineered around, from day one.

@@ -11,17 +11,27 @@ export default function Hero() {
       ========================================= */}
 
       <div className={styles.background} data-reveal-image data-parallax="40">
+        {/* Desktop Banner */}
         <Image
           src="/Images/VillaMatek/hero.webp"
           alt="Villa Matek elevator"
           fill
           priority
           sizes="100vw"
-          className={styles.backgroundImage}
+          className={`${styles.backgroundImage} ${styles.desktopBanner}`}
+        />
+
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/VillaMatek/mobilebanner.webp"
+          alt="Villa Matek elevator"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.backgroundImage} ${styles.mobileBanner}`}
         />
 
         {/* Dark overlay */}
-
         <div className={styles.overlay} />
       </div>
 
@@ -35,6 +45,7 @@ export default function Hero() {
             <span data-reveal-line-mask>
               <span data-reveal-line>WHERE ELEGANCE</span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>MOVES WITH YOU</span>
             </span>
@@ -46,11 +57,13 @@ export default function Hero() {
                 A residential elevator designed to become part of your home
               </span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>
                 — combining refined design, gearless technology and a
               </span>
             </span>
+
             <span data-reveal-line-mask>
               <span data-reveal-line>
                 choice of cabin styles.

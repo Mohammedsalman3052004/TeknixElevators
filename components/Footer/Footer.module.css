@@ -379,6 +379,7 @@
 
   .heading {
     font-size: clamp(36px, 10vw, 52px);
+    text-align: center;
   }
 
   .logo {
@@ -386,7 +387,8 @@
   }
 
   .logo img {
-    width: 125px;
+    width: 100%;
+    height: 100;
   }
 
   .linksSection {

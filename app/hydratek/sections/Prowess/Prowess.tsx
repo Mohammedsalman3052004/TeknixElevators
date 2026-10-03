@@ -12,7 +12,7 @@ type Item = {
 const items: Item[] = [
   {
     title: "CUSTOMIZED DESIGN",
-    text: "Choose a interior design from our ready to pick preconfigured cars or make a choice and create your own concept from the range of materials available.",
+    text: "Choose an interior design from our ready to pick preconfigured cars or make a choice and create your own concept from the range of materials available.",
   },
   {
     title: "HIBERNATION FUNCTION",
@@ -20,7 +20,7 @@ const items: Item[] = [
   },
   {
     title: "ZERO HEADROOM & LOW PIT DEPTH",
-    text: "Another outstanding feature of Hydratek is low Pit Depth Requirement and Zero Headroom space which ads extra space for you to use and giving you a clutter free headspace in the uppermost floor.",
+    text: "Another outstanding feature of Hydratek is low Pit Depth Requirement and Zero Headroom space which adds extra space for you to use and giving you a clutter free headspace in the uppermost floor.",
   },
   {
     title: "SMOOTHER RIDE",
@@ -28,7 +28,7 @@ const items: Item[] = [
   },
   {
     title: "ENVIRONMENT FRIENDLY",
-    text: "Hydratek uses high viscosity & high demulsiblity fluid of biodegradable grade, and extreme long life making it much more environment friendly then other products.",
+    text: "Hydratek uses high viscosity & high demulsibility fluid of biodegradable grade, and extreme long life making it much more environment friendly than other products.",
   },
   {
     title: "LOW POWER CONSUMPTION",

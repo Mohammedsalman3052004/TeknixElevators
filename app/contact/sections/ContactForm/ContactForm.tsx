@@ -7,6 +7,7 @@ const initialForm = {
   name: "",
   email: "",
   mobile: "",
+  floors: "",
   message: "",
 };
 
@@ -22,7 +23,7 @@ export default function ContactForm() {
 
     try {
       const response = await fetch(
-        "https://emailjsfuntions-428145106157.asia-south1.run.app/teknix-contact-form-new",
+        "https://emailjsfuntions-428145106157.asia-south1.run.app/teknix-contact-form",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -97,6 +98,23 @@ export default function ContactForm() {
               onChange={(e) => setForm({ ...form, mobile: e.target.value })}
               required
             />
+          </label>
+
+          <label className={styles.field}>
+            <span>NO. OF FLOORS</span>
+            <select
+              name="floors"
+              value={form.floors}
+              onChange={(e) => setForm({ ...form, floors: e.target.value })}
+              required
+            >
+              <option value="" disabled>Select floors</option>
+              <option value="1-3">1-3 Floors</option>
+              <option value="4-6">4-6 Floors</option>
+              <option value="7-10">7-10 Floors</option>
+              <option value="11-15">11-15 Floors</option>
+              <option value="15+">15+ Floors</option>
+            </select>
           </label>
 
           <label className={styles.field}>

@@ -88,13 +88,24 @@ export default function Hero() {
         data-reveal-image
         data-parallax="40"
       >
+        {/* Desktop Banner */}
         <Image
           src="/Images/Tesc20/hero.webp"
           alt="TESC-20 escalator in a premium retail space"
           fill
           priority
           sizes="100vw"
-          className={styles.heroImage}
+          className={`${styles.heroImage} ${styles.desktopBanner}`}
+        />
+
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/Tesc20/mobilebanner.webp"
+          alt="TESC-20 escalator in a premium retail space"
+          fill
+          priority
+          sizes="100vw"
+          className={`${styles.heroImage} ${styles.mobileBanner}`}
         />
       </div>
 
@@ -120,6 +131,7 @@ export default function Hero() {
               A refined escalator designed for premium
             </span>
           </span>
+
           <span className={styles.lineMask}>
             <span className={styles.line} data-reveal-line>
               public spaces and the way people move through them.

@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import styles from "./Hero.module.css";
-import Button from "@/components/UI/Button/Button";
 import { revealLines } from "@/components/Animations/Animations";
 import FillButton from "@/components/UI/FillButton/Fillbutton";
 
@@ -26,17 +25,6 @@ export default function Hero() {
     =========================================
     INITIAL HERO STATE
     =========================================
-
-    IMPORTANT:
-
-    Hide the text immediately.
-
-    Previously this was happening inside
-    revealLines(), which was called only after
-    the image animation finished.
-
-    That caused the text to appear first,
-    then animate again.
     */
 
     const titleLines =
@@ -79,7 +67,6 @@ export default function Hero() {
     */
 
     const onImageDone = () => {
-
       /*
       -----------------------------------------
       TITLE
@@ -89,7 +76,6 @@ export default function Hero() {
       revealLines(title, {
         stagger: 0.12,
       });
-
 
       /*
       -----------------------------------------
@@ -101,7 +87,6 @@ export default function Hero() {
         delay: 0.15,
         stagger: 0.1,
       });
-
 
       /*
       -----------------------------------------
@@ -120,7 +105,6 @@ export default function Hero() {
       }
     };
 
-
     /*
     =========================================
     LISTEN FOR IMAGE COMPLETION
@@ -131,7 +115,6 @@ export default function Hero() {
       "reveal-image-complete",
       onImageDone
     );
-
 
     /*
     =========================================
@@ -166,22 +149,32 @@ export default function Hero() {
         data-reveal-image
         data-parallax="40"
       >
+
+        {/* Desktop Banner */}
         <Image
           src="/Images/Home/hero.webp"
           alt="Teknix Elevators"
           fill
           priority
-          className={styles.heroImage}
+          className={`${styles.heroImage} ${styles.desktopBanner}`}
         />
-      </div>
 
+        {/* Mobile Banner */}
+        <Image
+          src="/Images/Home/mobilebanner.webp"
+          alt="Teknix Elevators"
+          fill
+          priority
+          className={`${styles.heroImage} ${styles.mobileBanner}`}
+        />
+
+      </div>
 
       {/* =====================================
           GRADIENT
       ===================================== */}
 
       <div className={styles.gradient} />
-
 
       {/* =====================================
           HERO CONTENT
@@ -214,7 +207,6 @@ export default function Hero() {
           </span>
         </h1>
 
-
         {/* DESCRIPTION */}
 
         <p
@@ -240,11 +232,12 @@ export default function Hero() {
           </span>
         </p>
 
-
         {/* BUTTON */}
 
-        <div ref={buttonRef} >
-          <FillButton href="/about">Explore Teknix</FillButton>
+        <div ref={buttonRef}>
+          <FillButton href="/about">
+            Explore Teknix
+          </FillButton>
         </div>
 
       </div>
