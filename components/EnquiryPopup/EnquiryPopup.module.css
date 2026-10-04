@@ -1,0 +1,337 @@
+/* =========================================
+   FLOATING TRIGGER (above WhatsApp button)
+   WhatsApp: bottom 24px, size 48px
+========================================= */
+
+.trigger {
+  position: fixed;
+  right: 24px;
+  bottom: 86px; /* 24 + 48 + 14 gap */
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background: white;
+  color: #0b0b0a;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  border: 1px solid black;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.trigger:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(6, 5, 4, 0.78);
+  backdrop-filter: blur(4px);
+
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   DIALOG
+========================================= */
+
+.dialog {
+  position: relative;
+
+  width: min(540px, 100%);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+
+  padding: clamp(32px, 5vw, 48px) clamp(24px, 5vw, 44px);
+
+  background: #080503;
+  border: 1px solid rgba(205, 190, 160, 0.18);
+
+  color: #ffffff;
+
+  animation: riseIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 24px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.5);
+
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-bottom: 14px;
+
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+
+  color: rgba(190, 177, 153, 0.75);
+}
+
+.eyebrowLine {
+  width: 16px;
+  height: 1px;
+  background: rgba(190, 177, 153, 0.5);
+}
+
+.heading h2 {
+  margin: 0;
+
+  font-family: "Alta", serif;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+
+  color: #f4f1eb;
+}
+
+.heading p {
+  max-width: 340px;
+  margin: 12px auto 0;
+
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field span {
+  font-family: var(--font-secondary);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+
+  padding: 0 0 12px;
+
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  line-height: 1.4;
+
+  outline: none;
+  resize: none;
+
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #c9aa7c;
+}
+
+.field textarea {
+  min-height: 72px;
+}
+
+/* Keep browser autofill on-theme */
+.field input:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+  box-shadow: 0 0 0 1000px #080503 inset;
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback {
+  min-height: 18px;
+  margin-top: -6px;
+  text-align: center;
+}
+
+.success,
+.error {
+  margin: 0;
+
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.success {
+  color: #9cb08a;
+}
+
+.error {
+  color: #d9806e;
+}
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 12px;
+
+  padding: 14px 28px;
+
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  color: #000000;
+
+  font-family: var(--font-secondary);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.submit:hover:not(:disabled) {
+  background: transparent;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .trigger {
+    right: 16px;
+    bottom: 82px; /* 16 + 52 + 14 gap (WhatsApp is 52px on mobile) */
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    gap: 18px;
+  }
+}

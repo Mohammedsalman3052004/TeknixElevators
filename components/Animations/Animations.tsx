@@ -8,6 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// iOS Safari: the address bar showing/hiding fires resize events mid-scroll,
+// which makes ScrollTrigger recalculate and causes jumps.
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 let lenis: Lenis | null = null;
 
 /** Used by <Preloader /> to release scrolling once the intro has finished. */
@@ -80,6 +84,12 @@ export default function Animations() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
+    // Phones / tablets (touch devices or narrow screens):
+    // image clip-reveal, scale and parallax are skipped (iOS glitch fix).
+    const isMobile = window.matchMedia(
+      "(max-width: 1024px), (hover: none)",
+    ).matches;
+
     const build = () => {
       if (prefersReducedMotion) return;
 
@@ -146,6 +156,15 @@ export default function Animations() {
 
           if (!imgs.length) return;
 
+          // MOBILE: static image. No clip-path, no scale.
+          // Still tell listeners (e.g. Hero) that the image is "done".
+          if (isMobile) {
+            requestAnimationFrame(() => {
+              wrapper.dispatchEvent(new CustomEvent("reveal-image-complete"));
+            });
+            return;
+          }
+
           gsap.set(wrapper, {
             clipPath: "inset(0% 0% 100% 0%)",
           });
@@ -186,32 +205,37 @@ export default function Animations() {
         });
 
       // 4) Parallax — data-parallax="60" moves the image slower/faster than scroll
-      gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((wrapper) => {
-        const imgs = wrapper.querySelectorAll("img");
-        if (!imgs.length) return;
+      //    DESKTOP ONLY (scrubbed parallax jitters on iOS touch scrolling)
+      if (!isMobile) {
+        gsap.utils
+          .toArray<HTMLElement>("[data-parallax]")
+          .forEach((wrapper) => {
+            const imgs = wrapper.querySelectorAll("img");
+            if (!imgs.length) return;
 
-        const strength = parseFloat(wrapper.dataset.parallax || "60");
+            const strength = parseFloat(wrapper.dataset.parallax || "60");
 
-        gsap.fromTo(
-          imgs,
-          { y: -strength },
-          {
-            y: strength,
-            ease: "none",
-            scrollTrigger: {
-              trigger: wrapper,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          },
-        );
-      });
+            gsap.fromTo(
+              imgs,
+              { y: -strength },
+              {
+                y: strength,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: wrapper,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: true,
+                },
+              },
+            );
+          });
+      }
 
       ScrollTrigger.refresh();
     };
 
-    const ctx = gsap.context(() => { });
+    const ctx = gsap.context(() => {});
     let onIntroStart: (() => void) | null = null;
 
     if (document.documentElement.dataset.preloading === "true") {

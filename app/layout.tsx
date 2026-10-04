@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Animations from "@/components/Animations/Animations";
 import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppButton";
+import EnquiryPopup from "@/components/EnquiryPopup/EnquiryPopup";
 // import Animations from "@/components/Animations/Animations.tsx";
 
 const instrumentSans = Instrument_Sans({
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Animations />
         {children}
         <Footer />
+        <EnquiryPopup />
         <WhatsAppButton />
       </body>
     </html>
