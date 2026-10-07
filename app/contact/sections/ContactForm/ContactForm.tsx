@@ -100,7 +100,7 @@ export default function ContactForm() {
             />
           </label>
 
-          <label className={styles.field}>
+          <label className={styles.field} style={{display:"none"}}>
             <span>NO. OF FLOORS</span>
             <select
               name="floors"

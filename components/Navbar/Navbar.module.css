@@ -191,8 +191,8 @@
     color 0.4s ease,
     transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 
-    height: 8px;
-    width: 8px;
+  height: 8px;
+  width: 8px;
 }
 
 .navContact:hover::before {
@@ -543,7 +543,7 @@
 
   font-family: Alta, serif;
   /* font-family: var(--font-secondary); */
-  font-size: clamp(24px, 2vw, 30px);;
+  font-size: clamp(24px, 2vw, 30px);
   font-weight: 300;
 
   letter-spacing: 0.14em;
@@ -560,6 +560,130 @@
   color: #9c8e70;
 
   transform: translateX(8px);
+}
+
+
+/* =========================================
+   CATEGORY + DROPDOWN (inside sub view)
+   -----------------------------------------
+   e.g. ELEVATORS -> VILLAS (chevron) -> product links
+========================================= */
+
+.catButton {
+  width: 100%;
+
+  padding: 14px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: none;
+  background: transparent;
+
+  font-family: Alta, serif;
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-align: left;
+
+  color: #171717;
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.catButton:hover,
+.catButton[aria-expanded="true"] {
+  color: #9c8e70;
+}
+
+.catButton:focus-visible {
+  outline: 1px solid #9c8e70;
+  outline-offset: 3px;
+}
+
+.catButton .chevron {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease;
+}
+
+.catButton:hover .chevron {
+  color: #9c8e70;
+}
+
+/* arrow turns down when open */
+.catButton[aria-expanded="true"] .chevron {
+  color: #9c8e70;
+  transform: rotate(90deg);
+}
+
+/* Smooth height animation without JS: grid 0fr -> 1fr */
+.dropdown {
+  display: grid;
+  grid-template-rows: 0fr;
+
+  visibility: hidden; /* keeps hidden links out of tab order */
+
+  transition:
+    grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0.45s;
+}
+
+.dropdownOpen {
+  grid-template-rows: 1fr;
+
+  visibility: visible;
+
+  transition:
+    grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s;
+}
+
+.dropdownInner {
+  min-height: 0;
+  margin: 0;
+  padding: 0 0 0 4px;
+
+  list-style: none;
+  overflow: hidden;
+}
+
+.dropdownLink {
+  display: block;
+
+  padding: 10px 0 10px 18px;
+
+  border-left: 1px solid #ececec;
+
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+
+  color: #858585;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    padding-left 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+
+.dropdownLink:hover {
+  color: #9c8e70;
+  border-left-color: #9c8e70;
+  padding-left: 26px;
+}
+
+.dropdownLinkActive {
+  color: #9c8e70;
+  border-left-color: #9c8e70;
+}
+
+.dropdownInner li:last-child .dropdownLink {
+  margin-bottom: 8px;
 }
 
 
@@ -662,6 +786,14 @@
   }
 
   .subItem {
+    font-size: 12px;
+  }
+
+  .catButton {
+    font-size: 20px;
+  }
+
+  .dropdownLink {
     font-size: 12px;
   }
 }

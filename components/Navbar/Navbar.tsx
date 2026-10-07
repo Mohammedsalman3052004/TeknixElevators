@@ -13,13 +13,25 @@ import styles from "./Navbar.module.css";
    LINKS
    ========================================= */
 
-type SubLink = { name: string; href: string };
+type SubLink = {
+  name: string;
+  href?: string; // optional: categories have no link of their own
+  children?: SubLink[]; // products inside a category
+};
 
 type NavItem = {
   name: string;
   href?: string;
   children?: SubLink[];
 };
+
+/* Products (defined once, reused across categories) */
+const OPTIMA: SubLink = { name: "OPTIMA", href: "/optima" };
+const VERTIX: SubLink = { name: "VERTIX", href: "/vertix" };
+const GREENTEK: SubLink = { name: "GREENTEK", href: "/greentek" };
+const HYDRATEK: SubLink = { name: "HYDRATEK", href: "/hydratek" };
+const VILLA_MATEK: SubLink = { name: "VILLA MATEK", href: "/villa-matek" };
+const EVO: SubLink = { name: "EVO", href: "/evo" };
 
 /* Left side panel — with sub links */
 const panelLinks: NavItem[] = [
@@ -35,12 +47,16 @@ const panelLinks: NavItem[] = [
   {
     name: "ELEVATORS",
     children: [
-      { name: "OPTIMA", href: "/optima" },
-      { name: "VERTIX", href: "/vertix" },
-      { name: "GREENTEK", href: "/greentek" },
-      { name: "HYDRATEK", href: "/hydratek" },
-      { name: "VILLA MATEK", href: "/villa-matek" },
-      { name: "EVO", href: "/evo" },
+      {
+        name: "VILLAS",
+        children: [VILLA_MATEK, GREENTEK, OPTIMA, EVO, HYDRATEK],
+      },
+      { name: "APARTMENTS", children: [OPTIMA, VERTIX, GREENTEK] },
+      { name: "HOTELS", children: [GREENTEK, VERTIX] },
+      { name: "OFFICES", children: [VERTIX, GREENTEK] },
+      { name: "HOSPITALS", children: [GREENTEK, VERTIX] },
+      { name: "DATA CENTERS", children: [GREENTEK] },
+      { name: "INDUSTRY", children: [GREENTEK, VERTIX] },
       { name: "SPECIAL PURPOSE", href: "/special-purpose" },
     ],
   },
@@ -68,10 +84,8 @@ const panelLinks: NavItem[] = [
    -----------------------------------------
    - TOP_ZONE_PX      : navbar stays fully transparent inside this zone
                         (the top of the hero — matches the reference shot).
-   - REVEAL_AFTER_VH  : navbar can only reappear once the page has been
-                        scrolled further than this many viewport heights —
-                        i.e. "3rd / 4th section". Raise/lower to line it up
-                        with your actual section heights.
+   - REVEAL_AFTER_PX  : navbar can only reappear once the page has been
+                        scrolled further than this many pixels.
    - SCROLL_DELTA_PX  : ignores tiny/jittery scroll movements (trackpads,
                         mobile momentum) so the bar doesn't flicker.
    ========================================= */
@@ -144,6 +158,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [subOpen, setSubOpen] = useState(false);
   const [subIndex, setSubIndex] = useState(0);
+  const [openCat, setOpenCat] = useState<string | null>(null);
   const [navState, setNavState] = useState<NavState>("top");
 
   const rootRef = useRef<HTMLDivElement>(null);
@@ -169,7 +184,13 @@ export default function Navbar() {
 
   const openSub = (index: number) => {
     setSubIndex(index);
+    setOpenCat(null);
     setSubOpen(true);
+  };
+
+  const closeSub = () => {
+    setSubOpen(false);
+    setOpenCat(null);
   };
 
   /* -----------------------------------------
@@ -190,6 +211,7 @@ export default function Navbar() {
           gsap.set(subViewRef.current, { x: 40, autoAlpha: 0 });
 
           setSubOpen(false);
+          setOpenCat(null);
         },
       });
 
@@ -374,7 +396,7 @@ export default function Navbar() {
      - At the very top          -> transparent, always visible.
      - Scrolling down           -> hidden, no matter how far down.
      - Scrolling up, but only
-       past REVEAL_AFTER_VH     -> reappears with a solid dark background.
+       past REVEAL_AFTER_PX     -> reappears with a solid dark background.
      ----------------------------------------- */
 
   useEffect(() => {
@@ -518,7 +540,13 @@ export default function Navbar() {
               <ul className={styles.list}>
                 {panelLinks.map((item, index) => {
                   const active = item.children
-                    ? item.children.some((c) => isActive(c.href))
+                    ? item.children.some((c) =>
+                      c.href
+                        ? isActive(c.href)
+                        : c.children?.some(
+                          (p) => p.href && isActive(p.href),
+                        ),
+                    )
                     : item.href
                       ? isActive(item.href)
                       : false;
@@ -580,7 +608,7 @@ export default function Navbar() {
               <button
                 type="button"
                 className={styles.backRow}
-                onClick={() => setSubOpen(false)}
+                onClick={closeSub}
               >
                 <span className={styles.backIcon}>
                   <BackArrow />
@@ -589,22 +617,81 @@ export default function Navbar() {
               </button>
 
               <ul className={styles.list}>
-                {activeItem.children?.map((child) => (
-                  <li
-                    key={child.name}
-                    className={styles.subListItem}
-                    data-sub-item
-                  >
-                    <Link
-                      href={child.href}
-                      className={`${styles.subItem} ${isActive(child.href) ? styles.itemActive : ""
-                        }`}
-                      onClick={closeMenu}
+                {activeItem.children?.map((child) => {
+                  /* Category with dropdown (Villas, Apartments, ...) */
+                  if (child.children) {
+                    const isOpen = openCat === child.name;
+                    const panelId = `cat-${child.name.replace(/\s+/g, "-")}`;
+                    const catActive = child.children.some(
+                      (p) => p.href && isActive(p.href),
+                    );
+
+                    return (
+                      <li
+                        key={child.name}
+                        className={styles.subListItem}
+                        data-sub-item
+                      >
+                        <button
+                          type="button"
+                          className={`${styles.catButton} ${catActive ? styles.itemActive : ""
+                            }`}
+                          aria-expanded={isOpen}
+                          aria-controls={panelId}
+                          onClick={() =>
+                            setOpenCat(isOpen ? null : child.name)
+                          }
+                        >
+                          <span>{child.name}</span>
+                          <Chevron />
+                        </button>
+
+                        <div
+                          id={panelId}
+                          className={`${styles.dropdown} ${isOpen ? styles.dropdownOpen : ""
+                            }`}
+                        >
+                          <ul className={styles.dropdownInner}>
+                            {child.children.map((product) => (
+                              <li key={`${child.name}-${product.name}`}>
+                                <Link
+                                  href={product.href ?? "/"}
+                                  className={`${styles.dropdownLink} ${product.href && isActive(product.href)
+                                      ? styles.dropdownLinkActive
+                                      : ""
+                                    }`}
+                                  onClick={closeMenu}
+                                >
+                                  {product.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </li>
+                    );
+                  }
+
+                  /* Normal link (Corporate Profile, Safety, etc.) */
+                  return (
+                    <li
+                      key={child.name}
+                      className={styles.subListItem}
+                      data-sub-item
                     >
-                      {child.name}
-                    </Link>
-                  </li>
-                ))}
+                      <Link
+                        href={child.href ?? "/"}
+                        className={`${styles.subItem} ${child.href && isActive(child.href)
+                            ? styles.itemActive
+                            : ""
+                          }`}
+                        onClick={closeMenu}
+                      >
+                        {child.name}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

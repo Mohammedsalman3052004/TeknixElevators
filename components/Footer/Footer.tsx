@@ -317,6 +317,17 @@ export default function Footer() {
       <div className={styles.bottomBar}>
         <p>© 2026 Teknix Elevators. All rights reserved.</p>
 
+        <p className={styles.credit}>
+          Digital Partner -{" "}
+          <a
+            href="https://www.pinakkaa.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pinakkaa
+          </a>
+        </p>
+
         <div className={styles.legalLinks}>
           <Link href="/privacy-policy">Privacy Policy</Link>
           <Link href="/terms-of-use">Terms of Use</Link>

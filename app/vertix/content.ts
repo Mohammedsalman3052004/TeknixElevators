@@ -12,12 +12,12 @@ export const specifications: SpecificationsProps = {
   brochureFormName: "Vertix Download Form",
   items: [
     { label: "TYPE", value: "MRL / MMR", sub: "Machine Room-Less", icon: "type" },
-    { label: "CAPACITY", value: "408 – 1020 KG", sub: "6 – 15 Persons", icon: "capacity" },
-    { label: "SPEED", value: "1–1.5 MPS", sub: "Metres per second", icon: "speed" },
-    { label: "LANDINGS", value: "2 – 15", sub: "Floors", icon: "landings" },
+    { label: "CAPACITY", value: "408 - 1360 KG", sub: "6-20 Persons", icon: "capacity" },
+    { label: "SPEED", value: "1 – 2 MPS", sub: "Metres per second", icon: "speed" },
+    { label: "LANDINGS", value: "2 – 20", sub: "Floors", icon: "landings" },
     { label: "DRIVE", value: "GEARLESS PMSM", sub: "Frequency Controlled", icon: "drive" },
     { label: "OPERATION", value: "FULL COLLECTIVE", sub: "Selective", icon: "operation" },
-    { label: "DOOR WIDTH", value: "700 / 800 / 900 MM", sub: "Clear opening", icon: "width" },
+    { label: "DOOR WIDTH", value: "700 / 800 / 900 / 1000 / 1200 MM", sub: "Clear opening", icon: "width" },
     { label: "DOOR HEIGHT", value: "2000 MM", sub: "Standard clear height", icon: "height" },
   ],
 };

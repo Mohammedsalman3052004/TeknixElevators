@@ -163,6 +163,37 @@ const branches: Office[] = [
       },
     ],
   },
+  {
+    city: "Bhubaneswar",
+    company: "Awfis",
+    address: [
+      "ST-12, Ground Floor, Opp. NALCO Headquarters, Jaydev Vihar,",
+      "Nayapalli, Bhubaneswar, Odisha - 751013, India",
+    ],
+    contacts: [
+      {
+        label: "Mobile Number",
+        value: "+91 819 735 9494",
+        href: "tel:+918197359494",
+      },
+    ],
+  },
+  {
+    city: "Mumbai",
+    company: "Mr. Amit Jain",
+    address: [
+      "A-1, 102 Tirupati Darshan, Balaji Nagar,",
+      "Opp. Railway Station, Bhayandar West,",
+      "Thane, Maharashtra - 401101",
+    ],
+    contacts: [
+      {
+        label: "Mobile Number",
+        value: "+91 829 697 3535",
+        href: "tel:+918296973535",
+      },
+    ],
+  },
 ];
 
 function OfficeBlock({
